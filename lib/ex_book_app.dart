@@ -19,10 +19,9 @@ class _ExBookAppState extends State<ExBookApp> {
         useMaterial3: true,
       ),
       routes: {
-        // '/': (context) => const MyHomePage(),
         '/introduction': (context) => const NgNhP(),
       },
-      home: const MyHomePage(),
+      home: const NgNhP(),
     );
   }
 }
