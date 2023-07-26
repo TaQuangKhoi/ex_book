@@ -1,25 +1,12 @@
+import 'package:ex_book/pages/create_account/introduction_page.dart';
 import 'package:ex_book/pages/welcome_page.dart';
+
 import 'package:flutter/material.dart';
 
+import 'ex_book_app.dart';
+
 void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Ex. Book',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const MyHomePage(),
-    );
-  }
+  runApp(const ExBookApp());
 }
 
 
