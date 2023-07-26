@@ -1,8 +1,14 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'dart:async';
+
+import 'create_account/introduction_page.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
+
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
@@ -11,10 +17,14 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     const String assetName = 'assets/logo.svg';
-    final Widget logo = SvgPicture.asset(
-        assetName,
-        semanticsLabel: 'Acme Logo'
-    );
+    final Widget logo =
+        SvgPicture.asset(assetName, semanticsLabel: 'Acme Logo');
+
+    Timer(const Duration(seconds: 3), () {
+      log("push");
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => const NgNhP()));
+    });
 
     return Scaffold(
         backgroundColor: const Color(0xFFF1F9EA),
