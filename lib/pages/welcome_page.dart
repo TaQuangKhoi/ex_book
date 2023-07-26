@@ -29,18 +29,18 @@ class _MyHomePageState extends State<MyHomePage> {
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     color: Color(0xFF074E16),
-                    fontSize: 64,
+                    fontSize: 70,
                     fontFamily: 'Mulish',
-                    // fontWeight: FontWeight.w700,
+                    fontWeight: FontWeight.w900,
                     // height: 36,
                   )),
               Text('Nơi trao đổi và mua sách cũ',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     color: Color(0xFF293731),
-                    // fontSize: 16,
-                    // fontFamily: 'Mulish',
-                    // fontWeight: FontWeight.w500,
+                    fontSize: 16,
+                    fontFamily: 'Mulish',
+                    fontWeight: FontWeight.w500,
                     // height: 36,
                   ))
             ],
