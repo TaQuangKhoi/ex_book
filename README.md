@@ -1,6 +1,6 @@
 # ex_book
 
-A new Flutter project.
+UI Project on Behance: https://www.behance.net/gallery/158105245/APP-EXBOOK
 
 ## Getting Started
 

@@ -401,7 +401,7 @@ class NgNhP extends StatelessWidget {
                       width: 203,
                       height: 73.79,
                       child: Stack(children: [
-                          
+
                           ]),
                     ),
                   ),
