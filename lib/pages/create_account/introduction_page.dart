@@ -139,7 +139,7 @@ class IntroBackground1 extends StatelessWidget {
             Container(
               margin: const EdgeInsets.only(top: 16),
               child: Text(
-                'Bạn tìm nơi cất giữ những điều cũ kỹ\nEX.BOOK tìm nơi cất giữ những\nnhững quyển sách cũ kỹ ',
+                'Bạn tìm nơi cất giữ những điều cũ kỹ\nEX.BOOK tìm nơi cất giữ những\nnhững quyển sách cũ kỹ',
                 textAlign: TextAlign.center,
                 softWrap: true,
                 style: GoogleFonts.mulish(
@@ -176,7 +176,7 @@ class IntroBackground2 extends StatelessWidget {
             const Image(
                 image: AssetImage('assets/introduction_page/hinh3.png')),
             Text(
-              'Nơi bạn yêu những thứ cũ kỹ',
+              'Mua sự chữa lành',
               textAlign: TextAlign.center,
               style: GoogleFonts.mulish(
                   textStyle: TextStyle(
@@ -190,7 +190,7 @@ class IntroBackground2 extends StatelessWidget {
             Container(
               margin: const EdgeInsets.only(top: 16),
               child: Text(
-                'Bạn tìm nơi cất giữ những điều cũ kỹ\nEX.BOOK tìm nơi cất giữ những\nnhững quyển sách cũ kỹ ',
+                'Bạn mua liều thuốc thời gian\nđể chữa lành cho tâm hồn giản đơn',
                 textAlign: TextAlign.center,
                 softWrap: true,
                 style: GoogleFonts.mulish(
