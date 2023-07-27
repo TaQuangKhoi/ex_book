@@ -51,24 +51,24 @@ class NgNhP extends StatelessWidget {
               const Text(
                 'Nơi bạn yêu những thứ cũ kỹ ',
                 textAlign: TextAlign.center,
-                // style: TextStyle(
-                //   color: Color(0xFF293731),
+                style: TextStyle(
+                  color: Color(0xFF293731),
                 //   fontSize: 24,
                 //   fontFamily: 'Mulish',
                 //   fontWeight: FontWeight.w700,
                 //   height: 36,
-                // ),
+                ),
               ),
               const Text(
                 'Bạn tìm nơi cất giữ những điều cũ kỹ\nEX.BOOK tìm nơi cất giữ những \nnhững quyển sách cũ kỹ ',
                 textAlign: TextAlign.center,
-                // style: TextStyle(
+                style: TextStyle(
                 //   color: Color(0xFF293731),
                 //   fontSize: 16,
                 //   fontFamily: 'Mulish',
                 //   fontWeight: FontWeight.w700,
                 //   height: 24,
-                // ),
+                ),
               ),
               ElevatedButton(
                   style: ElevatedButton.styleFrom(
