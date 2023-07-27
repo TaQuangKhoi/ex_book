@@ -27,22 +27,18 @@ class NgNhP extends StatelessWidget {
               left: 0,
               child: SizedBox(
                   width: MediaQuery.of(context).size.width,
-                  child: const FittedBox(
-                      fit: BoxFit.fill,
-                      child: Image(
-                        image:
-                            AssetImage('assets/introduction_page/vector_1.png'),
-                      )))),
+                  child: const Image(
+                    fit: BoxFit.fill,
+                    image: AssetImage('assets/introduction_page/vector_1.png'),
+                  ))),
           Positioned(
             top: 0,
             left: 0,
             child: SizedBox(
                 width: MediaQuery.of(context).size.width,
-                child: const FittedBox(
+                child: const Image(
                   fit: BoxFit.fill,
-                  child: Image(
-                    image: AssetImage('assets/introduction_page/vector_2.png'),
-                  ),
+                  image: AssetImage('assets/introduction_page/vector_2.png'),
                 )),
           ),
           Positioned(
@@ -50,11 +46,9 @@ class NgNhP extends StatelessWidget {
             left: 0,
             child: SizedBox(
                 width: MediaQuery.of(context).size.width,
-                child: const FittedBox(
+                child: const Image(
                   fit: BoxFit.fill,
-                  child: Image(
-                    image: AssetImage('assets/introduction_page/vector_25.png'),
-                  ),
+                  image: AssetImage('assets/introduction_page/vector_25.png'),
                 )),
           ),
           Positioned(
@@ -62,11 +56,9 @@ class NgNhP extends StatelessWidget {
             left: 0,
             child: SizedBox(
                 width: MediaQuery.of(context).size.width,
-                child: const FittedBox(
+                child: const Image(
                   fit: BoxFit.fill,
-                  child: Image(
-                    image: AssetImage('assets/introduction_page/vector_27.png'),
-                  ),
+                  image: AssetImage('assets/introduction_page/vector_27.png'),
                 )),
           ),
           Column(
