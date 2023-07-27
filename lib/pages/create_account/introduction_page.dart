@@ -230,7 +230,7 @@ class IntroBackground2 extends StatelessWidget {
             ),
           ),
         ),
-        TextBetween(
+        const TextBetween(
           circleIndex: 2,
           text1: 'Mua sự chữa lành',
           text2:
