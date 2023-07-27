@@ -45,6 +45,30 @@ class NgNhP extends StatelessWidget {
                   ),
                 )),
           ),
+          Positioned(
+            bottom: 0,
+            left: 0,
+            child: SizedBox(
+                width: MediaQuery.of(context).size.width,
+                child: const FittedBox(
+                  fit: BoxFit.fill,
+                  child: Image(
+                    image: AssetImage('assets/introduction_page/vector_25.png'),
+                  ),
+                )),
+          ),
+          Positioned(
+            bottom: 0,
+            left: 0,
+            child: SizedBox(
+                width: MediaQuery.of(context).size.width,
+                child: const FittedBox(
+                  fit: BoxFit.fill,
+                  child: Image(
+                    image: AssetImage('assets/introduction_page/vector_27.png'),
+                  ),
+                )),
+          ),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -58,7 +82,7 @@ class NgNhP extends StatelessWidget {
                   fontSize: 24,
                   fontFamily: 'Mulish',
                   fontWeight: FontWeight.w900,
-                //   height: 36,
+                  //   height: 36,
                 ),
               ),
               Text(
@@ -70,7 +94,7 @@ class NgNhP extends StatelessWidget {
                   fontSize: 16,
                   fontFamily: 'Mulish',
                   fontWeight: FontWeight.w900,
-                //   height: 24,
+                  //   height: 24,
                 ),
               ),
               ElevatedButton(
@@ -96,7 +120,7 @@ class NgNhP extends StatelessWidget {
                     ),
                   ))
             ],
-          )
+          ),
         ],
       ),
     );
