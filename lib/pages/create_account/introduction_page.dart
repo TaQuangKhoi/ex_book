@@ -119,44 +119,11 @@ class IntroBackground1 extends StatelessWidget {
                 image: AssetImage('assets/introduction_page/vector_27.png'),
               )),
         ),
-        Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Image(
-                image: AssetImage('assets/introduction_page/hinh3.png')),
-            Text(
-              'Nơi bạn yêu những thứ cũ kỹ',
-              textAlign: TextAlign.center,
-              style: GoogleFonts.mulish(
-                  textStyle: TextStyle(
-                color: Color(ExBookColor.mauTrungTinh1.colorHex),
-                fontSize: 24,
-                // fontFamily: 'Mulish',
-                fontWeight: FontWeight.w700,
-                //   height: 36,
-              )),
-            ),
-            Container(
-              margin: const EdgeInsets.only(top: 16),
-              child: Text(
-                'Bạn tìm nơi cất giữ những điều cũ kỹ\nEX.BOOK tìm nơi cất giữ những\nnhững quyển sách cũ kỹ',
-                textAlign: TextAlign.center,
-                softWrap: true,
-                style: GoogleFonts.mulish(
-                    textStyle: TextStyle(
-                  color: Color(ExBookColor.mauTrungTinh1.colorHex),
-                  fontSize: 16,
-                  // fontFamily: 'Mulish',
-                  fontWeight: FontWeight.w700,
-                  //   height: 24,
-                )),
-              ),
-            ),
-            const ThreeDot(
-              index: 1,
-            ),
-          ],
-        ),
+        const TextBetween(
+            circleIndex: 1,
+            text1: 'Nơi bạn yêu những thứ cũ kỹ',
+            text2:
+                'Bạn tìm nơi cất giữ những điều cũ kỹ\nEX.BOOK tìm nơi cất giữ những\nnhững quyển sách cũ kỹ'),
       ],
     );
   }
@@ -167,46 +134,67 @@ class IntroBackground2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
+    return const Stack(
       alignment: Alignment.center,
       children: [
-        Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Image(
-                image: AssetImage('assets/introduction_page/sach_2_1.png')),
-            Text(
-              'Mua sự chữa lành',
-              textAlign: TextAlign.center,
-              style: GoogleFonts.mulish(
-                  textStyle: TextStyle(
-                color: Color(ExBookColor.mauTrungTinh1.colorHex),
-                fontSize: 24,
-                // fontFamily: 'Mulish',
-                fontWeight: FontWeight.w700,
-                //   height: 36,
-              )),
-            ),
-            Container(
-              margin: const EdgeInsets.only(top: 16),
-              child: Text(
-                'Bạn mua liều thuốc thời gian\nđể chữa lành cho tâm hồn giản đơn',
-                textAlign: TextAlign.center,
-                softWrap: true,
-                style: GoogleFonts.mulish(
-                    textStyle: TextStyle(
-                  color: Color(ExBookColor.mauTrungTinh1.colorHex),
-                  fontSize: 16,
-                  // fontFamily: 'Mulish',
-                  fontWeight: FontWeight.w700,
-                  //   height: 24,
-                )),
-              ),
-            ),
-            const ThreeDot(
-              index: 2,
-            ),
-          ],
+        TextBetween(
+          circleIndex: 2,
+          text1: 'Mua sự chữa lành',
+          text2:
+              'Bạn mua liều thuốc thời gian\nđể chữa lành cho tâm hồn giản đơn',
+        ),
+      ],
+    );
+  }
+}
+
+class TextBetween extends StatelessWidget {
+  final int circleIndex;
+  final String text1;
+  final String text2;
+
+  const TextBetween(
+      {super.key,
+      required this.circleIndex,
+      required this.text1,
+      required this.text2});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        const Image(image: AssetImage('assets/introduction_page/sach_2_1.png')),
+        Text(
+          text1,
+          textAlign: TextAlign.center,
+          style: GoogleFonts.mulish(
+              textStyle: TextStyle(
+            color: Color(ExBookColor.mauTrungTinh1.colorHex),
+            fontSize: 24,
+            // fontFamily: 'Mulish',
+            fontWeight: FontWeight.w700,
+            //   height: 36,
+          )),
+        ),
+        Container(
+          margin: const EdgeInsets.only(top: 16),
+          child: Text(
+            text2,
+            textAlign: TextAlign.center,
+            softWrap: true,
+            style: GoogleFonts.mulish(
+                textStyle: TextStyle(
+              color: Color(ExBookColor.mauTrungTinh1.colorHex),
+              fontSize: 16,
+              // fontFamily: 'Mulish',
+              fontWeight: FontWeight.w700,
+              //   height: 24,
+            )),
+          ),
+        ),
+        ThreeDot(
+          index: circleIndex,
         ),
       ],
     );
