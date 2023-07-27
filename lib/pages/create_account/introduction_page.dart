@@ -18,87 +18,7 @@ class IntroductionPage extends StatelessWidget {
         fit: StackFit.expand,
         alignment: Alignment.center,
         children: [
-          const Positioned(
-            top: 90,
-            left: 0,
-            child: Image(
-              image: AssetImage('assets/introduction_page/group_101.png'),
-            ),
-          ),
-          Positioned(
-              top: 0,
-              left: 0,
-              child: SizedBox(
-                  width: MediaQuery.of(context).size.width,
-                  child: const Image(
-                    fit: BoxFit.fill,
-                    image: AssetImage('assets/introduction_page/vector_1.png'),
-                  ))),
-          Positioned(
-            top: 0,
-            left: 0,
-            child: SizedBox(
-                width: MediaQuery.of(context).size.width,
-                child: const Image(
-                  fit: BoxFit.fill,
-                  image: AssetImage('assets/introduction_page/vector_2.png'),
-                )),
-          ),
-          Positioned(
-            bottom: 0,
-            left: 0,
-            child: SizedBox(
-                width: MediaQuery.of(context).size.width,
-                child: const Image(
-                  fit: BoxFit.fill,
-                  image: AssetImage('assets/introduction_page/vector_25.png'),
-                )),
-          ),
-          Positioned(
-            bottom: 0,
-            left: 0,
-            child: SizedBox(
-                width: MediaQuery.of(context).size.width,
-                child: const Image(
-                  fit: BoxFit.fill,
-                  image: AssetImage('assets/introduction_page/vector_27.png'),
-                )),
-          ),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const Image(
-                  image: AssetImage('assets/introduction_page/hinh3.png')),
-              Text(
-                'Nơi bạn yêu những thứ cũ kỹ',
-                textAlign: TextAlign.center,
-                style: GoogleFonts.mulish(
-                    textStyle: TextStyle(
-                  color: Color(ExBookColor.mauTrungTinh1.colorHex),
-                  fontSize: 24,
-                  // fontFamily: 'Mulish',
-                  fontWeight: FontWeight.w700,
-                  //   height: 36,
-                )),
-              ),
-              Container(
-                margin: const EdgeInsets.only(top: 16),
-                child: Text(
-                  'Bạn tìm nơi cất giữ những điều cũ kỹ\nEX.BOOK tìm nơi cất giữ những\nnhững quyển sách cũ kỹ ',
-                  textAlign: TextAlign.center,
-                  softWrap: true,
-                  style: GoogleFonts.mulish(
-                      textStyle: TextStyle(
-                    color: Color(ExBookColor.mauTrungTinh1.colorHex),
-                    fontSize: 16,
-                    // fontFamily: 'Mulish',
-                    fontWeight: FontWeight.w700,
-                    //   height: 24,
-                  )),
-                ),
-              )
-            ],
-          ),
+          const IntroBackground1(),
           Center(
               child: Container(
             alignment: Alignment.bottomCenter,
@@ -129,3 +49,97 @@ class IntroductionPage extends StatelessWidget {
     );
   }
 }
+
+class IntroBackground1 extends StatelessWidget {
+  const IntroBackground1({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      children: [
+        const Positioned(
+          top: 90,
+          left: 0,
+          child: Image(
+            image: AssetImage('assets/introduction_page/group_101.png'),
+          ),
+        ),
+        Positioned(
+            top: 0,
+            left: 0,
+            child: SizedBox(
+                width: MediaQuery.of(context).size.width,
+                child: const Image(
+                  fit: BoxFit.fill,
+                  image: AssetImage('assets/introduction_page/vector_1.png'),
+                ))),
+        Positioned(
+          top: 0,
+          left: 0,
+          child: SizedBox(
+              width: MediaQuery.of(context).size.width,
+              child: const Image(
+                fit: BoxFit.fill,
+                image: AssetImage('assets/introduction_page/vector_2.png'),
+              )),
+        ),
+        Positioned(
+          bottom: 0,
+          left: 0,
+          child: SizedBox(
+              width: MediaQuery.of(context).size.width,
+              child: const Image(
+                fit: BoxFit.fill,
+                image: AssetImage('assets/introduction_page/vector_25.png'),
+              )),
+        ),
+        Positioned(
+          bottom: 0,
+          left: 0,
+          child: SizedBox(
+              width: MediaQuery.of(context).size.width,
+              child: const Image(
+                fit: BoxFit.fill,
+                image: AssetImage('assets/introduction_page/vector_27.png'),
+              )),
+        ),
+        Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Image(
+                image: AssetImage('assets/introduction_page/hinh3.png')),
+            Text(
+              'Nơi bạn yêu những thứ cũ kỹ',
+              textAlign: TextAlign.center,
+              style: GoogleFonts.mulish(
+                  textStyle: TextStyle(
+                    color: Color(ExBookColor.mauTrungTinh1.colorHex),
+                    fontSize: 24,
+                    // fontFamily: 'Mulish',
+                    fontWeight: FontWeight.w700,
+                    //   height: 36,
+                  )),
+            ),
+            Container(
+              margin: const EdgeInsets.only(top: 16),
+              child: Text(
+                'Bạn tìm nơi cất giữ những điều cũ kỹ\nEX.BOOK tìm nơi cất giữ những\nnhững quyển sách cũ kỹ ',
+                textAlign: TextAlign.center,
+                softWrap: true,
+                style: GoogleFonts.mulish(
+                    textStyle: TextStyle(
+                      color: Color(ExBookColor.mauTrungTinh1.colorHex),
+                      fontSize: 16,
+                      // fontFamily: 'Mulish',
+                      fontWeight: FontWeight.w700,
+                      //   height: 24,
+                    )),
+              ),
+            )
+          ],
+        ),
+      ],
+    );
+  }
+}
+
