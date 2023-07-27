@@ -1,5 +1,4 @@
 import 'package:ex_book/pages/create_account/introduction_page.dart';
-import 'package:ex_book/pages/welcome_page.dart';
 import 'package:flutter/material.dart';
 
 class ExBookApp extends StatefulWidget {
