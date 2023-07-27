@@ -8,19 +8,14 @@ import 'dart:async';
 import '../library/ex_book_colors.dart';
 import 'create_account/introduction_page.dart';
 
-class WelcomePage extends StatefulWidget {
+class WelcomePage extends StatelessWidget {
   const WelcomePage({super.key});
 
-  @override
-  State<WelcomePage> createState() => _WelcomePageState();
-}
-
-class _WelcomePageState extends State<WelcomePage> {
   @override
   Widget build(BuildContext context) {
     const String assetName = 'assets/logo.svg';
     final Widget logo =
-        SvgPicture.asset(assetName, semanticsLabel: 'Ex.Book Logo');
+    SvgPicture.asset(assetName, semanticsLabel: 'Ex.Book Logo');
 
     Timer(const Duration(seconds: 2), () {
       Navigator.push(
@@ -61,3 +56,4 @@ class _WelcomePageState extends State<WelcomePage> {
         ));
   }
 }
+
