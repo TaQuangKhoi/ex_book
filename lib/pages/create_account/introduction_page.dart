@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 
 import '../../library/ex_book_colors.dart';
 
+import 'package:google_fonts/google_fonts.dart';
+
 class NgNhP extends StatelessWidget {
   const NgNhP({super.key});
 
@@ -70,56 +72,55 @@ class NgNhP extends StatelessWidget {
               Text(
                 'Nơi bạn yêu những thứ cũ kỹ',
                 textAlign: TextAlign.center,
-                style: TextStyle(
+                style: GoogleFonts.mulish(
+                    textStyle: TextStyle(
                   color: Color(ExBookColor.mauChinh1.colorHex),
                   fontSize: 24,
-                  fontFamily: 'Mulish',
-                  fontWeight: FontWeight.w900,
+                  // fontFamily: 'Mulish',
+                  fontWeight: FontWeight.w700,
                   //   height: 36,
-                ),
+                )),
               ),
               Text(
                 'Bạn tìm nơi cất giữ những điều cũ kỹ\nEX.BOOK tìm nơi cất giữ những\nnhững quyển sách cũ kỹ ',
                 textAlign: TextAlign.center,
                 softWrap: true,
-                style: TextStyle(
+                style: GoogleFonts.mulish(
+                    textStyle: TextStyle(
                   color: Color(ExBookColor.mauChinh1.colorHex),
                   fontSize: 16,
-                  fontFamily: 'Mulish',
-                  fontWeight: FontWeight.w900,
+                  // fontFamily: 'Mulish',
+                  fontWeight: FontWeight.w700,
                   //   height: 24,
-                ),
+                )),
               )
             ],
           ),
-
           Center(
-            child: Container(
-              alignment: Alignment.bottomCenter,
-              margin: const EdgeInsets.only(bottom: 125),
-              child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    // surfaceTintColor: const Color(0xFF074E16),
-                    // foregroundColor: const Color(0xFF074E16),
-                    backgroundColor: const Color(0xFF074E16),
-                    minimumSize: Size(MediaQuery.of(context).size.width - 40, 56),
-                  ),
-                  onPressed: () {
-                    log("Tapped");
-                  },
-                  child: const Text(
-                    'TIẾP TỤC',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      color: Colors.white,
-                      //   fontSize: 18,
-                      //   fontFamily: 'Mulish',
-                      //   fontWeight: FontWeight.w400,
-                      //   letterSpacing: -0.30,
-                    ),
-                  )),
+              child: Container(
+            alignment: Alignment.bottomCenter,
+            margin: const EdgeInsets.only(bottom: 125),
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                // surfaceTintColor: const Color(0xFF074E16),
+                // foregroundColor: const Color(0xFF074E16),
+                backgroundColor: const Color(0xFF074E16),
+                minimumSize: Size(MediaQuery.of(context).size.width - 40, 56),
+              ),
+              onPressed: () {
+                log("Tapped");
+              },
+              child: Text('TIẾP TỤC',
+                  textAlign: TextAlign.center,
+                  style: GoogleFonts.mulish(
+                      textStyle: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 18,
+                    //   fontWeight: FontWeight.w400,
+                    //   letterSpacing: -0.30,
+                  ))),
             ),
-          )
+          ))
         ],
       ),
     );
