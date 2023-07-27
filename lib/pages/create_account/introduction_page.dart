@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 
 class NgNhP extends StatelessWidget {
@@ -5,13 +7,43 @@ class NgNhP extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      backgroundColor: Color(0xFFF1F9EA),
+    return Scaffold(
+      backgroundColor: const Color(0xFFF1F9EA),
       appBar: null,
       body: Stack(
+        fit: StackFit.expand,
         children: [
-          
-          Column(
+          const Positioned(
+            top: 90,
+            left: 0,
+            child: Image(
+              image: AssetImage('assets/introduction_page/group_101.png'),
+            ),
+          ),
+          Positioned(
+              top: 0,
+              left: 0,
+              child: SizedBox(
+                  width: MediaQuery.of(context).size.width,
+                  child: const FittedBox(
+                      fit: BoxFit.fill,
+                      child: Image(
+                        image:
+                            AssetImage('assets/introduction_page/vector_1.png'),
+                      )))),
+          Positioned(
+            top: 0,
+            left: 0,
+            child: SizedBox(
+                width: MediaQuery.of(context).size.width,
+                child: const FittedBox(
+                  fit: BoxFit.fill,
+                  child: Image(
+                    image: AssetImage('assets/introduction_page/vector_2.png'),
+                  ),
+                )),
+          ),
+          const Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Image(image: AssetImage('assets/introduction_page/hinh3.png')),
