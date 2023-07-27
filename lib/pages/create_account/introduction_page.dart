@@ -56,6 +56,7 @@ class IntroBackground1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Stack(
+      alignment: Alignment.center,
       children: [
         const Positioned(
           top: 90,
