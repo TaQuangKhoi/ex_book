@@ -139,10 +139,10 @@ class IntroBackground2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Stack(
+    return Stack(
       alignment: Alignment.center,
       children: [
-        Positioned(
+        const Positioned(
           top: 0,
           left: 0,
           child: Image(
@@ -150,7 +150,7 @@ class IntroBackground2 extends StatelessWidget {
                 'assets/introduction_page/background2/vector_30.png'),
           ),
         ),
-        Positioned(
+        const Positioned(
           top: 0,
           left: 0,
           child: Image(
@@ -158,7 +158,7 @@ class IntroBackground2 extends StatelessWidget {
                 AssetImage('assets/introduction_page/background2/vector_3.png'),
           ),
         ),
-        Positioned(
+        const Positioned(
           top: 20,
           left: 20,
           child: Image(
@@ -166,7 +166,7 @@ class IntroBackground2 extends StatelessWidget {
                 'assets/introduction_page/background2/group_105.png'),
           ),
         ),
-        Positioned(
+        const Positioned(
           top: 60,
           left: 0,
           child: Image(
@@ -174,7 +174,7 @@ class IntroBackground2 extends StatelessWidget {
                 'assets/introduction_page/background2/group_106.png'),
           ),
         ),
-        Positioned(
+        const Positioned(
           top: 0,
           right: 0,
           child: Image(
@@ -182,7 +182,7 @@ class IntroBackground2 extends StatelessWidget {
                 'assets/introduction_page/background2/vector_29.png'),
           ),
         ),
-        Positioned(
+        const Positioned(
           top: 0,
           right: 0,
           child: Image(
@@ -190,7 +190,7 @@ class IntroBackground2 extends StatelessWidget {
                 'assets/introduction_page/background2/vector_28.png'),
           ),
         ),
-        Positioned(
+        const Positioned(
           top: 190,
           right: 0,
           child: Image(
@@ -198,12 +198,36 @@ class IntroBackground2 extends StatelessWidget {
                 'assets/introduction_page/background2/group_108.png'),
           ),
         ),
-        Positioned(
+        const Positioned(
           top: 100,
           right: 20,
           child: Image(
             image: AssetImage(
                 'assets/introduction_page/background2/group_108.png'),
+          ),
+        ),
+        Positioned(
+          bottom: 0,
+          right: 0,
+          child: SizedBox(
+            width: MediaQuery.of(context).size.width,
+            child: const Image(
+              fit: BoxFit.fill,
+              image: AssetImage(
+                  'assets/introduction_page/background2/vector_25.png'),
+            ),
+          ),
+        ),
+        Positioned(
+          bottom: 0,
+          right: 0,
+          child: SizedBox(
+            width: MediaQuery.of(context).size.width,
+            child: const Image(
+              fit: BoxFit.fill,
+              image: AssetImage(
+                  'assets/introduction_page/background2/vector_27.png'),
+            ),
           ),
         ),
         TextBetween(
