@@ -24,42 +24,55 @@ class _IntroductionPageState extends State<IntroductionPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Color(ExBookColor.mauChinh3.colorHex),
-      appBar: null,
-      body: Stack(
-        fit: StackFit.expand,
-        alignment: Alignment.center,
-        children: [
-          background,
-          Center(
-              child: Container(
-            alignment: Alignment.bottomCenter,
-            margin: const EdgeInsets.only(bottom: 125),
-            child: ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                // surfaceTintColor: const Color(0xFF074E16),
-                // foregroundColor: const Color(0xFF074E16),
-                backgroundColor: Color(ExBookColor.mauChinh1.colorHex),
-                minimumSize: Size(MediaQuery.of(context).size.width - 40, 56),
+    return GestureDetector(
+      onPanUpdate: (details) {
+        if (details.delta.dx > 0) {
+          setState(() {
+            background = const IntroBackground1();
+          });
+        } else if (details.delta.dx < 0) {
+          setState(() {
+            background = const IntroBackground2();
+          });
+        }
+      },
+      child: Scaffold(
+        backgroundColor: Color(ExBookColor.mauChinh3.colorHex),
+        appBar: null,
+        body: Stack(
+          fit: StackFit.expand,
+          alignment: Alignment.center,
+          children: [
+            background,
+            Center(
+                child: Container(
+              alignment: Alignment.bottomCenter,
+              margin: const EdgeInsets.only(bottom: 125),
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  // surfaceTintColor: const Color(0xFF074E16),
+                  // foregroundColor: const Color(0xFF074E16),
+                  backgroundColor: Color(ExBookColor.mauChinh1.colorHex),
+                  minimumSize: Size(MediaQuery.of(context).size.width - 40, 56),
+                ),
+                onPressed: () {
+                  setState(() {
+                    background = const IntroBackground2();
+                  });
+                },
+                child: Text('TIẾP TỤC',
+                    textAlign: TextAlign.center,
+                    style: GoogleFonts.mulish(
+                        textStyle: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 18,
+                      //   fontWeight: FontWeight.w400,
+                      //   letterSpacing: -0.30,
+                    ))),
               ),
-              onPressed: () {
-                setState(() {
-                  background = const IntroBackground2();
-                });
-              },
-              child: Text('TIẾP TỤC',
-                  textAlign: TextAlign.center,
-                  style: GoogleFonts.mulish(
-                      textStyle: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 18,
-                    //   fontWeight: FontWeight.w400,
-                    //   letterSpacing: -0.30,
-                  ))),
-            ),
-          ))
-        ],
+            ))
+          ],
+        ),
       ),
     );
   }
