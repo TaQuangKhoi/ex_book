@@ -74,7 +74,7 @@ class IntroductionPage extends StatelessWidget {
                 textAlign: TextAlign.center,
                 style: GoogleFonts.mulish(
                     textStyle: TextStyle(
-                  color: Color(ExBookColor.mauChinh1.colorHex),
+                  color: Color(ExBookColor.mauTrungTinh1.colorHex),
                   fontSize: 24,
                   // fontFamily: 'Mulish',
                   fontWeight: FontWeight.w700,
@@ -89,7 +89,7 @@ class IntroductionPage extends StatelessWidget {
                   softWrap: true,
                   style: GoogleFonts.mulish(
                       textStyle: TextStyle(
-                    color: Color(ExBookColor.mauChinh1.colorHex),
+                    color: Color(ExBookColor.mauTrungTinh1.colorHex),
                     fontSize: 16,
                     // fontFamily: 'Mulish',
                     fontWeight: FontWeight.w700,
@@ -107,7 +107,7 @@ class IntroductionPage extends StatelessWidget {
               style: ElevatedButton.styleFrom(
                 // surfaceTintColor: const Color(0xFF074E16),
                 // foregroundColor: const Color(0xFF074E16),
-                backgroundColor: const Color(0xFF074E16),
+                backgroundColor: Color(ExBookColor.mauChinh1.colorHex),
                 minimumSize: Size(MediaQuery.of(context).size.width - 40, 56),
               ),
               onPressed: () {
