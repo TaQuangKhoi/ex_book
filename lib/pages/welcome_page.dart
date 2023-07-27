@@ -22,11 +22,10 @@ class _WelcomePageState extends State<WelcomePage> {
     final Widget logo =
         SvgPicture.asset(assetName, semanticsLabel: 'Ex.Book Logo');
 
-    // Timer(const Duration(seconds: 3), () {
-    //   log("push");
-    //   Navigator.push(
-    //       context, MaterialPageRoute(builder: (context) => const IntroductionPage()));
-    // });
+    Timer(const Duration(seconds: 2), () {
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => const IntroductionPage()));
+    });
 
     return Scaffold(
         backgroundColor: const Color(0xFFF1F9EA),
@@ -41,21 +40,22 @@ class _WelcomePageState extends State<WelcomePage> {
                   textAlign: TextAlign.center,
                   style: GoogleFonts.mulish(
                       textStyle: TextStyle(
-                    color: Color(ExBookColor.mauChinh1.colorHex),
-                    fontSize: 70,
-                    // fontFamily: 'Mulish',
-                    fontWeight: FontWeight.w700,
-                    // height: 36,
-                  ))),
+                        color: Color(ExBookColor.mauChinh1.colorHex),
+                        fontSize: 64,
+                        // fontFamily: 'Mulish',
+                        fontWeight: FontWeight.w700,
+                        // height: 36,
+                      ))),
               Text('Nơi trao đổi và mua sách cũ',
                   textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color: Color(ExBookColor.mauTrungTinh1.colorHex),
-                    fontSize: 16,
-                    fontFamily: 'Mulish',
-                    fontWeight: FontWeight.w500,
-                    // height: 36,
-                  ))
+                  style: GoogleFonts.mulish(
+                      textStyle: TextStyle(
+                        color: Color(ExBookColor.mauTrungTinh1.colorHex),
+                        fontSize: 16,
+                        // fontFamily: 'Mulish',
+                        fontWeight: FontWeight.w500,
+                        // height: 36,
+                      )))
             ],
           ),
         ));
