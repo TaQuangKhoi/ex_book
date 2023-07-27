@@ -2,8 +2,10 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'dart:async';
 
+import '../library/ex_book_colors.dart';
 import 'create_account/introduction_page.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -35,19 +37,21 @@ class _MyHomePageState extends State<MyHomePage> {
             mainAxisSize: MainAxisSize.min,
             children: [
               logo,
-              const Text('Ex.Book',
+              Text('Ex.Book',
                   textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color: Color(0xFF074E16),
-                    fontSize: 70,
-                    fontFamily: 'Mulish',
-                    fontWeight: FontWeight.w900,
-                    // height: 36,
+                  style: GoogleFonts.mulish(
+                    textStyle: TextStyle(
+                      color: Color(ExBookColor.mauChinh1.colorHex),
+                      fontSize: 70,
+                      // fontFamily: 'Mulish',
+                      fontWeight: FontWeight.w900,
+                      // height: 36,
+                    )
                   )),
-              const Text('Nơi trao đổi và mua sách cũ',
+              Text('Nơi trao đổi và mua sách cũ',
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                    color: Color(0xFF293731),
+                    color: Color(ExBookColor.mauTrungTinh1.colorHex),
                     fontSize: 16,
                     fontFamily: 'Mulish',
                     fontWeight: FontWeight.w500,
