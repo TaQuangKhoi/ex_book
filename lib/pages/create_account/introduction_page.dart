@@ -1,5 +1,4 @@
 import 'dart:developer';
-import 'dart:ffi';
 
 import 'package:flutter/material.dart';
 
@@ -76,8 +75,12 @@ class NgNhP extends StatelessWidget {
                     // surfaceTintColor: const Color(0xFF074E16),
                     // foregroundColor: const Color(0xFF074E16),
                     backgroundColor: const Color(0xFF074E16),
+                    minimumSize:
+                        Size(MediaQuery.of(context).size.width - 40, 56),
                   ),
-                  onPressed: () {log("Tapped");},
+                  onPressed: () {
+                    log("Tapped");
+                  },
                   child: const Text(
                     'TIẾP TỤC',
                     textAlign: TextAlign.center,
