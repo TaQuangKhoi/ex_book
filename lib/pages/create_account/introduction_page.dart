@@ -246,9 +246,11 @@ class ThreeDot extends StatelessWidget {
             child: Container(
               width: 8,
               height: 8,
-              decoration: const ShapeDecoration(
-                color: Color(0xFF7D8984),
-                shape: OvalBorder(),
+              decoration: ShapeDecoration(
+                color: index == 2
+                    ? Color(ExBookColor.mauChinh1.colorHex)
+                    : const Color(0xFF7D8984),
+                shape: const OvalBorder(),
               ),
             ),
           ),
@@ -258,9 +260,11 @@ class ThreeDot extends StatelessWidget {
             child: Container(
               width: 8,
               height: 8,
-              decoration: const ShapeDecoration(
-                color: Color(0xFF7D8984),
-                shape: OvalBorder(),
+              decoration: ShapeDecoration(
+                color: index == 3
+                    ? Color(ExBookColor.mauChinh1.colorHex)
+                    : const Color(0xFF7D8984),
+                shape: const OvalBorder(),
               ),
             ),
           ),
