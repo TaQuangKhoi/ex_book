@@ -6,8 +6,21 @@ import '../../library/ex_book_colors.dart';
 
 import 'package:google_fonts/google_fonts.dart';
 
-class IntroductionPage extends StatelessWidget {
+class IntroductionPage extends StatefulWidget {
   const IntroductionPage({super.key});
+
+  @override
+  State<IntroductionPage> createState() => _IntroductionPageState();
+}
+
+class _IntroductionPageState extends State<IntroductionPage> {
+  late Widget background;
+
+  @override
+  void initState() {
+    background = const IntroBackground1();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +31,7 @@ class IntroductionPage extends StatelessWidget {
         fit: StackFit.expand,
         alignment: Alignment.center,
         children: [
-          const IntroBackground1(),
+          background,
           Center(
               child: Container(
             alignment: Alignment.bottomCenter,
@@ -31,7 +44,9 @@ class IntroductionPage extends StatelessWidget {
                 minimumSize: Size(MediaQuery.of(context).size.width - 40, 56),
               ),
               onPressed: () {
-                log("Tapped");
+                setState(() {
+                  background = const IntroBackground2();
+                });
               },
               child: Text('TIẾP TỤC',
                   textAlign: TextAlign.center,
@@ -114,12 +129,12 @@ class IntroBackground1 extends StatelessWidget {
               textAlign: TextAlign.center,
               style: GoogleFonts.mulish(
                   textStyle: TextStyle(
-                    color: Color(ExBookColor.mauTrungTinh1.colorHex),
-                    fontSize: 24,
-                    // fontFamily: 'Mulish',
-                    fontWeight: FontWeight.w700,
-                    //   height: 36,
-                  )),
+                color: Color(ExBookColor.mauTrungTinh1.colorHex),
+                fontSize: 24,
+                // fontFamily: 'Mulish',
+                fontWeight: FontWeight.w700,
+                //   height: 36,
+              )),
             ),
             Container(
               margin: const EdgeInsets.only(top: 16),
@@ -129,58 +144,16 @@ class IntroBackground1 extends StatelessWidget {
                 softWrap: true,
                 style: GoogleFonts.mulish(
                     textStyle: TextStyle(
-                      color: Color(ExBookColor.mauTrungTinh1.colorHex),
-                      fontSize: 16,
-                      // fontFamily: 'Mulish',
-                      fontWeight: FontWeight.w700,
-                      //   height: 24,
-                    )),
+                  color: Color(ExBookColor.mauTrungTinh1.colorHex),
+                  fontSize: 16,
+                  // fontFamily: 'Mulish',
+                  fontWeight: FontWeight.w700,
+                  //   height: 24,
+                )),
               ),
             ),
-            Container(
-              margin: const EdgeInsets.only(top: 16),
-              width: 40,
-              height: 8,
-              child: Stack(
-                children: [
-                  Positioned(
-                    left: 0,
-                    top: 0,
-                    child: Container(
-                      width: 8,
-                      height: 8,
-                      decoration: const ShapeDecoration(
-                        color: Color(0xFF074E16),
-                        shape: OvalBorder(),
-                      ),
-                    ),
-                  ),
-                  Positioned(
-                    left: 16,
-                    top: 0,
-                    child: Container(
-                      width: 8,
-                      height: 8,
-                      decoration: const ShapeDecoration(
-                        color: Color(0xFF7D8984),
-                        shape: OvalBorder(),
-                      ),
-                    ),
-                  ),
-                  Positioned(
-                    left: 32,
-                    top: 0,
-                    child: Container(
-                      width: 8,
-                      height: 8,
-                      decoration: const ShapeDecoration(
-                        color: Color(0xFF7D8984),
-                        shape: OvalBorder(),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
+            const ThreeDot(
+              index: 1,
             ),
           ],
         ),
@@ -189,3 +162,110 @@ class IntroBackground1 extends StatelessWidget {
   }
 }
 
+class IntroBackground2 extends StatelessWidget {
+  const IntroBackground2({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      alignment: Alignment.center,
+      children: [
+        Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Image(
+                image: AssetImage('assets/introduction_page/hinh3.png')),
+            Text(
+              'Nơi bạn yêu những thứ cũ kỹ',
+              textAlign: TextAlign.center,
+              style: GoogleFonts.mulish(
+                  textStyle: TextStyle(
+                color: Color(ExBookColor.mauTrungTinh1.colorHex),
+                fontSize: 24,
+                // fontFamily: 'Mulish',
+                fontWeight: FontWeight.w700,
+                //   height: 36,
+              )),
+            ),
+            Container(
+              margin: const EdgeInsets.only(top: 16),
+              child: Text(
+                'Bạn tìm nơi cất giữ những điều cũ kỹ\nEX.BOOK tìm nơi cất giữ những\nnhững quyển sách cũ kỹ ',
+                textAlign: TextAlign.center,
+                softWrap: true,
+                style: GoogleFonts.mulish(
+                    textStyle: TextStyle(
+                  color: Color(ExBookColor.mauTrungTinh1.colorHex),
+                  fontSize: 16,
+                  // fontFamily: 'Mulish',
+                  fontWeight: FontWeight.w700,
+                  //   height: 24,
+                )),
+              ),
+            ),
+            const ThreeDot(
+              index: 2,
+            ),
+          ],
+        ),
+      ],
+    );
+  }
+}
+
+class ThreeDot extends StatelessWidget {
+  final int index;
+
+  const ThreeDot({super.key, required this.index});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: const EdgeInsets.only(top: 16),
+      width: 40,
+      height: 8,
+      child: Stack(
+        children: [
+          Positioned(
+            left: 0,
+            top: 0,
+            child: Container(
+              width: 8,
+              height: 8,
+              decoration: ShapeDecoration(
+                color: index == 1
+                    ? Color(ExBookColor.mauChinh1.colorHex)
+                    : const Color(0xFF7D8984),
+                shape: const OvalBorder(),
+              ),
+            ),
+          ),
+          Positioned(
+            left: 16,
+            top: 0,
+            child: Container(
+              width: 8,
+              height: 8,
+              decoration: const ShapeDecoration(
+                color: Color(0xFF7D8984),
+                shape: OvalBorder(),
+              ),
+            ),
+          ),
+          Positioned(
+            left: 32,
+            top: 0,
+            child: Container(
+              width: 8,
+              height: 8,
+              decoration: const ShapeDecoration(
+                color: Color(0xFF7D8984),
+                shape: OvalBorder(),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
