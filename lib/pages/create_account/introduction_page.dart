@@ -48,17 +48,6 @@ class NgNhP extends StatelessWidget {
             children: [
               Image(image: AssetImage('assets/introduction_page/hinh3.png')),
               Text(
-                'TIẾP TỤC',
-                textAlign: TextAlign.center,
-                // style: TextStyle(
-                //   color: Colors.white,
-                //   fontSize: 18,
-                //   fontFamily: 'Mulish',
-                //   fontWeight: FontWeight.w400,
-                //   letterSpacing: -0.30,
-                // ),
-              ),
-              Text(
                 'Nơi bạn yêu những thứ cũ kỹ ',
                 textAlign: TextAlign.center,
                 // style: TextStyle(
@@ -79,7 +68,20 @@ class NgNhP extends StatelessWidget {
                 //   fontWeight: FontWeight.w700,
                 //   height: 24,
                 // ),
-              )
+              ),
+              ElevatedButton(
+                  onPressed: null,
+                  child: Text(
+                    'TIẾP TỤC',
+                    textAlign: TextAlign.center,
+                    // style: TextStyle(
+                    //   color: Colors.white,
+                    //   fontSize: 18,
+                    //   fontFamily: 'Mulish',
+                    //   fontWeight: FontWeight.w400,
+                    //   letterSpacing: -0.30,
+                    // ),
+                  ))
             ],
           )
         ],
