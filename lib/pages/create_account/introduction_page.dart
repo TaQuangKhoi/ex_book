@@ -136,7 +136,52 @@ class IntroBackground1 extends StatelessWidget {
                       //   height: 24,
                     )),
               ),
-            )
+            ),
+            Container(
+              margin: const EdgeInsets.only(top: 16),
+              width: 40,
+              height: 8,
+              child: Stack(
+                children: [
+                  Positioned(
+                    left: 0,
+                    top: 0,
+                    child: Container(
+                      width: 8,
+                      height: 8,
+                      decoration: const ShapeDecoration(
+                        color: Color(0xFF074E16),
+                        shape: OvalBorder(),
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    left: 16,
+                    top: 0,
+                    child: Container(
+                      width: 8,
+                      height: 8,
+                      decoration: const ShapeDecoration(
+                        color: Color(0xFF7D8984),
+                        shape: OvalBorder(),
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    left: 32,
+                    top: 0,
+                    child: Container(
+                      width: 8,
+                      height: 8,
+                      decoration: const ShapeDecoration(
+                        color: Color(0xFF7D8984),
+                        shape: OvalBorder(),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       ],
