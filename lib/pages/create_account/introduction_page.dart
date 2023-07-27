@@ -18,7 +18,7 @@ class _IntroductionPageState extends State<IntroductionPage> {
 
   @override
   void initState() {
-    background = const IntroBackground1();
+    background = const IntroBackground2();
     super.initState();
   }
 
@@ -77,7 +77,8 @@ class IntroBackground1 extends StatelessWidget {
           top: 90,
           left: 0,
           child: Image(
-            image: AssetImage('assets/introduction_page/background1/group_101.png'),
+            image: AssetImage(
+                'assets/introduction_page/background1/group_101.png'),
           ),
         ),
         Positioned(
@@ -87,7 +88,8 @@ class IntroBackground1 extends StatelessWidget {
                 width: MediaQuery.of(context).size.width,
                 child: const Image(
                   fit: BoxFit.fill,
-                  image: AssetImage('assets/introduction_page/background1/vector_1.png'),
+                  image: AssetImage(
+                      'assets/introduction_page/background1/vector_1.png'),
                 ))),
         Positioned(
           top: 0,
@@ -96,7 +98,8 @@ class IntroBackground1 extends StatelessWidget {
               width: MediaQuery.of(context).size.width,
               child: const Image(
                 fit: BoxFit.fill,
-                image: AssetImage('assets/introduction_page/background1/vector_2.png'),
+                image: AssetImage(
+                    'assets/introduction_page/background1/vector_2.png'),
               )),
         ),
         Positioned(
@@ -106,7 +109,8 @@ class IntroBackground1 extends StatelessWidget {
               width: MediaQuery.of(context).size.width,
               child: const Image(
                 fit: BoxFit.fill,
-                image: AssetImage('assets/introduction_page/background1/vector_25.png'),
+                image: AssetImage(
+                    'assets/introduction_page/background1/vector_25.png'),
               )),
         ),
         Positioned(
@@ -116,7 +120,8 @@ class IntroBackground1 extends StatelessWidget {
               width: MediaQuery.of(context).size.width,
               child: const Image(
                 fit: BoxFit.fill,
-                image: AssetImage('assets/introduction_page/background1/vector_27.png'),
+                image: AssetImage(
+                    'assets/introduction_page/background1/vector_27.png'),
               )),
         ),
         const TextBetween(
@@ -141,7 +146,24 @@ class IntroBackground2 extends StatelessWidget {
           top: 0,
           left: 0,
           child: Image(
-            image: AssetImage('assets/introduction_page/background1/group_101.png'),
+            image: AssetImage(
+                'assets/introduction_page/background2/vector_30.png'),
+          ),
+        ),
+        Positioned(
+          top: 0,
+          left: 0,
+          child: Image(
+            image:
+                AssetImage('assets/introduction_page/background2/vector_3.png'),
+          ),
+        ),
+        Positioned(
+          top: 0,
+          left: 0,
+          child: Image(
+            image: AssetImage(
+                'assets/introduction_page/background2/group_105.png'),
           ),
         ),
         TextBetween(

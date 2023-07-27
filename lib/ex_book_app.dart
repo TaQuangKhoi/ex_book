@@ -22,7 +22,7 @@ class _ExBookAppState extends State<ExBookApp> {
         '/welcome': (context) => const WelcomePage(),
         '/introduction': (context) => const IntroductionPage(),
       },
-      home: const WelcomePage(),
+      home: const IntroductionPage(),
     );
   }
 }
