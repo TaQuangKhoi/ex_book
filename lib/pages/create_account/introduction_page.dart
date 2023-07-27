@@ -14,6 +14,7 @@ class NgNhP extends StatelessWidget {
       appBar: null,
       body: Stack(
         fit: StackFit.expand,
+        alignment: Alignment.center,
         children: [
           const Positioned(
             top: 90,
@@ -93,27 +94,31 @@ class NgNhP extends StatelessWidget {
           ),
 
           Center(
-            child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  // surfaceTintColor: const Color(0xFF074E16),
-                  // foregroundColor: const Color(0xFF074E16),
-                  backgroundColor: const Color(0xFF074E16),
-                  minimumSize: Size(MediaQuery.of(context).size.width - 40, 56),
-                ),
-                onPressed: () {
-                  log("Tapped");
-                },
-                child: const Text(
-                  'TIẾP TỤC',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color: Colors.white,
-                    //   fontSize: 18,
-                    //   fontFamily: 'Mulish',
-                    //   fontWeight: FontWeight.w400,
-                    //   letterSpacing: -0.30,
+            child: Container(
+              alignment: Alignment.bottomCenter,
+              margin: const EdgeInsets.only(bottom: 125),
+              child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    // surfaceTintColor: const Color(0xFF074E16),
+                    // foregroundColor: const Color(0xFF074E16),
+                    backgroundColor: const Color(0xFF074E16),
+                    minimumSize: Size(MediaQuery.of(context).size.width - 40, 56),
                   ),
-                )),
+                  onPressed: () {
+                    log("Tapped");
+                  },
+                  child: const Text(
+                    'TIẾP TỤC',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: Colors.white,
+                      //   fontSize: 18,
+                      //   fontFamily: 'Mulish',
+                      //   fontWeight: FontWeight.w400,
+                      //   letterSpacing: -0.30,
+                    ),
+                  )),
+            ),
           )
         ],
       ),
