@@ -174,7 +174,7 @@ class IntroBackground2 extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const Image(
-                image: AssetImage('assets/introduction_page/hinh3.png')),
+                image: AssetImage('assets/introduction_page/sach_2_1.png')),
             Text(
               'Mua sự chữa lành',
               textAlign: TextAlign.center,
