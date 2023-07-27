@@ -1,4 +1,5 @@
 import 'package:ex_book/pages/create_account/introduction_page.dart';
+import 'package:ex_book/pages/welcome_page.dart';
 import 'package:flutter/material.dart';
 
 class ExBookApp extends StatefulWidget {
@@ -18,9 +19,10 @@ class _ExBookAppState extends State<ExBookApp> {
         useMaterial3: true,
       ),
       routes: {
+        '/welcome': (context) => const WelcomePage(),
         '/introduction': (context) => const IntroductionPage(),
       },
-      home: const IntroductionPage(),
+      home: const WelcomePage(),
     );
   }
 }

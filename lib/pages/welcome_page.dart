@@ -20,7 +20,7 @@ class _WelcomePageState extends State<WelcomePage> {
   Widget build(BuildContext context) {
     const String assetName = 'assets/logo.svg';
     final Widget logo =
-        SvgPicture.asset(assetName, semanticsLabel: 'Acme Logo');
+        SvgPicture.asset(assetName, semanticsLabel: 'Ex.Book Logo');
 
     // Timer(const Duration(seconds: 3), () {
     //   log("push");
@@ -44,7 +44,7 @@ class _WelcomePageState extends State<WelcomePage> {
                     color: Color(ExBookColor.mauChinh1.colorHex),
                     fontSize: 70,
                     // fontFamily: 'Mulish',
-                    fontWeight: FontWeight.w900,
+                    fontWeight: FontWeight.w700,
                     // height: 36,
                   ))),
               Text('Nơi trao đổi và mua sách cũ',
