@@ -8,25 +8,25 @@ import 'dart:async';
 import '../library/ex_book_colors.dart';
 import 'create_account/introduction_page.dart';
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key});
+class WelcomePage extends StatefulWidget {
+  const WelcomePage({super.key});
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<WelcomePage> createState() => _WelcomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _WelcomePageState extends State<WelcomePage> {
   @override
   Widget build(BuildContext context) {
     const String assetName = 'assets/logo.svg';
     final Widget logo =
         SvgPicture.asset(assetName, semanticsLabel: 'Acme Logo');
 
-    Timer(const Duration(seconds: 3), () {
-      log("push");
-      Navigator.push(
-          context, MaterialPageRoute(builder: (context) => const IntroductionPage()));
-    });
+    // Timer(const Duration(seconds: 3), () {
+    //   log("push");
+    //   Navigator.push(
+    //       context, MaterialPageRoute(builder: (context) => const IntroductionPage()));
+    // });
 
     return Scaffold(
         backgroundColor: const Color(0xFFF1F9EA),
@@ -40,14 +40,13 @@ class _MyHomePageState extends State<MyHomePage> {
               Text('Ex.Book',
                   textAlign: TextAlign.center,
                   style: GoogleFonts.mulish(
-                    textStyle: TextStyle(
-                      color: Color(ExBookColor.mauChinh1.colorHex),
-                      fontSize: 70,
-                      // fontFamily: 'Mulish',
-                      fontWeight: FontWeight.w900,
-                      // height: 36,
-                    )
-                  )),
+                      textStyle: TextStyle(
+                    color: Color(ExBookColor.mauChinh1.colorHex),
+                    fontSize: 70,
+                    // fontFamily: 'Mulish',
+                    fontWeight: FontWeight.w900,
+                    // height: 36,
+                  ))),
               Text('Nơi trao đổi và mua sách cũ',
                   textAlign: TextAlign.center,
                   style: TextStyle(
