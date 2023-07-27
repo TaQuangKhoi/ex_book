@@ -159,11 +159,51 @@ class IntroBackground2 extends StatelessWidget {
           ),
         ),
         Positioned(
-          top: 0,
-          left: 0,
+          top: 20,
+          left: 20,
           child: Image(
             image: AssetImage(
                 'assets/introduction_page/background2/group_105.png'),
+          ),
+        ),
+        Positioned(
+          top: 60,
+          left: 0,
+          child: Image(
+            image: AssetImage(
+                'assets/introduction_page/background2/group_106.png'),
+          ),
+        ),
+        Positioned(
+          top: 0,
+          right: 0,
+          child: Image(
+            image: AssetImage(
+                'assets/introduction_page/background2/vector_29.png'),
+          ),
+        ),
+        Positioned(
+          top: 0,
+          right: 0,
+          child: Image(
+            image: AssetImage(
+                'assets/introduction_page/background2/vector_28.png'),
+          ),
+        ),
+        Positioned(
+          top: 190,
+          right: 0,
+          child: Image(
+            image: AssetImage(
+                'assets/introduction_page/background2/group_108.png'),
+          ),
+        ),
+        Positioned(
+          top: 100,
+          right: 20,
+          child: Image(
+            image: AssetImage(
+                'assets/introduction_page/background2/group_108.png'),
           ),
         ),
         TextBetween(
