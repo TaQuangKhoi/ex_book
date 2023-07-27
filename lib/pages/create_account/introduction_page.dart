@@ -88,31 +88,33 @@ class NgNhP extends StatelessWidget {
                   fontWeight: FontWeight.w900,
                   //   height: 24,
                 ),
-              ),
-              ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    // surfaceTintColor: const Color(0xFF074E16),
-                    // foregroundColor: const Color(0xFF074E16),
-                    backgroundColor: const Color(0xFF074E16),
-                    minimumSize:
-                        Size(MediaQuery.of(context).size.width - 40, 56),
-                  ),
-                  onPressed: () {
-                    log("Tapped");
-                  },
-                  child: const Text(
-                    'TIẾP TỤC',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      color: Colors.white,
-                      //   fontSize: 18,
-                      //   fontFamily: 'Mulish',
-                      //   fontWeight: FontWeight.w400,
-                      //   letterSpacing: -0.30,
-                    ),
-                  ))
+              )
             ],
           ),
+
+          Center(
+            child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  // surfaceTintColor: const Color(0xFF074E16),
+                  // foregroundColor: const Color(0xFF074E16),
+                  backgroundColor: const Color(0xFF074E16),
+                  minimumSize: Size(MediaQuery.of(context).size.width - 40, 56),
+                ),
+                onPressed: () {
+                  log("Tapped");
+                },
+                child: const Text(
+                  'TIẾP TỤC',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Colors.white,
+                    //   fontSize: 18,
+                    //   fontFamily: 'Mulish',
+                    //   fontWeight: FontWeight.w400,
+                    //   letterSpacing: -0.30,
+                  ),
+                )),
+          )
         ],
       ),
     );
