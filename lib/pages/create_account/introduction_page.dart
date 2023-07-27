@@ -2,13 +2,15 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 
+import '../../library/ex_book_colors.dart';
+
 class NgNhP extends StatelessWidget {
   const NgNhP({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFF1F9EA),
+      backgroundColor: Color(ExBookColor.mauChinh3.colorHex),
       appBar: null,
       body: Stack(
         fit: StackFit.expand,
@@ -48,25 +50,26 @@ class NgNhP extends StatelessWidget {
             children: [
               const Image(
                   image: AssetImage('assets/introduction_page/hinh3.png')),
-              const Text(
-                'Nơi bạn yêu những thứ cũ kỹ ',
+              Text(
+                'Nơi bạn yêu những thứ cũ kỹ',
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  color: Color(0xFF293731),
-                //   fontSize: 24,
-                //   fontFamily: 'Mulish',
-                //   fontWeight: FontWeight.w700,
+                  color: Color(ExBookColor.mauChinh1.colorHex),
+                  fontSize: 24,
+                  fontFamily: 'Mulish',
+                  fontWeight: FontWeight.w900,
                 //   height: 36,
                 ),
               ),
-              const Text(
-                'Bạn tìm nơi cất giữ những điều cũ kỹ\nEX.BOOK tìm nơi cất giữ những \nnhững quyển sách cũ kỹ ',
+              Text(
+                'Bạn tìm nơi cất giữ những điều cũ kỹ\nEX.BOOK tìm nơi cất giữ những\nnhững quyển sách cũ kỹ ',
                 textAlign: TextAlign.center,
+                softWrap: true,
                 style: TextStyle(
-                //   color: Color(0xFF293731),
-                //   fontSize: 16,
-                //   fontFamily: 'Mulish',
-                //   fontWeight: FontWeight.w700,
+                  color: Color(ExBookColor.mauChinh1.colorHex),
+                  fontSize: 16,
+                  fontFamily: 'Mulish',
+                  fontWeight: FontWeight.w900,
                 //   height: 24,
                 ),
               ),
