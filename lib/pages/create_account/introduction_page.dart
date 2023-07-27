@@ -77,7 +77,7 @@ class IntroBackground1 extends StatelessWidget {
           top: 90,
           left: 0,
           child: Image(
-            image: AssetImage('assets/introduction_page/group_101.png'),
+            image: AssetImage('assets/introduction_page/background1/group_101.png'),
           ),
         ),
         Positioned(
@@ -87,7 +87,7 @@ class IntroBackground1 extends StatelessWidget {
                 width: MediaQuery.of(context).size.width,
                 child: const Image(
                   fit: BoxFit.fill,
-                  image: AssetImage('assets/introduction_page/vector_1.png'),
+                  image: AssetImage('assets/introduction_page/background1/vector_1.png'),
                 ))),
         Positioned(
           top: 0,
@@ -96,7 +96,7 @@ class IntroBackground1 extends StatelessWidget {
               width: MediaQuery.of(context).size.width,
               child: const Image(
                 fit: BoxFit.fill,
-                image: AssetImage('assets/introduction_page/vector_2.png'),
+                image: AssetImage('assets/introduction_page/background1/vector_2.png'),
               )),
         ),
         Positioned(
@@ -106,7 +106,7 @@ class IntroBackground1 extends StatelessWidget {
               width: MediaQuery.of(context).size.width,
               child: const Image(
                 fit: BoxFit.fill,
-                image: AssetImage('assets/introduction_page/vector_25.png'),
+                image: AssetImage('assets/introduction_page/background1/vector_25.png'),
               )),
         ),
         Positioned(
@@ -116,7 +116,7 @@ class IntroBackground1 extends StatelessWidget {
               width: MediaQuery.of(context).size.width,
               child: const Image(
                 fit: BoxFit.fill,
-                image: AssetImage('assets/introduction_page/vector_27.png'),
+                image: AssetImage('assets/introduction_page/background1/vector_27.png'),
               )),
         ),
         const TextBetween(
@@ -137,6 +137,13 @@ class IntroBackground2 extends StatelessWidget {
     return const Stack(
       alignment: Alignment.center,
       children: [
+        Positioned(
+          top: 0,
+          left: 0,
+          child: Image(
+            image: AssetImage('assets/introduction_page/background1/group_101.png'),
+          ),
+        ),
         TextBetween(
           circleIndex: 2,
           text1: 'Mua sự chữa lành',
