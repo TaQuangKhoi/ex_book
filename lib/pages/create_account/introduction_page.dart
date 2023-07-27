@@ -11,8 +11,8 @@ class NgNhP extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Image(image: AssetImage('assets/hinh3.png')),
 
+          Image(image: AssetImage('assets/introduction_page/hinh3.png')),
           Text(
             'TIẾP TỤC',
             textAlign: TextAlign.center,
