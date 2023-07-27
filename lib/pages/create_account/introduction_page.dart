@@ -81,18 +81,21 @@ class NgNhP extends StatelessWidget {
                   //   height: 36,
                 )),
               ),
-              Text(
-                'Bạn tìm nơi cất giữ những điều cũ kỹ\nEX.BOOK tìm nơi cất giữ những\nnhững quyển sách cũ kỹ ',
-                textAlign: TextAlign.center,
-                softWrap: true,
-                style: GoogleFonts.mulish(
-                    textStyle: TextStyle(
-                  color: Color(ExBookColor.mauChinh1.colorHex),
-                  fontSize: 16,
-                  // fontFamily: 'Mulish',
-                  fontWeight: FontWeight.w700,
-                  //   height: 24,
-                )),
+              Container(
+                margin: const EdgeInsets.only(top: 16),
+                child: Text(
+                  'Bạn tìm nơi cất giữ những điều cũ kỹ\nEX.BOOK tìm nơi cất giữ những\nnhững quyển sách cũ kỹ ',
+                  textAlign: TextAlign.center,
+                  softWrap: true,
+                  style: GoogleFonts.mulish(
+                      textStyle: TextStyle(
+                    color: Color(ExBookColor.mauChinh1.colorHex),
+                    fontSize: 16,
+                    // fontFamily: 'Mulish',
+                    fontWeight: FontWeight.w700,
+                    //   height: 24,
+                  )),
+                ),
               )
             ],
           ),
