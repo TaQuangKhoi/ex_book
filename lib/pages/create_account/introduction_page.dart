@@ -6,8 +6,8 @@ import '../../library/ex_book_colors.dart';
 
 import 'package:google_fonts/google_fonts.dart';
 
-class NgNhP extends StatelessWidget {
-  const NgNhP({super.key});
+class IntroductionPage extends StatelessWidget {
+  const IntroductionPage({super.key});
 
   @override
   Widget build(BuildContext context) {

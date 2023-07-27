@@ -23,7 +23,7 @@ class _MyHomePageState extends State<MyHomePage> {
     Timer(const Duration(seconds: 3), () {
       log("push");
       Navigator.push(
-          context, MaterialPageRoute(builder: (context) => const NgNhP()));
+          context, MaterialPageRoute(builder: (context) => const IntroductionPage()));
     });
 
     return Scaffold(
