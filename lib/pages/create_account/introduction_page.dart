@@ -1,3 +1,4 @@
+import 'dart:developer';
 import 'dart:ffi';
 
 import 'package:flutter/material.dart';
@@ -43,11 +44,12 @@ class NgNhP extends StatelessWidget {
                   ),
                 )),
           ),
-          const Column(
+          Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Image(image: AssetImage('assets/introduction_page/hinh3.png')),
-              Text(
+              const Image(
+                  image: AssetImage('assets/introduction_page/hinh3.png')),
+              const Text(
                 'Nơi bạn yêu những thứ cũ kỹ ',
                 textAlign: TextAlign.center,
                 // style: TextStyle(
@@ -58,7 +60,7 @@ class NgNhP extends StatelessWidget {
                 //   height: 36,
                 // ),
               ),
-              Text(
+              const Text(
                 'Bạn tìm nơi cất giữ những điều cũ kỹ\nEX.BOOK tìm nơi cất giữ những \nnhững quyển sách cũ kỹ ',
                 textAlign: TextAlign.center,
                 // style: TextStyle(
@@ -70,17 +72,22 @@ class NgNhP extends StatelessWidget {
                 // ),
               ),
               ElevatedButton(
-                  onPressed: null,
-                  child: Text(
+                  style: ElevatedButton.styleFrom(
+                    // surfaceTintColor: const Color(0xFF074E16),
+                    // foregroundColor: const Color(0xFF074E16),
+                    backgroundColor: const Color(0xFF074E16),
+                  ),
+                  onPressed: () {log("Tapped");},
+                  child: const Text(
                     'TIẾP TỤC',
                     textAlign: TextAlign.center,
-                    // style: TextStyle(
-                    //   color: Colors.white,
-                    //   fontSize: 18,
-                    //   fontFamily: 'Mulish',
-                    //   fontWeight: FontWeight.w400,
-                    //   letterSpacing: -0.30,
-                    // ),
+                    style: TextStyle(
+                      color: Colors.white,
+                      //   fontSize: 18,
+                      //   fontFamily: 'Mulish',
+                      //   fontWeight: FontWeight.w400,
+                      //   letterSpacing: -0.30,
+                    ),
                   ))
             ],
           )
