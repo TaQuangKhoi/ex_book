@@ -85,11 +85,11 @@ class _IntroductionPageState extends State<IntroductionPage> {
           textAlign: TextAlign.center,
           style: GoogleFonts.mulish(
               textStyle: const TextStyle(
-                color: Colors.white,
-                fontSize: 18,
-                //   fontWeight: FontWeight.w400,
-                //   letterSpacing: -0.30,
-              ))),
+            color: Colors.white,
+            fontSize: 18,
+            //   fontWeight: FontWeight.w400,
+            //   letterSpacing: -0.30,
+          ))),
     );
 
     Widget twoButtonSignUpAndLogIn = Row(
@@ -107,11 +107,11 @@ class _IntroductionPageState extends State<IntroductionPage> {
               textAlign: TextAlign.center,
               style: GoogleFonts.mulish(
                   textStyle: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 18,
-                    //   fontWeight: FontWeight.w400,
-                    //   letterSpacing: -0.30,
-                  ))),
+                color: Colors.white,
+                fontSize: 18,
+                //   fontWeight: FontWeight.w400,
+                //   letterSpacing: -0.30,
+              ))),
         ),
         ElevatedButton(
           style: ElevatedButton.styleFrom(
@@ -125,11 +125,11 @@ class _IntroductionPageState extends State<IntroductionPage> {
               textAlign: TextAlign.center,
               style: GoogleFonts.mulish(
                   textStyle: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 18,
-                    //   fontWeight: FontWeight.w400,
-                    //   letterSpacing: -0.30,
-                  ))),
+                color: Colors.white,
+                fontSize: 18,
+                //   fontWeight: FontWeight.w400,
+                //   letterSpacing: -0.30,
+              ))),
         ),
       ],
     );
@@ -217,10 +217,12 @@ class IntroBackground1 extends StatelessWidget {
               )),
         ),
         const TextBetween(
-            circleIndex: 1,
-            text1: 'Nơi bạn yêu những thứ cũ kỹ',
-            text2:
-                'Bạn tìm nơi cất giữ những điều cũ kỹ\nEX.BOOK tìm nơi cất giữ những\nnhững quyển sách cũ kỹ'),
+          circleIndex: 1,
+          text1: 'Nơi bạn yêu những thứ cũ kỹ',
+          text2:
+              'Bạn tìm nơi cất giữ những điều cũ kỹ\nEX.BOOK tìm nơi cất giữ những\nnhững quyển sách cũ kỹ',
+          imagePath: 'assets/introduction_page/background1/hinh3.png',
+        ),
       ],
     );
   }
@@ -327,6 +329,7 @@ class IntroBackground2 extends StatelessWidget {
           text1: 'Mua sự chữa lành',
           text2:
               'Bạn mua liều thuốc thời gian\nđể chữa lành cho tâm hồn giản đơn',
+          imagePath: 'assets/introduction_page/background2/sach_2_1.png',
         ),
       ],
     );
@@ -345,16 +348,16 @@ class IntroBackground3 extends StatelessWidget {
           top: 100,
           left: 0,
           child: Image(
-            image: AssetImage(
-                'assets/introduction_page/background3/vector_5.png'),
+            image:
+                AssetImage('assets/introduction_page/background3/vector_5.png'),
           ),
         ),
         Positioned(
           top: 120,
           left: 0,
           child: Image(
-            image: AssetImage(
-                'assets/introduction_page/background3/vector_3.png'),
+            image:
+                AssetImage('assets/introduction_page/background3/vector_3.png'),
           ),
         ),
         Positioned(
@@ -373,11 +376,52 @@ class IntroBackground3 extends StatelessWidget {
                 'assets/introduction_page/background3/group_106.png'),
           ),
         ),
+        Positioned(
+          top: 0,
+          right: 0,
+          child: Image(
+            image:
+                AssetImage('assets/introduction_page/background3/vector_1.png'),
+          ),
+        ),
+        Positioned(
+          top: 0,
+          right: 0,
+          child: Image(
+            image:
+            AssetImage('assets/introduction_page/background3/vector_6.png'),
+          ),
+        ),
+        Positioned(
+          top: 20,
+          right: 120,
+          child: Image(
+            image:
+            AssetImage('assets/introduction_page/background3/group_102.png'),
+          ),
+        ),
+        Positioned(
+          top: 40,
+          right: 60,
+          child: Image(
+            image:
+            AssetImage('assets/introduction_page/background3/group_102.png'),
+          ),
+        ),
+        Positioned(
+          top: 40,
+          right: 0,
+          child: Image(
+            image:
+            AssetImage('assets/introduction_page/background3/group_104.png'),
+          ),
+        ),
         TextBetween(
           circleIndex: 3,
           text1: 'Những cuốn sách tái sinh',
           text2:
               'Chúng mình là EX.BOOK nơi tái sinh \nnhững quyển sách cũ kỹ trên tay bạn',
+          imagePath: 'assets/introduction_page/background3/hinh_sach_1_1.png',
         ),
       ],
     );
@@ -388,19 +432,21 @@ class TextBetween extends StatelessWidget {
   final int circleIndex;
   final String text1;
   final String text2;
+  final String imagePath;
 
   const TextBetween(
       {super.key,
       required this.circleIndex,
       required this.text1,
-      required this.text2});
+      required this.text2,
+      required this.imagePath});
 
   @override
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        const Image(image: AssetImage('assets/introduction_page/sach_2_1.png')),
+        Image(image: AssetImage(imagePath)),
         Text(
           text1,
           textAlign: TextAlign.center,
