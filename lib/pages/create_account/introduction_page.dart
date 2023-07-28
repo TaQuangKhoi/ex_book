@@ -25,6 +25,7 @@ class _IntroductionPageState extends State<IntroductionPage> {
   }
 
   Widget getBackground() {
+    log("getBackground-$circleIndex");
     switch (circleIndex) {
       case 1:
         return const IntroBackground1();
@@ -37,11 +38,10 @@ class _IntroductionPageState extends State<IntroductionPage> {
     }
   }
 
-  void handleSwipe(DragUpdateDetails details) {
-    if (details.delta.dx > 0) {
-      log("Swipe Right");
+  void handleSwipe(DragEndDetails details) {
+    double velocity = details.velocity.pixelsPerSecond.dx;
+    if (velocity > 0) {
       if (circleIndex == 1) {
-        log("circleIndex == 1");
         return;
       }
       circleIndex--;
@@ -49,10 +49,8 @@ class _IntroductionPageState extends State<IntroductionPage> {
       setState(() {
         background = getBackground();
       });
-    } else if (details.delta.dx < 0) {
-      log("Swipe Left");
+    } else if (velocity < 0) {
       if (circleIndex == 3) {
-        log("circleIndex == 3");
         return;
       }
       circleIndex++;
@@ -66,7 +64,7 @@ class _IntroductionPageState extends State<IntroductionPage> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onPanUpdate: handleSwipe,
+      onPanEnd: handleSwipe,
       child: Scaffold(
         backgroundColor: Color(ExBookColor.mauChinh3.colorHex),
         appBar: null,
