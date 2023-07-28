@@ -341,10 +341,10 @@ class IntroBackground3 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Stack(
+    return Stack(
       alignment: Alignment.center,
       children: [
-        Positioned(
+        const Positioned(
           top: 100,
           left: 0,
           child: Image(
@@ -352,7 +352,7 @@ class IntroBackground3 extends StatelessWidget {
                 AssetImage('assets/introduction_page/background3/vector_5.png'),
           ),
         ),
-        Positioned(
+        const Positioned(
           top: 120,
           left: 0,
           child: Image(
@@ -360,7 +360,7 @@ class IntroBackground3 extends StatelessWidget {
                 AssetImage('assets/introduction_page/background3/vector_3.png'),
           ),
         ),
-        Positioned(
+        const Positioned(
           top: 120,
           left: 20,
           child: Image(
@@ -368,7 +368,7 @@ class IntroBackground3 extends StatelessWidget {
                 'assets/introduction_page/background3/group_105.png'),
           ),
         ),
-        Positioned(
+        const Positioned(
           top: 160,
           left: 0,
           child: Image(
@@ -376,7 +376,7 @@ class IntroBackground3 extends StatelessWidget {
                 'assets/introduction_page/background3/group_106.png'),
           ),
         ),
-        Positioned(
+        const Positioned(
           top: 0,
           right: 0,
           child: Image(
@@ -384,7 +384,7 @@ class IntroBackground3 extends StatelessWidget {
                 AssetImage('assets/introduction_page/background3/vector_1.png'),
           ),
         ),
-        Positioned(
+        const Positioned(
           top: 0,
           right: 0,
           child: Image(
@@ -392,7 +392,7 @@ class IntroBackground3 extends StatelessWidget {
             AssetImage('assets/introduction_page/background3/vector_6.png'),
           ),
         ),
-        Positioned(
+        const Positioned(
           top: 20,
           right: 120,
           child: Image(
@@ -400,7 +400,7 @@ class IntroBackground3 extends StatelessWidget {
             AssetImage('assets/introduction_page/background3/group_102.png'),
           ),
         ),
-        Positioned(
+        const Positioned(
           top: 40,
           right: 60,
           child: Image(
@@ -408,7 +408,7 @@ class IntroBackground3 extends StatelessWidget {
             AssetImage('assets/introduction_page/background3/group_102.png'),
           ),
         ),
-        Positioned(
+        const Positioned(
           top: 40,
           right: 0,
           child: Image(
@@ -416,7 +416,27 @@ class IntroBackground3 extends StatelessWidget {
             AssetImage('assets/introduction_page/background3/group_104.png'),
           ),
         ),
-        TextBetween(
+        Positioned(
+          bottom: 0,
+          right: 0,
+          child: SizedBox(
+            width: MediaQuery.of(context).size.width,
+            child: Image(
+              fit: BoxFit.fill,
+              image:
+              AssetImage('assets/introduction_page/background3/vector_4.png'),
+            ),
+          ),
+        ),
+        const Positioned(
+          bottom: 0,
+          right: 0,
+          child: Image(
+            image:
+            AssetImage('assets/introduction_page/background3/vector_2.png'),
+          ),
+        ),
+        const TextBetween(
           circleIndex: 3,
           text1: 'Những cuốn sách tái sinh',
           text2:
