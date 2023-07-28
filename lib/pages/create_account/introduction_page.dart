@@ -13,8 +13,8 @@ class IntroductionPage extends StatefulWidget {
 }
 
 class _IntroductionPageState extends State<IntroductionPage> {
-  late Widget background = const IntroBackground1();
-  int circleIndex = 1;
+  int circleIndex = 3;
+  late Widget background = getBackground();
 
   @override
   void initState() {
@@ -341,6 +341,38 @@ class IntroBackground3 extends StatelessWidget {
     return const Stack(
       alignment: Alignment.center,
       children: [
+        Positioned(
+          top: 100,
+          left: 0,
+          child: Image(
+            image: AssetImage(
+                'assets/introduction_page/background3/vector_5.png'),
+          ),
+        ),
+        Positioned(
+          top: 120,
+          left: 0,
+          child: Image(
+            image: AssetImage(
+                'assets/introduction_page/background3/vector_3.png'),
+          ),
+        ),
+        Positioned(
+          top: 120,
+          left: 20,
+          child: Image(
+            image: AssetImage(
+                'assets/introduction_page/background3/group_105.png'),
+          ),
+        ),
+        Positioned(
+          top: 160,
+          left: 0,
+          child: Image(
+            image: AssetImage(
+                'assets/introduction_page/background3/group_106.png'),
+          ),
+        ),
         TextBetween(
           circleIndex: 3,
           text1: 'Những cuốn sách tái sinh',
