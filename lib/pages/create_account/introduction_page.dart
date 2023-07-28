@@ -254,6 +254,25 @@ class IntroBackground2 extends StatelessWidget {
   }
 }
 
+class IntroBackground3 extends StatelessWidget {
+  const IntroBackground3({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Stack(
+      alignment: Alignment.center,
+      children: [
+        TextBetween(
+          circleIndex: 3,
+          text1: 'Những cuốn sách tái sinh',
+          text2:
+              'Chúng mình là EX.BOOK nơi tái sinh \nnhững quyển sách cũ kỹ trên tay bạn',
+        ),
+      ],
+    );
+  }
+}
+
 class TextBetween extends StatelessWidget {
   final int circleIndex;
   final String text1;
