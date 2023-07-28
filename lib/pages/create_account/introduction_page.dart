@@ -92,46 +92,50 @@ class _IntroductionPageState extends State<IntroductionPage> {
           ))),
     );
 
-    Widget twoButtonSignUpAndLogIn = Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        ElevatedButton(
-          style: ElevatedButton.styleFrom(
-            // surfaceTintColor: const Color(0xFF074E16),
-            // foregroundColor: const Color(0xFF074E16),
-            backgroundColor: Color(ExBookColor.mauChinh1.colorHex),
-            minimumSize: Size(MediaQuery.of(context).size.width - 40, 56),
-          ),
-          onPressed: nextBackground,
-          child: Text('TIẾP TỤC',
-              textAlign: TextAlign.center,
-              style: GoogleFonts.mulish(
-                  textStyle: const TextStyle(
-                color: Colors.white,
-                fontSize: 18,
-                //   fontWeight: FontWeight.w400,
-                //   letterSpacing: -0.30,
-              ))),
-        ),
-        ElevatedButton(
-          style: ElevatedButton.styleFrom(
-            // surfaceTintColor: const Color(0xFF074E16),
-            // foregroundColor: const Color(0xFF074E16),
-            backgroundColor: Color(ExBookColor.mauChinh1.colorHex),
-            minimumSize: Size(MediaQuery.of(context).size.width - 40, 56),
-          ),
-          onPressed: nextBackground,
-          child: Text('TIẾP TỤC',
-              textAlign: TextAlign.center,
-              style: GoogleFonts.mulish(
-                  textStyle: const TextStyle(
-                color: Colors.white,
-                fontSize: 18,
-                //   fontWeight: FontWeight.w400,
-                //   letterSpacing: -0.30,
-              ))),
-        ),
-      ],
+    Widget twoButtonSignUpAndLogIn = Container(
+      height: 56,
+      color: Colors.black,
+      margin: const EdgeInsets.symmetric(horizontal: 20),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          Expanded(child: ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              // surfaceTintColor: const Color(0xFF074E16),
+              // foregroundColor: const Color(0xFF074E16),
+              backgroundColor: Color(ExBookColor.mauChinh1.colorHex),
+              // minimumSize: Size(MediaQuery.of(context).size.width - 40, 56),
+            ),
+            onPressed: nextBackground,
+            child: Text('TIẾP TỤC',
+                textAlign: TextAlign.center,
+                style: GoogleFonts.mulish(
+                    textStyle: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 18,
+                      //   fontWeight: FontWeight.w400,
+                      //   letterSpacing: -0.30,
+                    ))),
+          )),
+          Expanded(child: ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              // surfaceTintColor: const Color(0xFF074E16),
+              // foregroundColor: const Color(0xFF074E16),
+              backgroundColor: Color(ExBookColor.mauChinh1.colorHex),
+            ),
+            onPressed: nextBackground,
+            child: Text('TIẾP TỤC',
+                textAlign: TextAlign.center,
+                style: GoogleFonts.mulish(
+                    textStyle: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 18,
+                      //   fontWeight: FontWeight.w400,
+                      //   letterSpacing: -0.30,
+                    ))),
+          )),
+        ],
+      ),
     );
 
     return GestureDetector(
@@ -148,7 +152,7 @@ class _IntroductionPageState extends State<IntroductionPage> {
                 child: Container(
               alignment: Alignment.bottomCenter,
               margin: const EdgeInsets.only(bottom: 125),
-              child: buttonNext,
+              child: circleIndex == 3 ? twoButtonSignUpAndLogIn : buttonNext,
             ))
           ],
         ),
