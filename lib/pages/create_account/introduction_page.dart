@@ -14,28 +14,59 @@ class IntroductionPage extends StatefulWidget {
 }
 
 class _IntroductionPageState extends State<IntroductionPage> {
-  late Widget background;
+  late Widget background = const IntroBackground1();
+  int circleIndex = 1;
 
   @override
   void initState() {
-    background = const IntroBackground2();
+    // background = const IntroBackground1();
+    // circleIndex = 1;
     super.initState();
+  }
+
+  Widget getBackground() {
+    switch (circleIndex) {
+      case 1:
+        return const IntroBackground1();
+      case 2:
+        return const IntroBackground2();
+      case 3:
+        return const IntroBackground3();
+      default:
+        return const IntroBackground1();
+    }
+  }
+
+  void handleSwipe(DragUpdateDetails details) {
+    if (details.delta.dx > 0) {
+      log("Swipe Right");
+      if (circleIndex == 1) {
+        log("circleIndex == 1");
+        return;
+      }
+      circleIndex--;
+      log(circleIndex.toString());
+      setState(() {
+        background = getBackground();
+      });
+    } else if (details.delta.dx < 0) {
+      log("Swipe Left");
+      if (circleIndex == 3) {
+        log("circleIndex == 3");
+        return;
+      }
+      circleIndex++;
+      log(circleIndex.toString());
+      setState(() {
+        background = getBackground();
+      });
+    }
   }
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onPanUpdate: (details) {
-        if (details.delta.dx > 0) {
-          setState(() {
-            background = const IntroBackground1();
-          });
-        } else if (details.delta.dx < 0) {
-          setState(() {
-            background = const IntroBackground2();
-          });
-        }
-      },
+      onPanUpdate: handleSwipe,
       child: Scaffold(
         backgroundColor: Color(ExBookColor.mauChinh3.colorHex),
         appBar: null,
@@ -57,7 +88,7 @@ class _IntroductionPageState extends State<IntroductionPage> {
                 ),
                 onPressed: () {
                   setState(() {
-                    background = const IntroBackground2();
+                    background = const IntroBackground1();
                   });
                 },
                 child: Text('TIẾP TỤC',
