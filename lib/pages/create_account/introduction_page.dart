@@ -1,10 +1,9 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../../library/ex_book_colors.dart';
-
-import 'package:google_fonts/google_fonts.dart';
 
 class IntroductionPage extends StatefulWidget {
   const IntroductionPage({super.key});
@@ -91,6 +90,48 @@ class _IntroductionPageState extends State<IntroductionPage> {
                 //   fontWeight: FontWeight.w400,
                 //   letterSpacing: -0.30,
               ))),
+    );
+
+    Widget twoButtonSignUpAndLogIn = Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        ElevatedButton(
+          style: ElevatedButton.styleFrom(
+            // surfaceTintColor: const Color(0xFF074E16),
+            // foregroundColor: const Color(0xFF074E16),
+            backgroundColor: Color(ExBookColor.mauChinh1.colorHex),
+            minimumSize: Size(MediaQuery.of(context).size.width - 40, 56),
+          ),
+          onPressed: nextBackground,
+          child: Text('TIẾP TỤC',
+              textAlign: TextAlign.center,
+              style: GoogleFonts.mulish(
+                  textStyle: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 18,
+                    //   fontWeight: FontWeight.w400,
+                    //   letterSpacing: -0.30,
+                  ))),
+        ),
+        ElevatedButton(
+          style: ElevatedButton.styleFrom(
+            // surfaceTintColor: const Color(0xFF074E16),
+            // foregroundColor: const Color(0xFF074E16),
+            backgroundColor: Color(ExBookColor.mauChinh1.colorHex),
+            minimumSize: Size(MediaQuery.of(context).size.width - 40, 56),
+          ),
+          onPressed: nextBackground,
+          child: Text('TIẾP TỤC',
+              textAlign: TextAlign.center,
+              style: GoogleFonts.mulish(
+                  textStyle: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 18,
+                    //   fontWeight: FontWeight.w400,
+                    //   letterSpacing: -0.30,
+                  ))),
+        ),
+      ],
     );
 
     return GestureDetector(
