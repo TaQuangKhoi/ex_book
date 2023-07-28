@@ -61,8 +61,38 @@ class _IntroductionPageState extends State<IntroductionPage> {
     }
   }
 
+  void nextBackground() {
+    if (circleIndex == 3) {
+      return;
+    }
+    circleIndex++;
+    log(circleIndex.toString());
+    setState(() {
+      background = getBackground();
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
+    Widget buttonNext = ElevatedButton(
+      style: ElevatedButton.styleFrom(
+        // surfaceTintColor: const Color(0xFF074E16),
+        // foregroundColor: const Color(0xFF074E16),
+        backgroundColor: Color(ExBookColor.mauChinh1.colorHex),
+        minimumSize: Size(MediaQuery.of(context).size.width - 40, 56),
+      ),
+      onPressed: nextBackground,
+      child: Text('TIẾP TỤC',
+          textAlign: TextAlign.center,
+          style: GoogleFonts.mulish(
+              textStyle: const TextStyle(
+                color: Colors.white,
+                fontSize: 18,
+                //   fontWeight: FontWeight.w400,
+                //   letterSpacing: -0.30,
+              ))),
+    );
+
     return GestureDetector(
       onPanEnd: handleSwipe,
       child: Scaffold(
@@ -77,28 +107,7 @@ class _IntroductionPageState extends State<IntroductionPage> {
                 child: Container(
               alignment: Alignment.bottomCenter,
               margin: const EdgeInsets.only(bottom: 125),
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  // surfaceTintColor: const Color(0xFF074E16),
-                  // foregroundColor: const Color(0xFF074E16),
-                  backgroundColor: Color(ExBookColor.mauChinh1.colorHex),
-                  minimumSize: Size(MediaQuery.of(context).size.width - 40, 56),
-                ),
-                onPressed: () {
-                  setState(() {
-                    background = const IntroBackground1();
-                  });
-                },
-                child: Text('TIẾP TỤC',
-                    textAlign: TextAlign.center,
-                    style: GoogleFonts.mulish(
-                        textStyle: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 18,
-                      //   fontWeight: FontWeight.w400,
-                      //   letterSpacing: -0.30,
-                    ))),
-              ),
+              child: buttonNext,
             ))
           ],
         ),
