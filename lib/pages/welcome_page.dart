@@ -6,7 +6,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'dart:async';
 
 import '../library/ex_book_colors.dart';
-import 'create_account/introduction_page.dart';
+import 'introduction_page.dart';
 
 class WelcomePage extends StatelessWidget {
   const WelcomePage({super.key});

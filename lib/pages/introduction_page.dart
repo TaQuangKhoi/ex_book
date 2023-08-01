@@ -3,7 +3,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../../library/ex_book_colors.dart';
+import '../library/ex_book_colors.dart';
 
 class IntroductionPage extends StatefulWidget {
   const IntroductionPage({super.key});
@@ -13,7 +13,7 @@ class IntroductionPage extends StatefulWidget {
 }
 
 class _IntroductionPageState extends State<IntroductionPage> {
-  int circleIndex = 3;
+  int circleIndex = 1;
   late Widget background = getBackground();
 
   @override
