@@ -92,50 +92,49 @@ class _IntroductionPageState extends State<IntroductionPage> {
           ))),
     );
 
-    Widget twoButtonSignUpAndLogIn = Container(
-      height: 56,
-      color: Colors.black,
-      margin: const EdgeInsets.symmetric(horizontal: 20),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [
-          Expanded(child: ElevatedButton(
-            style: ElevatedButton.styleFrom(
-              // surfaceTintColor: const Color(0xFF074E16),
-              // foregroundColor: const Color(0xFF074E16),
-              backgroundColor: Color(ExBookColor.mauChinh1.colorHex),
-              // minimumSize: Size(MediaQuery.of(context).size.width - 40, 56),
-            ),
-            onPressed: nextBackground,
-            child: Text('TIẾP TỤC',
-                textAlign: TextAlign.center,
-                style: GoogleFonts.mulish(
-                    textStyle: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 18,
-                      //   fontWeight: FontWeight.w400,
-                      //   letterSpacing: -0.30,
-                    ))),
-          )),
-          Expanded(child: ElevatedButton(
-            style: ElevatedButton.styleFrom(
-              // surfaceTintColor: const Color(0xFF074E16),
-              // foregroundColor: const Color(0xFF074E16),
-              backgroundColor: Color(ExBookColor.mauChinh1.colorHex),
-            ),
-            onPressed: nextBackground,
-            child: Text('TIẾP TỤC',
-                textAlign: TextAlign.center,
-                style: GoogleFonts.mulish(
-                    textStyle: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 18,
-                      //   fontWeight: FontWeight.w400,
-                      //   letterSpacing: -0.30,
-                    ))),
-          )),
-        ],
-      ),
+    Widget twoButtonSignUpAndLogIn = Row(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      children: [
+        SizedBox(
+            height: 56,
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                // surfaceTintColor: const Color(0xFF074E16),
+                // foregroundColor: const Color(0xFF074E16),
+                backgroundColor: Color(ExBookColor.mauChinh1.colorHex),
+                // minimumSize: Size(MediaQuery.of(context).size.width - 40, 56),
+              ),
+              onPressed: nextBackground,
+              child: Text('TIẾP TỤC',
+                  textAlign: TextAlign.center,
+                  style: GoogleFonts.mulish(
+                      textStyle: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 18,
+                    //   fontWeight: FontWeight.w400,
+                    //   letterSpacing: -0.30,
+                  ))),
+            )),
+        Container(
+            height: 56,
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                // surfaceTintColor: const Color(0xFF074E16),
+                // foregroundColor: const Color(0xFF074E16),
+                backgroundColor: Color(ExBookColor.mauChinh1.colorHex),
+              ),
+              onPressed: nextBackground,
+              child: Text('TIẾP TỤC',
+                  textAlign: TextAlign.center,
+                  style: GoogleFonts.mulish(
+                      textStyle: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 18,
+                    //   fontWeight: FontWeight.w400,
+                    //   letterSpacing: -0.30,
+                  ))),
+            )),
+      ],
     );
 
     return GestureDetector(
@@ -393,31 +392,31 @@ class IntroBackground3 extends StatelessWidget {
           right: 0,
           child: Image(
             image:
-            AssetImage('assets/introduction_page/background3/vector_6.png'),
+                AssetImage('assets/introduction_page/background3/vector_6.png'),
           ),
         ),
         const Positioned(
           top: 20,
           right: 120,
           child: Image(
-            image:
-            AssetImage('assets/introduction_page/background3/group_102.png'),
+            image: AssetImage(
+                'assets/introduction_page/background3/group_102.png'),
           ),
         ),
         const Positioned(
           top: 40,
           right: 60,
           child: Image(
-            image:
-            AssetImage('assets/introduction_page/background3/group_102.png'),
+            image: AssetImage(
+                'assets/introduction_page/background3/group_102.png'),
           ),
         ),
         const Positioned(
           top: 40,
           right: 0,
           child: Image(
-            image:
-            AssetImage('assets/introduction_page/background3/group_104.png'),
+            image: AssetImage(
+                'assets/introduction_page/background3/group_104.png'),
           ),
         ),
         Positioned(
@@ -427,8 +426,8 @@ class IntroBackground3 extends StatelessWidget {
             width: MediaQuery.of(context).size.width,
             child: Image(
               fit: BoxFit.fill,
-              image:
-              AssetImage('assets/introduction_page/background3/vector_4.png'),
+              image: AssetImage(
+                  'assets/introduction_page/background3/vector_4.png'),
             ),
           ),
         ),
@@ -437,7 +436,7 @@ class IntroBackground3 extends StatelessWidget {
           right: 0,
           child: Image(
             image:
-            AssetImage('assets/introduction_page/background3/vector_2.png'),
+                AssetImage('assets/introduction_page/background3/vector_2.png'),
           ),
         ),
         const TextBetween(
