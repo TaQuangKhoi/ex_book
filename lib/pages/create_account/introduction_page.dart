@@ -95,45 +95,49 @@ class _IntroductionPageState extends State<IntroductionPage> {
     Widget twoButtonSignUpAndLogIn = Row(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
-        SizedBox(
-            height: 56,
-            child: ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                // surfaceTintColor: const Color(0xFF074E16),
-                // foregroundColor: const Color(0xFF074E16),
-                backgroundColor: Color(ExBookColor.mauChinh1.colorHex),
-                // minimumSize: Size(MediaQuery.of(context).size.width - 40, 56),
-              ),
-              onPressed: nextBackground,
-              child: Text('TIẾP TỤC',
-                  textAlign: TextAlign.center,
-                  style: GoogleFonts.mulish(
-                      textStyle: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 18,
-                    //   fontWeight: FontWeight.w400,
-                    //   letterSpacing: -0.30,
-                  ))),
-            )),
-        Container(
-            height: 56,
-            child: ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                // surfaceTintColor: const Color(0xFF074E16),
-                // foregroundColor: const Color(0xFF074E16),
-                backgroundColor: Color(ExBookColor.mauChinh1.colorHex),
-              ),
-              onPressed: nextBackground,
-              child: Text('TIẾP TỤC',
-                  textAlign: TextAlign.center,
-                  style: GoogleFonts.mulish(
-                      textStyle: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 18,
-                    //   fontWeight: FontWeight.w400,
-                    //   letterSpacing: -0.30,
-                  ))),
-            )),
+        Expanded(
+            child: Container(
+                margin: const EdgeInsets.fromLTRB(20, 0, 10, 0),
+                height: 56,
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    // surfaceTintColor: const Color(0xFF074E16),
+                    // foregroundColor: const Color(0xFF074E16),
+                    backgroundColor: Color(ExBookColor.mauChinh1.colorHex),
+                    // minimumSize: Size(MediaQuery.of(context).size.width - 40, 56),
+                  ),
+                  onPressed: nextBackground,
+                  child: Text('TIẾP TỤC',
+                      textAlign: TextAlign.center,
+                      style: GoogleFonts.mulish(
+                          textStyle: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 18,
+                        //   fontWeight: FontWeight.w400,
+                        //   letterSpacing: -0.30,
+                      ))),
+                ))),
+        Expanded(
+            child: Container(
+                margin: const EdgeInsets.fromLTRB(10, 0, 20, 0),
+                height: 56,
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    // surfaceTintColor: const Color(0xFF074E16),
+                    // foregroundColor: const Color(0xFF074E16),
+                    backgroundColor: Color(ExBookColor.mauChinh1.colorHex),
+                  ),
+                  onPressed: nextBackground,
+                  child: Text('TIẾP TỤC',
+                      textAlign: TextAlign.center,
+                      style: GoogleFonts.mulish(
+                          textStyle: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 18,
+                        //   fontWeight: FontWeight.w400,
+                        //   letterSpacing: -0.30,
+                      ))),
+                ))),
       ],
     );
 
