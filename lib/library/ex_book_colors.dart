@@ -1,7 +1,7 @@
 enum ExBookColor {
   mauChinh1(0xFF074E16),
-  mauChinh2(0xFF293731),
-  mauChinh3(0xFFF1F9EA),
+  mauChinh2(0xFFC3E4A6),
+  mauChinh3(0xFFD4F1BB),
 
   mauPhu1(0xFF293731),
   mauPhu2(0xFF293731),
