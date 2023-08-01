@@ -71,6 +71,14 @@ class _IntroductionPageState extends State<IntroductionPage> {
     });
   }
 
+  void goToLogin() {
+    Navigator.pushNamed(context, '/login');
+  }
+
+  void goToSignUp() {
+    Navigator.pushNamed(context, '/signup');
+  }
+
   @override
   Widget build(BuildContext context) {
     Widget buttonNext = ElevatedButton(
@@ -108,20 +116,15 @@ class _IntroductionPageState extends State<IntroductionPage> {
                 ),
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    // surfaceTintColor: const Color(0xFF074E16),
-                    // foregroundColor: const Color(0xFF074E16),
                     backgroundColor: Color(ExBookColor.mauChinh3.colorHex),
-                    // minimumSize: Size(MediaQuery.of(context).size.width - 40, 56),
                   ),
-                  onPressed: nextBackground,
+                  onPressed: goToSignUp,
                   child: Text('ĐĂNG KÝ',
                       textAlign: TextAlign.center,
                       style: GoogleFonts.mulish(
                           textStyle: TextStyle(
                         color: Color(ExBookColor.mauChinh1.colorHex),
                         fontSize: 18,
-                        //   fontWeight: FontWeight.w400,
-                        //   letterSpacing: -0.30,
                       ))),
                 ))),
         Expanded(
@@ -134,15 +137,13 @@ class _IntroductionPageState extends State<IntroductionPage> {
                     // foregroundColor: const Color(0xFF074E16),
                     backgroundColor: Color(ExBookColor.mauChinh1.colorHex),
                   ),
-                  onPressed: nextBackground,
+                  onPressed: goToLogin,
                   child: Text('ĐĂNG NHẬP',
                       textAlign: TextAlign.center,
                       style: GoogleFonts.mulish(
                           textStyle: const TextStyle(
                         color: Colors.white,
                         fontSize: 18,
-                        //   fontWeight: FontWeight.w400,
-                        //   letterSpacing: -0.30,
                       ))),
                 ))),
       ],
