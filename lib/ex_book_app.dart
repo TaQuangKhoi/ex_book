@@ -31,7 +31,7 @@ class _ExBookAppState extends State<ExBookApp> {
         '/login': (context) => const LogInPage(),
         '/signup': (context) => const SignUpPage(),
       },
-      home: const WelcomePage(),
+      home: const SignUpPage(),
     );
   }
 }
