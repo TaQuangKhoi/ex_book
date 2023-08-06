@@ -10,6 +10,16 @@ class SignUpPage extends StatefulWidget {
 }
 
 class _SignUpPageState extends State<SignUpPage> {
+
+  InputDecoration getTextFieldStyle(hintText) {
+    return InputDecoration(
+      filled: true,
+      fillColor: Color(ExBookColor.mauChinh3.colorHex),
+      border: const OutlineInputBorder(),
+      hintText: hintText,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
