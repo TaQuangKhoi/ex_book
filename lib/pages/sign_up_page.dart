@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../library/ex_book_colors.dart';
+
 class SignUpPage extends StatefulWidget {
   const SignUpPage({super.key});
 
@@ -40,9 +42,9 @@ class _SignUpPageState extends State<SignUpPage> {
                             width: 162,
                             height: 48,
                             decoration: ShapeDecoration(
-                              color: Color(0xFFD4F1BA),
+                              color: Color(ExBookColor.mauChinh3.colorHex),
                               shape: RoundedRectangleBorder(
-                                side: BorderSide(
+                                side: const BorderSide(
                                     width: 0.50, color: Color(0xFFC2E4A5)),
                                 borderRadius: BorderRadius.circular(4),
                               ),
@@ -107,7 +109,7 @@ class _SignUpPageState extends State<SignUpPage> {
                             width: 164,
                             height: 48,
                             decoration: ShapeDecoration(
-                              color: Color(0xFFD4F1BA),
+                              color: Color(ExBookColor.mauChinh3.colorHex),
                               shape: RoundedRectangleBorder(
                                 side: BorderSide(
                                     width: 0.50, color: Color(0xFFC2E4A5)),
@@ -174,7 +176,7 @@ class _SignUpPageState extends State<SignUpPage> {
                             width: 339,
                             height: 48,
                             decoration: ShapeDecoration(
-                              color: Color(0xFFD4F1BA),
+                              color: Color(ExBookColor.mauChinh3.colorHex),
                               shape: RoundedRectangleBorder(
                                 side: BorderSide(
                                     width: 0.50, color: Color(0xFFC2E4A5)),
@@ -241,7 +243,7 @@ class _SignUpPageState extends State<SignUpPage> {
                             width: 339,
                             height: 48,
                             decoration: ShapeDecoration(
-                              color: Color(0xFFD4F1BA),
+                              color: Color(ExBookColor.mauChinh3.colorHex),
                               shape: RoundedRectangleBorder(
                                 side: BorderSide(
                                     width: 0.50, color: Color(0xFFC2E4A5)),
@@ -308,7 +310,7 @@ class _SignUpPageState extends State<SignUpPage> {
                             width: 339,
                             height: 48,
                             decoration: ShapeDecoration(
-                              color: Color(0xFFD4F1BA),
+                              color: Color(ExBookColor.mauChinh3.colorHex),
                               shape: RoundedRectangleBorder(
                                 side: BorderSide(
                                     width: 0.50, color: Color(0xFFC2E4A5)),
@@ -487,11 +489,11 @@ class _SignUpPageState extends State<SignUpPage> {
               ],
             ),
           ),
-          const Column(
+          Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text.rich(
+              const Text.rich(
                 TextSpan(
                   children: [
                     TextSpan(
@@ -518,7 +520,7 @@ class _SignUpPageState extends State<SignUpPage> {
                 ),
                 textAlign: TextAlign.center,
               ),
-              Text(
+              const Text(
                 'Tên tài khoản',
                 style: TextStyle(
                   color: Color(0xFF293731),
@@ -530,8 +532,9 @@ class _SignUpPageState extends State<SignUpPage> {
               ),
               TextField(
                 decoration: InputDecoration(
-
-                  border: OutlineInputBorder(),
+                  filled: true,
+                  fillColor: Color(ExBookColor.mauChinh3.colorHex),
+                  border: const OutlineInputBorder(),
                   hintText: 'Name_123',
                 ),
               ),
