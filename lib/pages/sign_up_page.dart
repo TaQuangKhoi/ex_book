@@ -246,73 +246,7 @@ class _SignUpPageState extends State<SignUpPage> {
                     ),
                   ),
                 ),
-                Positioned(
-                  left: 18,
-                  top: 196,
-                  child: Container(
-                    width: 339,
-                    height: 68,
-                    child: Stack(
-                      children: [
-                        Positioned(
-                          left: 0,
-                          top: 20,
-                          child: Container(
-                            width: 339,
-                            height: 48,
-                            decoration: ShapeDecoration(
-                              color: Color(ExBookColor.mauChinh3.colorHex),
-                              shape: RoundedRectangleBorder(
-                                side: BorderSide(
-                                    width: 0.50, color: Color(0xFFC2E4A5)),
-                                borderRadius: BorderRadius.circular(4),
-                              ),
-                            ),
-                          ),
-                        ),
-                        Positioned(
-                          left: 7.91,
-                          top: 22,
-                          child: SizedBox(
-                            width: 323.19,
-                            height: 46,
-                            child: Opacity(
-                              opacity: 0.50,
-                              child: Text(
-                                '@gmail.com',
-                                style: TextStyle(
-                                  color: Color(0x7F293731),
-                                  fontSize: 16,
-                                  fontFamily: 'Mulish',
-                                  fontWeight: FontWeight.w400,
-                                  letterSpacing: -0.30,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                        Positioned(
-                          left: 0,
-                          top: 0,
-                          child: SizedBox(
-                            width: 323.19,
-                            height: 16,
-                            child: Text(
-                              'Email / Điện thoại',
-                              style: TextStyle(
-                                color: Color(0xFF293731),
-                                fontSize: 16,
-                                fontFamily: 'Mulish',
-                                fontWeight: FontWeight.w400,
-                                letterSpacing: -0.30,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
+
                 Positioned(
                   left: 18,
                   top: 364,
@@ -538,23 +472,19 @@ class _SignUpPageState extends State<SignUpPage> {
                 ),
                 textAlign: TextAlign.center,
               ),
-              const Text(
+              Text(
                 'Tên tài khoản',
-                style: TextStyle(
-                  color: Color(0xFF293731),
-                  fontSize: 16,
-                  fontFamily: 'Mulish',
-                  fontWeight: FontWeight.w400,
-                  letterSpacing: -0.30,
-                ),
+                style: labelTextFieldStyle,
               ),
               TextField(
-                decoration: InputDecoration(
-                  filled: true,
-                  fillColor: Color(ExBookColor.mauChinh3.colorHex),
-                  border: const OutlineInputBorder(),
-                  hintText: 'Name_123',
-                ),
+                decoration: getTextFieldStyle('Name_123'),
+              ),
+              Text(
+                'Email / Điện thoại',
+                style: labelTextFieldStyle,
+              ),
+              TextField(
+                decoration: getTextFieldStyle('@gmail.com'),
               ),
             ],
           )
