@@ -27,72 +27,6 @@ class _SignUpPageState extends State<SignUpPage> {
               children: [
                 Positioned(
                   left: 18,
-                  top: 112,
-                  child: Container(
-                    width: 339,
-                    height: 68,
-                    child: Stack(
-                      children: [
-                        // Positioned(
-                        //   left: 0,
-                        //   top: 20,
-                        //   child: Container(
-                        //     width: 339,
-                        //     height: 48,
-                        //     decoration: ShapeDecoration(
-                        //       color: Color(0xFFD4F1BA),
-                        //       shape: RoundedRectangleBorder(
-                        //         side: BorderSide(width: 0.50, color: Color(0xFFC2E4A5)),
-                        //         borderRadius: BorderRadius.circular(4),
-                        //       ),
-                        //     ),
-                        //   ),
-                        // ),
-                        // Positioned(
-                        //   left: 7.91,
-                        //   top: 22,
-                        //   child: SizedBox(
-                        //     width: 323.19,
-                        //     height: 46,
-                        //     child: Opacity(
-                        //       opacity: 0.50,
-                        //       child: Text(
-                        //         'Name_123',
-                        //         style: TextStyle(
-                        //           color: Color(0x7F293731),
-                        //           fontSize: 16,
-                        //           fontFamily: 'Mulish',
-                        //           fontWeight: FontWeight.w400,
-                        //           letterSpacing: -0.30,
-                        //         ),
-                        //       ),
-                        //     ),
-                        //   ),
-                        // ),
-                        Positioned(
-                          left: 0,
-                          top: 0,
-                          child: SizedBox(
-                            width: 323.19,
-                            height: 16,
-                            child: Text(
-                              'Tên tài khoản',
-                              style: TextStyle(
-                                color: Color(0xFF293731),
-                                fontSize: 16,
-                                fontFamily: 'Mulish',
-                                fontWeight: FontWeight.w400,
-                                letterSpacing: -0.30,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                Positioned(
-                  left: 18,
                   top: 280,
                   child: Container(
                     width: 162,
@@ -553,8 +487,9 @@ class _SignUpPageState extends State<SignUpPage> {
               ],
             ),
           ),
-          Column(
+          const Column(
             mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text.rich(
                 TextSpan(
@@ -583,8 +518,19 @@ class _SignUpPageState extends State<SignUpPage> {
                 ),
                 textAlign: TextAlign.center,
               ),
+              Text(
+                'Tên tài khoản',
+                style: TextStyle(
+                  color: Color(0xFF293731),
+                  fontSize: 16,
+                  fontFamily: 'Mulish',
+                  fontWeight: FontWeight.w400,
+                  letterSpacing: -0.30,
+                ),
+              ),
               TextField(
                 decoration: InputDecoration(
+
                   border: OutlineInputBorder(),
                   hintText: 'Name_123',
                 ),
