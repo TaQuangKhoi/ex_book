@@ -96,7 +96,7 @@ class _IntroductionPageState extends State<IntroductionPage> {
             color: Colors.white,
             fontSize: 18,
             //   fontWeight: FontWeight.w400,
-            //   letterSpacing: -0.30,
+            letterSpacing: -0.30,
           ))),
     );
 

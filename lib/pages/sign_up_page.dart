@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../library/ex_book_colors.dart';
 
@@ -46,41 +47,43 @@ class _SignUpPageState extends State<SignUpPage> {
       body: SafeArea(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            const Text.rich(
-              TextSpan(
-                children: [
-                  TextSpan(
-                    text: 'ĐĂNG KÝ TÀI KHOẢN\n',
-                    style: TextStyle(
-                      color: Color(0xFF2A3732),
-                      fontSize: 16,
-                      fontFamily: 'Mulish',
-                      fontWeight: FontWeight.w700,
-                      letterSpacing: -0.30,
-                    ),
-                  ),
-                  TextSpan(
-                    text: 'Bạn hãy nhập thông tin đã đăng ký tài khoản',
-                    style: TextStyle(
-                      color: Color(0xFF2A3732),
-                      fontSize: 16,
-                      fontFamily: 'Mulish',
-                      fontWeight: FontWeight.w400,
-                      letterSpacing: -0.30,
-                    ),
-                  ),
-                ],
+            Text(
+              'ĐĂNG KÝ TÀI KHOẢN',
+              style: GoogleFonts.mulish(
+                textStyle: const TextStyle(
+                  color: Color(0xFF2A3732),
+                  fontSize: 16,
+                  fontWeight: FontWeight.w700,
+                  letterSpacing: -0.30,
+                )
               ),
-              textAlign: TextAlign.center,
             ),
             Text(
-              'Tên tài khoản',
-              style: labelTextFieldStyle,
+              'Bạn hãy nhập thông tin đã đăng ký tài khoản',
+              style: GoogleFonts.mulish(
+                textStyle: const TextStyle(
+                  color: Color(0xFF2A3732),
+                  fontSize: 16,
+                  fontFamily: 'Mulish',
+                  fontWeight: FontWeight.w400,
+                  // letterSpacing: -0.30,
+                ),
+              ),
             ),
-            TextField(
-              decoration: getTextFieldStyle('Name_123'),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Tên tài khoản',
+                  style: labelTextFieldStyle,
+                ),
+                TextField(
+                  decoration: getTextFieldStyle('Name_123'),
+                ),
+              ],
             ),
             Column(
               mainAxisAlignment: MainAxisAlignment.start,
