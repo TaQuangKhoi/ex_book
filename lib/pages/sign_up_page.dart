@@ -63,18 +63,21 @@ class _SignUpPageState extends State<SignUpPage> {
   }
 
   Widget getInput(String text, String textFieldText, [Widget? suffixIcon]) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.start,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          text,
-          style: labelTextFieldStyle,
-        ),
-        TextField(
-          decoration: getTextFieldStyle(textFieldText, suffixIcon),
-        ),
-      ],
+    return Padding(
+      padding: const EdgeInsets.only(top: 18),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            text,
+            style: labelTextFieldStyle,
+          ),
+          TextField(
+            decoration: getTextFieldStyle(textFieldText, suffixIcon),
+          ),
+        ],
+      ),
     );
   }
 
@@ -144,55 +147,58 @@ class _SignUpPageState extends State<SignUpPage> {
               getInput('Tên tài khoản', 'Name_123'),
               getInput('Email / Điện thoại', '@gmail.com'),
               getInput('Ngày sinh', 'DD/MM/YY', calendarIconSvg),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Giới tính',
-                    style: labelTextFieldStyle,
-                  ),
-                  DecoratedBox(
-                    decoration: BoxDecoration(
-                      color: Color(ExBookColor.mauChinh3.colorHex),
-                      border: Border.all(
-                          color: Color(ExBookColor.mauChinh2.colorHex),
-                          width: 2),
-                      borderRadius: BorderRadius.circular(4),
+              Padding(
+                padding: const EdgeInsets.only(top: 18),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Giới tính',
+                      style: labelTextFieldStyle,
                     ),
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 15, right: 15),
-                      child: DropdownButton(
-                        dropdownColor: Color(ExBookColor.mauChinh3.colorHex),
-                        isExpanded: true,
+                    DecoratedBox(
+                      decoration: BoxDecoration(
+                        color: Color(ExBookColor.mauChinh3.colorHex),
+                        border: Border.all(
+                            color: Color(ExBookColor.mauChinh2.colorHex),
+                            width: 2),
                         borderRadius: BorderRadius.circular(4),
-                        value: gioiTinh,
-                        items: [
-                          DropdownMenuItem(
-                            enabled: false,
-                            value: 0,
-                            child: Text('Nam/Nữ',
-                                style: TextStyle(
-                                    color: Theme.of(context).hintColor)),
-                          ),
-                          const DropdownMenuItem(
-                            value: 1,
-                            child: Text('Nam'),
-                          ),
-                          const DropdownMenuItem(
-                            value: 2,
-                            child: Text('Nữ'),
-                          ),
-                        ],
-                        onChanged: (int? value) {
-                          setState(() {
-                            gioiTinh = value!;
-                          });
-                        },
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 15, right: 15),
+                        child: DropdownButton(
+                          dropdownColor: Color(ExBookColor.mauChinh3.colorHex),
+                          isExpanded: true,
+                          borderRadius: BorderRadius.circular(4),
+                          value: gioiTinh,
+                          items: [
+                            DropdownMenuItem(
+                              enabled: false,
+                              value: 0,
+                              child: Text('Nam/Nữ',
+                                  style: TextStyle(
+                                      color: Theme.of(context).hintColor)),
+                            ),
+                            const DropdownMenuItem(
+                              value: 1,
+                              child: Text('Nam'),
+                            ),
+                            const DropdownMenuItem(
+                              value: 2,
+                              child: Text('Nữ'),
+                            ),
+                          ],
+                          onChanged: (int? value) {
+                            setState(() {
+                              gioiTinh = value!;
+                            });
+                          },
+                        ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
               getInput('Mật khẩu', '*********'),
               getInput('Nhập lại mật khẩu', '*********'),
