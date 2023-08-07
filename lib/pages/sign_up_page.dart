@@ -33,10 +33,6 @@ class _SignUpPageState extends State<SignUpPage> {
       letterSpacing: -0.30,
     );
 
-    // return Scaffold(
-    //   body: ,
-    // );
-
     return Scaffold(
       body: Stack(
         children: [
@@ -52,73 +48,7 @@ class _SignUpPageState extends State<SignUpPage> {
             ),
             child: Stack(
               children: [
-                Positioned(
-                  left: 18,
-                  top: 380,
-                  child: Container(
-                    width: 162,
-                    height: 68,
-                    child: Stack(
-                      children: [
-                        Positioned(
-                          left: 0,
-                          top: 20,
-                          child: Container(
-                            width: 162,
-                            height: 48,
-                            decoration: ShapeDecoration(
-                              color: Color(ExBookColor.mauChinh3.colorHex),
-                              shape: RoundedRectangleBorder(
-                                side: const BorderSide(
-                                    width: 0.50, color: Color(0xFFC2E4A5)),
-                                borderRadius: BorderRadius.circular(4),
-                              ),
-                            ),
-                          ),
-                        ),
-                        Positioned(
-                          left: 3.78,
-                          top: 22,
-                          child: SizedBox(
-                            width: 154.44,
-                            height: 46,
-                            child: Opacity(
-                              opacity: 0.50,
-                              child: Text(
-                                'DD/MM/YY',
-                                style: TextStyle(
-                                  color: Color(0x7F293731),
-                                  fontSize: 16,
-                                  fontFamily: 'Mulish',
-                                  fontWeight: FontWeight.w400,
-                                  letterSpacing: -0.30,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                        Positioned(
-                          left: 0,
-                          top: 0,
-                          child: SizedBox(
-                            width: 154.44,
-                            height: 16,
-                            child: Text(
-                              'Ngày sinh',
-                              style: TextStyle(
-                                color: Color(0xFF293731),
-                                fontSize: 16,
-                                fontFamily: 'Mulish',
-                                fontWeight: FontWeight.w400,
-                                letterSpacing: -0.30,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
+
                 Positioned(
                   left: 193,
                   top: 380,
@@ -365,33 +295,19 @@ class _SignUpPageState extends State<SignUpPage> {
                   ),
                 ],
               ),
-              // Row(
-              //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              //   mainAxisSize: MainAxisSize.min,
-              //   children: [
-              //     Column(
-              //       children: [
-              //         Expanded(
-              //           child: new Padding(
-              //             padding: const EdgeInsets.all(20.0),
-              //             child: Text(
-              //               'Ngày sinh',
-              //               style: labelTextFieldStyle,
-              //             ),
-              //           ),
-              //         ),
-              //         Expanded(
-              //           child: new Padding(
-              //             padding: const EdgeInsets.all(20.0),
-              //             child: TextField(
-              //               decoration: getTextFieldStyle('@gmail.com'),
-              //             ),
-              //           ),
-              //         ),
-              //       ],
-              //     )
-              //   ],
-              // )
+              Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Ngày sinh',
+                    style: labelTextFieldStyle,
+                  ),
+                  TextField(
+                    decoration: getTextFieldStyle('DD/MM/YY'),
+                  ),
+                ],
+              ),
               Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
