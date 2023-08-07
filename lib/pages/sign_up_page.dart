@@ -66,7 +66,7 @@ class _SignUpPageState extends State<SignUpPage> {
     }
   }
 
-  Widget getInput(String text, String textFieldText,
+  Widget getInputUI(String text, String textFieldText,
       [Widget? suffixIcon, TextEditingController? controller]) {
     return Padding(
       padding: const EdgeInsets.only(top: 16),
@@ -87,7 +87,7 @@ class _SignUpPageState extends State<SignUpPage> {
     );
   }
 
-  Widget getDropDown() {
+  Widget getDropDownUI() {
     return Padding(
       padding: const EdgeInsets.only(top: 16),
       child: Column(
@@ -208,14 +208,14 @@ class _SignUpPageState extends State<SignUpPage> {
                   ),
                 ),
               ),
-              getInput(
+              getInputUI(
                   'Tên tài khoản', 'Name_123', null, tenTaiKhoanController),
-              getInput(
+              getInputUI(
                   'Email / Điện thoại', '@gmail.com', null, emailController),
-              getInput('Ngày sinh', 'DD/MM/YY', calendarIconSvg),
-              getDropDown(),
-              getInput('Mật khẩu', '*********', null, matKhauController),
-              getInput('Nhập lại mật khẩu', '*********', null,
+              getInputUI('Ngày sinh', 'DD/MM/YY', calendarIconSvg),
+              getDropDownUI(),
+              getInputUI('Mật khẩu', '*********', null, matKhauController),
+              getInputUI('Nhập lại mật khẩu', '*********', null,
                   nhapLaiMatKhauController),
               const Center(
                 child: ElevatedButton(
