@@ -34,7 +34,7 @@ class _SignUpPageState extends State<SignUpPage> {
       letterSpacing: -0.30,
     );
 
-    const String fbLogoAssetName = 'sign_up_page/facebook-logo.svg';
+    const String fbLogoAssetName = 'assets/sign_up_page/facebook-logo.svg';
     final Widget fbLogoSvg =
         SvgPicture.asset(fbLogoAssetName, semanticsLabel: 'Acme Logo');
 
