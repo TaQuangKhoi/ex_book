@@ -17,6 +17,10 @@ class _SignUpPageState extends State<SignUpPage> {
   int gioiTinh = 0;
   String birthday = '';
   late TextEditingController birthdayController;
+  late TextEditingController tenTaiKhoanController;
+  late TextEditingController emailController;
+  late TextEditingController matKhauController;
+  late TextEditingController nhapLaiMatKhauController;
 
   TextStyle labelTextFieldStyle = GoogleFonts.mulish(
       textStyle: const TextStyle(
@@ -62,9 +66,10 @@ class _SignUpPageState extends State<SignUpPage> {
     }
   }
 
-  Widget getInput(String text, String textFieldText, [Widget? suffixIcon]) {
+  Widget getInput(String text, String textFieldText,
+      [Widget? suffixIcon, TextEditingController? controller]) {
     return Padding(
-      padding: const EdgeInsets.only(top: 18),
+      padding: const EdgeInsets.only(top: 16),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -74,6 +79,7 @@ class _SignUpPageState extends State<SignUpPage> {
             style: labelTextFieldStyle,
           ),
           TextField(
+            controller: controller,
             decoration: getTextFieldStyle(textFieldText, suffixIcon),
           ),
         ],
@@ -144,11 +150,13 @@ class _SignUpPageState extends State<SignUpPage> {
                   ),
                 ),
               ),
-              getInput('Tên tài khoản', 'Name_123'),
-              getInput('Email / Điện thoại', '@gmail.com'),
+              getInput(
+                  'Tên tài khoản', 'Name_123', null, tenTaiKhoanController),
+              getInput(
+                  'Email / Điện thoại', '@gmail.com', null, emailController),
               getInput('Ngày sinh', 'DD/MM/YY', calendarIconSvg),
               Padding(
-                padding: const EdgeInsets.only(top: 18),
+                padding: const EdgeInsets.only(top: 16),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -200,8 +208,9 @@ class _SignUpPageState extends State<SignUpPage> {
                   ],
                 ),
               ),
-              getInput('Mật khẩu', '*********'),
-              getInput('Nhập lại mật khẩu', '*********'),
+              getInput('Mật khẩu', '*********', null, matKhauController),
+              getInput('Nhập lại mật khẩu', '*********', null,
+                  nhapLaiMatKhauController),
               const Center(
                 child: ElevatedButton(
                     onPressed: null,
