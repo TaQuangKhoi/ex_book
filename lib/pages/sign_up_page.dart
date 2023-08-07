@@ -28,12 +28,13 @@ class _SignUpPageState extends State<SignUpPage> {
 
   @override
   Widget build(BuildContext context) {
-    TextStyle labelTextFieldStyle = const TextStyle(
-      color: Color(0xFF293731),
-      fontSize: 16,
-      fontFamily: 'Mulish',
-      fontWeight: FontWeight.w400,
-      letterSpacing: -0.30,
+    TextStyle labelTextFieldStyle = GoogleFonts.mulish(
+      textStyle: const TextStyle(
+        color: Color(0xFF293731),
+        fontSize: 16,
+        fontWeight: FontWeight.w400,
+        letterSpacing: -0.30,
+      )
     );
 
     const String fbLogoAssetName = 'assets/sign_up_page/facebook-logo.svg';
