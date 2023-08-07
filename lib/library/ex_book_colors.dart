@@ -10,7 +10,9 @@ enum ExBookColor {
   mauTrungTinh2(0xFF293731),
   mauTrungTinh3(0xFF293731),
   mauTrungTinh4(0xFF293731),
-  mauTrungTinh5(0xFF293731);
+  mauTrungTinh5(0xFF293731),
+
+  background(0xFFF1F9EA);
 
   final int colorHex;
   const ExBookColor(this.colorHex);
