@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -13,41 +12,57 @@ class SignUpPage extends StatefulWidget {
 }
 
 class _SignUpPageState extends State<SignUpPage> {
-  InputDecoration getTextFieldStyle(hintText) {
+  InputDecoration getTextFieldStyle(String hintText, [Widget? suffixIcon]) {
     return InputDecoration(
       filled: true,
-      fillColor: Color(ExBookColor.mauChinh2.colorHex),
-      border: const OutlineInputBorder(),
+      fillColor: Color(ExBookColor.mauChinh3.colorHex),
+      border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(4),
+          borderSide: BorderSide(
+              color: Color(ExBookColor.mauChinh2.colorHex), width: 1.0)),
       hintText: hintText,
-      focusedBorder: InputBorder.none,
-      enabledBorder: InputBorder.none,
-      errorBorder: InputBorder.none,
-      disabledBorder: InputBorder.none,
+      suffixIcon: suffixIcon,
+      // focusedBorder: InputBorder.none,
+      // enabledBorder: InputBorder.none,
+      // errorBorder: InputBorder.none,
+      // disabledBorder: InputBorder.none,
     );
   }
 
   @override
   Widget build(BuildContext context) {
     TextStyle labelTextFieldStyle = GoogleFonts.mulish(
-      textStyle: const TextStyle(
-        color: Color(0xFF293731),
-        fontSize: 16,
-        fontWeight: FontWeight.w400,
-        letterSpacing: -0.30,
-      )
+        textStyle: const TextStyle(
+      color: Color(0xFF293731),
+      fontSize: 16,
+      fontWeight: FontWeight.w400,
+      letterSpacing: -0.30,
+    ));
+
+    const String assetPath = 'assets/sign_up_page/';
+
+    final Widget fbLogoSvg = SvgPicture.asset('${assetPath}facebook-logo.svg',
+        semanticsLabel: 'Facebook Logo');
+
+    final Widget calendarIconSvg = SvgPicture.asset(
+      '${assetPath}calendar-icon.svg',
+      semanticsLabel: 'Calendar Icon',
+      fit: BoxFit.scaleDown,
     );
 
-    const String fbLogoAssetName = 'assets/sign_up_page/facebook-logo.svg';
-    final Widget fbLogoSvg =
-        SvgPicture.asset(fbLogoAssetName, semanticsLabel: 'Acme Logo');
+    final Widget sexIconSvg = SvgPicture.asset(
+      '${assetPath}people-sharp-icon.svg',
+      semanticsLabel: 'Calendar Icon',
+      fit: BoxFit.scaleDown,
+    );
 
     return Scaffold(
       appBar: null,
-      backgroundColor: Color(ExBookColor.mauChinh3.colorHex),
+      backgroundColor: Color(ExBookColor.background.colorHex),
       resizeToAvoidBottomInset: false,
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.all(18.0),
+          padding: const EdgeInsets.all(18.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -108,7 +123,7 @@ class _SignUpPageState extends State<SignUpPage> {
                     style: labelTextFieldStyle,
                   ),
                   TextField(
-                    decoration: getTextFieldStyle('DD/MM/YY'),
+                    decoration: getTextFieldStyle('DD/MM/YY', calendarIconSvg),
                   ),
                 ],
               ),
@@ -120,8 +135,18 @@ class _SignUpPageState extends State<SignUpPage> {
                     'Giới tính',
                     style: labelTextFieldStyle,
                   ),
-                  TextField(
-                    decoration: getTextFieldStyle('Nam/Nữ'),
+                  DropdownButton(
+                    hint: const Text('Nam/Nữ'), items: const [
+                      DropdownMenuItem(
+                        child: Text('Nam'),
+                        value: 1,
+                      ),
+                      DropdownMenuItem(
+                        child: Text('Nữ'),
+                        value: 2,
+                      ),
+                  ], onChanged: (int? value) {  },
+                    
                   ),
                 ],
               ),
