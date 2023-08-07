@@ -64,6 +64,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/
+    - assets/translations/
     - assets/introduction_page/
     - assets/introduction_page/background1/
     - assets/introduction_page/background2/
