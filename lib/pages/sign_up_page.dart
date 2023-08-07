@@ -18,6 +18,14 @@ class _SignUpPageState extends State<SignUpPage> {
   String birthday = '';
   late TextEditingController birthdayController;
 
+  TextStyle labelTextFieldStyle = GoogleFonts.mulish(
+      textStyle: const TextStyle(
+    color: Color(0xFF293731),
+    fontSize: 16,
+    fontWeight: FontWeight.w400,
+    letterSpacing: -0.30,
+  ));
+
   InputDecoration getTextFieldStyle(String hintText, [Widget? suffixIcon]) {
     OutlineInputBorder border = OutlineInputBorder(
         borderRadius: BorderRadius.circular(4),
@@ -54,6 +62,22 @@ class _SignUpPageState extends State<SignUpPage> {
     }
   }
 
+  Widget getInput(String text, String textFieldText, [Widget? suffixIcon]) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          text,
+          style: labelTextFieldStyle,
+        ),
+        TextField(
+          decoration: getTextFieldStyle(textFieldText, suffixIcon),
+        ),
+      ],
+    );
+  }
+
   @override
   void initState() {
     // TODO: implement initState
@@ -63,14 +87,6 @@ class _SignUpPageState extends State<SignUpPage> {
 
   @override
   Widget build(BuildContext context) {
-    TextStyle labelTextFieldStyle = GoogleFonts.mulish(
-        textStyle: const TextStyle(
-      color: Color(0xFF293731),
-      fontSize: 16,
-      fontWeight: FontWeight.w400,
-      letterSpacing: -0.30,
-    ));
-
     const String assetPath = 'assets/sign_up_page/';
 
     final Widget fbLogoSvg = SvgPicture.asset('${assetPath}facebook-logo.svg',
@@ -125,46 +141,9 @@ class _SignUpPageState extends State<SignUpPage> {
                   ),
                 ),
               ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Tên tài khoản',
-                    style: labelTextFieldStyle,
-                  ),
-                  TextField(
-                    decoration: getTextFieldStyle('Name_123'),
-                  ),
-                ],
-              ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Email / Điện thoại',
-                    style: labelTextFieldStyle,
-                  ),
-                  TextField(
-                    decoration: getTextFieldStyle('@gmail.com'),
-                  ),
-                ],
-              ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Ngày sinh',
-                    style: labelTextFieldStyle,
-                  ),
-                  TextField(
-                    controller: birthdayController,
-                    decoration: getTextFieldStyle('DD/MM/YY', calendarIconSvg),
-                  ),
-                ],
-              ),
+              getInput('Tên tài khoản', 'Name_123'),
+              getInput('Email / Điện thoại', '@gmail.com'),
+              getInput('Ngày sinh', 'DD/MM/YY', calendarIconSvg),
               Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -215,32 +194,8 @@ class _SignUpPageState extends State<SignUpPage> {
                   ),
                 ],
               ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Mật khẩu',
-                    style: labelTextFieldStyle,
-                  ),
-                  TextField(
-                    decoration: getTextFieldStyle('*********'),
-                  ),
-                ],
-              ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Nhập lại mật khẩu',
-                    style: labelTextFieldStyle,
-                  ),
-                  TextField(
-                    decoration: getTextFieldStyle('*********'),
-                  ),
-                ],
-              ),
+              getInput('Mật khẩu', '*********'),
+              getInput('Nhập lại mật khẩu', '*********'),
               const Center(
                 child: ElevatedButton(
                     onPressed: null,
