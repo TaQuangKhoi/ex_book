@@ -16,7 +16,10 @@ class _SignUpPageState extends State<SignUpPage> {
       fillColor: Color(ExBookColor.mauChinh3.colorHex),
       border: const OutlineInputBorder(),
       hintText: hintText,
-      enabledBorder: null,
+      focusedBorder: InputBorder.none,
+      enabledBorder: InputBorder.none,
+      errorBorder: InputBorder.none,
+      disabledBorder: InputBorder.none,
     );
   }
 
