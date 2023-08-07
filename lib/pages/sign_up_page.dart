@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -12,20 +14,25 @@ class SignUpPage extends StatefulWidget {
 }
 
 class _SignUpPageState extends State<SignUpPage> {
+  late int gioiTinh = 0;
+
   InputDecoration getTextFieldStyle(String hintText, [Widget? suffixIcon]) {
+    OutlineInputBorder border = OutlineInputBorder(
+      borderRadius: BorderRadius.circular(4),
+      borderSide: BorderSide(
+          color: Color(ExBookColor.mauChinh2.colorHex), width: 1.0)
+    );
+
     return InputDecoration(
       filled: true,
       fillColor: Color(ExBookColor.mauChinh3.colorHex),
-      border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(4),
-          borderSide: BorderSide(
-              color: Color(ExBookColor.mauChinh2.colorHex), width: 1.0)),
+      border: border,
       hintText: hintText,
       suffixIcon: suffixIcon,
-      // focusedBorder: InputBorder.none,
-      // enabledBorder: InputBorder.none,
-      // errorBorder: InputBorder.none,
-      // disabledBorder: InputBorder.none,
+      enabledBorder: border,
+      focusedBorder: border,
+      errorBorder: border,
+      focusedErrorBorder: border,
     );
   }
 
@@ -33,11 +40,11 @@ class _SignUpPageState extends State<SignUpPage> {
   Widget build(BuildContext context) {
     TextStyle labelTextFieldStyle = GoogleFonts.mulish(
         textStyle: const TextStyle(
-      color: Color(0xFF293731),
-      fontSize: 16,
-      fontWeight: FontWeight.w400,
-      letterSpacing: -0.30,
-    ));
+          color: Color(0xFF293731),
+          fontSize: 16,
+          fontWeight: FontWeight.w400,
+          letterSpacing: -0.30,
+        ));
 
     const String assetPath = 'assets/sign_up_page/';
 
@@ -71,11 +78,11 @@ class _SignUpPageState extends State<SignUpPage> {
                 'ĐĂNG KÝ TÀI KHOẢN',
                 style: GoogleFonts.mulish(
                     textStyle: const TextStyle(
-                  color: Color(0xFF2A3732),
-                  fontSize: 16,
-                  fontWeight: FontWeight.w700,
-                  letterSpacing: -0.30,
-                )),
+                      color: Color(0xFF2A3732),
+                      fontSize: 16,
+                      fontWeight: FontWeight.w700,
+                      letterSpacing: -0.30,
+                    )),
               ),
               Text(
                 'Bạn hãy nhập thông tin đã đăng ký tài khoản',
@@ -135,19 +142,44 @@ class _SignUpPageState extends State<SignUpPage> {
                     'Giới tính',
                     style: labelTextFieldStyle,
                   ),
-                  DropdownButton(
-                    hint: const Text('Nam/Nữ'),
-                    items: const [
-                      DropdownMenuItem(
-                        child: Text('Nam'),
-                        value: 1,
+                  DecoratedBox(
+                    decoration: BoxDecoration(
+                      color: Color(ExBookColor.mauChinh3.colorHex),
+                      border: Border.all(
+                          color: Color(ExBookColor.mauChinh2.colorHex),
+                          width: 2),
+                      borderRadius: BorderRadius.circular(4),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 15, right: 15),
+                      child: DropdownButton(
+                        dropdownColor: Color(ExBookColor.mauChinh3.colorHex),
+                        isExpanded: true,
+                        borderRadius: BorderRadius.circular(4),
+                        value: gioiTinh,
+                        items: [
+                          DropdownMenuItem(
+                            enabled: false,
+                            value: 0,
+                            child: Text('Nam/Nữ', style: TextStyle(color: Theme.of(context).hintColor)),
+                          ),
+                          const DropdownMenuItem(
+                            value: 1,
+                            child: Text('Nam'),
+                          ),
+                          const DropdownMenuItem(
+                            value: 2,
+                            child: Text('Nữ'),
+                          ),
+                        ],
+                        onChanged: (int? value) {
+                          log('value: $value');
+                          setState(() {
+                            gioiTinh = value!;
+                          });
+                        },
                       ),
-                      DropdownMenuItem(
-                        child: Text('Nữ'),
-                        value: 2,
-                      ),
-                    ],
-                    onChanged: (int? value) {},
+                    ),
                   ),
                 ],
               ),
