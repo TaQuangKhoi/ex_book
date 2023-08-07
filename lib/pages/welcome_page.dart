@@ -15,11 +15,11 @@ class WelcomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     const String assetName = 'assets/logo.svg';
     final Widget logo =
-    SvgPicture.asset(assetName, semanticsLabel: 'Ex.Book Logo');
+        SvgPicture.asset(assetName, semanticsLabel: 'Ex.Book Logo');
 
     Timer(const Duration(seconds: 2), () {
-      Navigator.push(
-          context, MaterialPageRoute(builder: (context) => const IntroductionPage()));
+      Navigator.push(context,
+          MaterialPageRoute(builder: (context) => const IntroductionPage()));
     });
 
     return Scaffold(
@@ -35,25 +35,24 @@ class WelcomePage extends StatelessWidget {
                   textAlign: TextAlign.center,
                   style: GoogleFonts.mulish(
                       textStyle: TextStyle(
-                        color: Color(ExBookColor.mauChinh1.colorHex),
-                        fontSize: 64,
-                        // fontFamily: 'Mulish',
-                        fontWeight: FontWeight.w700,
-                        // height: 36,
-                      ))),
+                    color: Color(ExBookColor.mauChinh1.colorHex),
+                    fontSize: 64,
+                    // fontFamily: 'Mulish',
+                    fontWeight: FontWeight.w700,
+                    // height: 36,
+                  ))),
               Text('Nơi trao đổi và mua sách cũ',
                   textAlign: TextAlign.center,
                   style: GoogleFonts.mulish(
                       textStyle: TextStyle(
-                        color: Color(ExBookColor.mauTrungTinh1.colorHex),
-                        fontSize: 16,
-                        // fontFamily: 'Mulish',
-                        fontWeight: FontWeight.w500,
-                        // height: 36,
-                      )))
+                    color: Color(ExBookColor.mauTrungTinh1.colorHex),
+                    fontSize: 16,
+                    // fontFamily: 'Mulish',
+                    fontWeight: FontWeight.w500,
+                    // height: 36,
+                  )))
             ],
           ),
         ));
   }
 }
-
