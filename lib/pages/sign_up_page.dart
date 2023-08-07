@@ -10,13 +10,13 @@ class SignUpPage extends StatefulWidget {
 }
 
 class _SignUpPageState extends State<SignUpPage> {
-
   InputDecoration getTextFieldStyle(hintText) {
     return InputDecoration(
       filled: true,
       fillColor: Color(ExBookColor.mauChinh3.colorHex),
       border: const OutlineInputBorder(),
       hintText: hintText,
+      enabledBorder: null,
     );
   }
 
@@ -29,6 +29,10 @@ class _SignUpPageState extends State<SignUpPage> {
       fontWeight: FontWeight.w400,
       letterSpacing: -0.30,
     );
+
+    // return Scaffold(
+    //   body: ,
+    // );
 
     return Scaffold(
       body: Stack(
@@ -203,27 +207,7 @@ class _SignUpPageState extends State<SignUpPage> {
                             ),
                           ),
                         ),
-                        Positioned(
-                          left: 7.91,
-                          top: 22,
-                          child: SizedBox(
-                            width: 323.19,
-                            height: 46,
-                            child: Opacity(
-                              opacity: 0.50,
-                              child: Text(
-                                '*********',
-                                style: TextStyle(
-                                  color: Color(0x7F293731),
-                                  fontSize: 16,
-                                  fontFamily: 'Mulish',
-                                  fontWeight: FontWeight.w400,
-                                  letterSpacing: -0.30,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
+
                         Positioned(
                           left: 0,
                           top: 0,
@@ -255,61 +239,9 @@ class _SignUpPageState extends State<SignUpPage> {
                     height: 68,
                     child: Stack(
                       children: [
-                        Positioned(
-                          left: 0,
-                          top: 20,
-                          child: Container(
-                            width: 339,
-                            height: 48,
-                            decoration: ShapeDecoration(
-                              color: Color(ExBookColor.mauChinh3.colorHex),
-                              shape: RoundedRectangleBorder(
-                                side: BorderSide(
-                                    width: 0.50, color: Color(0xFFC2E4A5)),
-                                borderRadius: BorderRadius.circular(4),
-                              ),
-                            ),
-                          ),
-                        ),
-                        Positioned(
-                          left: 7.91,
-                          top: 22,
-                          child: SizedBox(
-                            width: 323.19,
-                            height: 46,
-                            child: Opacity(
-                              opacity: 0.50,
-                              child: Text(
-                                '********',
-                                style: TextStyle(
-                                  color: Color(0x7F293731),
-                                  fontSize: 16,
-                                  fontFamily: 'Mulish',
-                                  fontWeight: FontWeight.w400,
-                                  letterSpacing: -0.30,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                        Positioned(
-                          left: 0,
-                          top: 0,
-                          child: SizedBox(
-                            width: 323.19,
-                            height: 16,
-                            child: Text(
-                              'Mật khẩu',
-                              style: TextStyle(
-                                color: Color(0xFF293731),
-                                fontSize: 16,
-                                fontFamily: 'Mulish',
-                                fontWeight: FontWeight.w400,
-                                letterSpacing: -0.30,
-                              ),
-                            ),
-                          ),
-                        ),
+
+
+
                       ],
                     ),
                   ),
@@ -479,15 +411,61 @@ class _SignUpPageState extends State<SignUpPage> {
               TextField(
                 decoration: getTextFieldStyle('Name_123'),
               ),
-              Text(
-                'Email / Điện thoại',
-                style: labelTextFieldStyle,
+              Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Email / Điện thoại',
+                    style: labelTextFieldStyle,
+                  ),
+                  TextField(
+                    decoration: getTextFieldStyle('@gmail.com'),
+                  ),
+                ],
               ),
-              TextField(
-                decoration: getTextFieldStyle('@gmail.com'),
+              // Row(
+              //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              //   mainAxisSize: MainAxisSize.min,
+              //   children: [
+              //     Column(
+              //       children: [
+              //         Expanded(
+              //           child: new Padding(
+              //             padding: const EdgeInsets.all(20.0),
+              //             child: Text(
+              //               'Ngày sinh',
+              //               style: labelTextFieldStyle,
+              //             ),
+              //           ),
+              //         ),
+              //         Expanded(
+              //           child: new Padding(
+              //             padding: const EdgeInsets.all(20.0),
+              //             child: TextField(
+              //               decoration: getTextFieldStyle('@gmail.com'),
+              //             ),
+              //           ),
+              //         ),
+              //       ],
+              //     )
+              //   ],
+              // )
+              Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Mật khẩu',
+                    style: labelTextFieldStyle,
+                  ),
+                  TextField(
+                    decoration: getTextFieldStyle('*********'),
+                  ),
+                ],
               ),
             ],
-          )
+          ),
         ],
       ),
     );
