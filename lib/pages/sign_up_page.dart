@@ -136,7 +136,8 @@ class _SignUpPageState extends State<SignUpPage> {
                     style: labelTextFieldStyle,
                   ),
                   DropdownButton(
-                    hint: const Text('Nam/Nữ'), items: const [
+                    hint: const Text('Nam/Nữ'),
+                    items: const [
                       DropdownMenuItem(
                         child: Text('Nam'),
                         value: 1,
@@ -145,8 +146,8 @@ class _SignUpPageState extends State<SignUpPage> {
                         child: Text('Nữ'),
                         value: 2,
                       ),
-                  ], onChanged: (int? value) {  },
-                    
+                    ],
+                    onChanged: (int? value) {},
                   ),
                 ],
               ),
