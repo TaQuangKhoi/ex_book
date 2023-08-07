@@ -14,14 +14,15 @@ class SignUpPage extends StatefulWidget {
 }
 
 class _SignUpPageState extends State<SignUpPage> {
-  late int gioiTinh = 0;
+  int gioiTinh = 0;
+  String birthday = '';
+  late TextEditingController birthdayController;
 
   InputDecoration getTextFieldStyle(String hintText, [Widget? suffixIcon]) {
     OutlineInputBorder border = OutlineInputBorder(
-      borderRadius: BorderRadius.circular(4),
-      borderSide: BorderSide(
-          color: Color(ExBookColor.mauChinh2.colorHex), width: 1.0)
-    );
+        borderRadius: BorderRadius.circular(4),
+        borderSide: BorderSide(
+            color: Color(ExBookColor.mauChinh2.colorHex), width: 1.0));
 
     return InputDecoration(
       filled: true,
@@ -36,26 +37,55 @@ class _SignUpPageState extends State<SignUpPage> {
     );
   }
 
+  late DateTime selectedDate = DateTime.now();
+
+  Future<void> _selectDate(BuildContext context) async {
+    log('select date');
+    final DateTime? picked = await showDatePicker(
+        context: context,
+        initialDate: selectedDate,
+        firstDate: DateTime(2015, 8),
+        lastDate: DateTime(2101));
+    if (picked != null && picked != selectedDate) {
+      setState(() {
+        selectedDate = picked;
+        birthdayController.text = selectedDate.toString().substring(0, 10);
+      });
+    }
+  }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    birthdayController = TextEditingController();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     TextStyle labelTextFieldStyle = GoogleFonts.mulish(
         textStyle: const TextStyle(
-          color: Color(0xFF293731),
-          fontSize: 16,
-          fontWeight: FontWeight.w400,
-          letterSpacing: -0.30,
-        ));
+      color: Color(0xFF293731),
+      fontSize: 16,
+      fontWeight: FontWeight.w400,
+      letterSpacing: -0.30,
+    ));
 
     const String assetPath = 'assets/sign_up_page/';
 
     final Widget fbLogoSvg = SvgPicture.asset('${assetPath}facebook-logo.svg',
         semanticsLabel: 'Facebook Logo');
 
-    final Widget calendarIconSvg = SvgPicture.asset(
-      '${assetPath}calendar-icon.svg',
-      semanticsLabel: 'Calendar Icon',
-      fit: BoxFit.scaleDown,
-    );
+    final Widget calendarIconSvg = IconButton(
+        onPressed: () {
+          log('calendarIconSvg onPressed');
+          _selectDate(context);
+        },
+        icon: SvgPicture.asset(
+          '${assetPath}calendar-icon.svg',
+          semanticsLabel: 'Calendar Icon',
+          fit: BoxFit.scaleDown,
+        ));
 
     final Widget sexIconSvg = SvgPicture.asset(
       '${assetPath}people-sharp-icon.svg',
@@ -78,11 +108,11 @@ class _SignUpPageState extends State<SignUpPage> {
                 'ĐĂNG KÝ TÀI KHOẢN',
                 style: GoogleFonts.mulish(
                     textStyle: const TextStyle(
-                      color: Color(0xFF2A3732),
-                      fontSize: 16,
-                      fontWeight: FontWeight.w700,
-                      letterSpacing: -0.30,
-                    )),
+                  color: Color(0xFF2A3732),
+                  fontSize: 16,
+                  fontWeight: FontWeight.w700,
+                  letterSpacing: -0.30,
+                )),
               ),
               Text(
                 'Bạn hãy nhập thông tin đã đăng ký tài khoản',
@@ -130,6 +160,7 @@ class _SignUpPageState extends State<SignUpPage> {
                     style: labelTextFieldStyle,
                   ),
                   TextField(
+                    controller: birthdayController,
                     decoration: getTextFieldStyle('DD/MM/YY', calendarIconSvg),
                   ),
                 ],
@@ -161,7 +192,9 @@ class _SignUpPageState extends State<SignUpPage> {
                           DropdownMenuItem(
                             enabled: false,
                             value: 0,
-                            child: Text('Nam/Nữ', style: TextStyle(color: Theme.of(context).hintColor)),
+                            child: Text('Nam/Nữ',
+                                style: TextStyle(
+                                    color: Theme.of(context).hintColor)),
                           ),
                           const DropdownMenuItem(
                             value: 1,
@@ -173,7 +206,6 @@ class _SignUpPageState extends State<SignUpPage> {
                           ),
                         ],
                         onChanged: (int? value) {
-                          log('value: $value');
                           setState(() {
                             gioiTinh = value!;
                           });
