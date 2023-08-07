@@ -48,75 +48,6 @@ class _SignUpPageState extends State<SignUpPage> {
             ),
             child: Stack(
               children: [
-
-                Positioned(
-                  left: 193,
-                  top: 380,
-                  child: Container(
-                    width: 164,
-                    height: 68,
-                    child: Stack(
-                      children: [
-                        Positioned(
-                          left: 0,
-                          top: 20,
-                          child: Container(
-                            width: 164,
-                            height: 48,
-                            decoration: ShapeDecoration(
-                              color: Color(ExBookColor.mauChinh3.colorHex),
-                              shape: RoundedRectangleBorder(
-                                side: BorderSide(
-                                    width: 0.50, color: Color(0xFFC2E4A5)),
-                                borderRadius: BorderRadius.circular(4),
-                              ),
-                            ),
-                          ),
-                        ),
-                        Positioned(
-                          left: 3.83,
-                          top: 22,
-                          child: SizedBox(
-                            width: 156.35,
-                            height: 46,
-                            child: Opacity(
-                              opacity: 0.50,
-                              child: Text(
-                                'Nam/Nữ',
-                                style: TextStyle(
-                                  color: Color(0x7F293731),
-                                  fontSize: 16,
-                                  fontFamily: 'Mulish',
-                                  fontWeight: FontWeight.w400,
-                                  letterSpacing: -0.30,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                        Positioned(
-                          left: 0,
-                          top: 0,
-                          child: SizedBox(
-                            width: 156.35,
-                            height: 16,
-                            child: Text(
-                              'Giới tính',
-                              style: TextStyle(
-                                color: Color(0xFF293731),
-                                fontSize: 16,
-                                fontFamily: 'Mulish',
-                                fontWeight: FontWeight.w400,
-                                letterSpacing: -0.30,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-
                 Positioned(
                   left: 16,
                   top: 603,
@@ -305,6 +236,19 @@ class _SignUpPageState extends State<SignUpPage> {
                   ),
                   TextField(
                     decoration: getTextFieldStyle('DD/MM/YY'),
+                  ),
+                ],
+              ),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Giới tính',
+                    style: labelTextFieldStyle,
+                  ),
+                  TextField(
+                    decoration: getTextFieldStyle('Nam/Nữ'),
                   ),
                 ],
               ),
