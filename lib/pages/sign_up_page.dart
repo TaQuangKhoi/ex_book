@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 import '../library/ex_book_colors.dart';
 
@@ -13,7 +14,7 @@ class _SignUpPageState extends State<SignUpPage> {
   InputDecoration getTextFieldStyle(hintText) {
     return InputDecoration(
       filled: true,
-      fillColor: Color(ExBookColor.mauChinh3.colorHex),
+      fillColor: Color(ExBookColor.mauChinh2.colorHex),
       border: const OutlineInputBorder(),
       hintText: hintText,
       focusedBorder: InputBorder.none,
@@ -33,253 +34,142 @@ class _SignUpPageState extends State<SignUpPage> {
       letterSpacing: -0.30,
     );
 
+    const String fbLogoAssetName = 'sign_up_page/facebook-logo.svg';
+    final Widget fbLogoSvg =
+        SvgPicture.asset(fbLogoAssetName, semanticsLabel: 'Acme Logo');
+
     return Scaffold(
-      body: Stack(
+      backgroundColor: Color(ExBookColor.mauChinh3.colorHex),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Container(
-            width: 375,
-            height: 812,
-            clipBehavior: Clip.antiAlias,
-            decoration: ShapeDecoration(
-              color: Color(0xFFF1F9EA),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10),
-              ),
-            ),
-            child: Stack(
+          const Text.rich(
+            TextSpan(
               children: [
-                Positioned(
-                  left: 16,
-                  top: 603,
-                  child: Container(
-                    width: 343,
-                    height: 183,
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Container(
-                          width: 343,
-                          height: 56,
-                          child: Stack(
-                            children: [
-                              Positioned(
-                                left: 0,
-                                top: 0,
-                                child: Container(
-                                  width: 343,
-                                  height: 56,
-                                  decoration: ShapeDecoration(
-                                    color: Color(0xFF064D16),
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(41),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              Positioned(
-                                left: 8,
-                                top: 0,
-                                child: SizedBox(
-                                  width: 327,
-                                  height: 56,
-                                  child: Text(
-                                    'ĐĂNG NHẬP',
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 18,
-                                      fontFamily: 'Mulish',
-                                      fontWeight: FontWeight.w400,
-                                      letterSpacing: -0.30,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        SizedBox(
-                          width: 343,
-                          child: Text(
-                            'Hoặc',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Color(0xFF2A3732),
-                              fontSize: 16,
-                              fontFamily: 'Mulish',
-                              fontWeight: FontWeight.w500,
-                              letterSpacing: -0.30,
-                            ),
-                          ),
-                        ),
-                        Container(
-                          width: 101.70,
-                          height: 44,
-                          child: Stack(
-                            children: [
-                              Positioned(
-                                left: 0,
-                                top: 0,
-                                child: Container(
-                                  width: 43.87,
-                                  height: 44,
-                                  decoration: ShapeDecoration(
-                                    color: Color(0xFF074E16),
-                                    shape: OvalBorder(),
-                                  ),
-                                ),
-                              ),
-                              Positioned(
-                                left: 57.83,
-                                top: 0,
-                                child: Container(
-                                  width: 43.87,
-                                  height: 44,
-                                  decoration: ShapeDecoration(
-                                    color: Color(0xFF074E16),
-                                    shape: OvalBorder(),
-                                  ),
-                                ),
-                              ),
-                              Positioned(
-                                left: 9.97,
-                                top: 10,
-                                child: Container(
-                                  width: 23.93,
-                                  height: 24,
-                                  clipBehavior: Clip.antiAlias,
-                                  decoration: BoxDecoration(),
-                                  child: Stack(children: []),
-                                ),
-                              ),
-                              Positioned(
-                                left: 67.80,
-                                top: 10,
-                                child: Container(
-                                  width: 23.93,
-                                  height: 24,
-                                  clipBehavior: Clip.antiAlias,
-                                  decoration: BoxDecoration(),
-                                  child: Stack(children: []),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
+                TextSpan(
+                  text: 'ĐĂNG KÝ TÀI KHOẢN\n',
+                  style: TextStyle(
+                    color: Color(0xFF2A3732),
+                    fontSize: 16,
+                    fontFamily: 'Mulish',
+                    fontWeight: FontWeight.w700,
+                    letterSpacing: -0.30,
+                  ),
+                ),
+                TextSpan(
+                  text: 'Bạn hãy nhập thông tin đã đăng ký tài khoản',
+                  style: TextStyle(
+                    color: Color(0xFF2A3732),
+                    fontSize: 16,
+                    fontFamily: 'Mulish',
+                    fontWeight: FontWeight.w400,
+                    letterSpacing: -0.30,
                   ),
                 ),
               ],
             ),
+            textAlign: TextAlign.center,
+          ),
+          Text(
+            'Tên tài khoản',
+            style: labelTextFieldStyle,
+          ),
+          TextField(
+            decoration: getTextFieldStyle('Name_123'),
           ),
           Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text.rich(
-                TextSpan(
-                  children: [
-                    TextSpan(
-                      text: 'ĐĂNG KÝ TÀI KHOẢN\n',
-                      style: TextStyle(
-                        color: Color(0xFF2A3732),
-                        fontSize: 16,
-                        fontFamily: 'Mulish',
-                        fontWeight: FontWeight.w700,
-                        letterSpacing: -0.30,
-                      ),
-                    ),
-                    TextSpan(
-                      text: 'Bạn hãy nhập thông tin đã đăng ký tài khoản',
-                      style: TextStyle(
-                        color: Color(0xFF2A3732),
-                        fontSize: 16,
-                        fontFamily: 'Mulish',
-                        fontWeight: FontWeight.w400,
-                        letterSpacing: -0.30,
-                      ),
-                    ),
-                  ],
-                ),
-                textAlign: TextAlign.center,
-              ),
               Text(
-                'Tên tài khoản',
+                'Email / Điện thoại',
                 style: labelTextFieldStyle,
               ),
               TextField(
-                decoration: getTextFieldStyle('Name_123'),
-              ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Email / Điện thoại',
-                    style: labelTextFieldStyle,
-                  ),
-                  TextField(
-                    decoration: getTextFieldStyle('@gmail.com'),
-                  ),
-                ],
-              ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Ngày sinh',
-                    style: labelTextFieldStyle,
-                  ),
-                  TextField(
-                    decoration: getTextFieldStyle('DD/MM/YY'),
-                  ),
-                ],
-              ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Giới tính',
-                    style: labelTextFieldStyle,
-                  ),
-                  TextField(
-                    decoration: getTextFieldStyle('Nam/Nữ'),
-                  ),
-                ],
-              ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Mật khẩu',
-                    style: labelTextFieldStyle,
-                  ),
-                  TextField(
-                    decoration: getTextFieldStyle('*********'),
-                  ),
-                ],
-              ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Nhập lại mật khẩu',
-                    style: labelTextFieldStyle,
-                  ),
-                  TextField(
-                    decoration: getTextFieldStyle('*********'),
-                  ),
-                ],
+                decoration: getTextFieldStyle('@gmail.com'),
               ),
             ],
           ),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'Ngày sinh',
+                style: labelTextFieldStyle,
+              ),
+              TextField(
+                decoration: getTextFieldStyle('DD/MM/YY'),
+              ),
+            ],
+          ),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'Giới tính',
+                style: labelTextFieldStyle,
+              ),
+              TextField(
+                decoration: getTextFieldStyle('Nam/Nữ'),
+              ),
+            ],
+          ),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'Mật khẩu',
+                style: labelTextFieldStyle,
+              ),
+              TextField(
+                decoration: getTextFieldStyle('*********'),
+              ),
+            ],
+          ),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'Nhập lại mật khẩu',
+                style: labelTextFieldStyle,
+              ),
+              TextField(
+                decoration: getTextFieldStyle('*********'),
+              ),
+            ],
+          ),
+          const Center(
+            child: ElevatedButton(
+                onPressed: null,
+                child: Text(
+                  'ĐĂNG NHẬP',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 18,
+                    fontFamily: 'Mulish',
+                    fontWeight: FontWeight.w400,
+                    letterSpacing: -0.30,
+                  ),
+                )),
+          ),
+          const Text(
+            'Hoặc',
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              color: Color(0xFF2A3732),
+              fontSize: 16,
+              fontFamily: 'Mulish',
+              fontWeight: FontWeight.w500,
+              letterSpacing: -0.30,
+            ),
+          ),
+          ElevatedButton(onPressed: null, child: fbLogoSvg),
         ],
       ),
     );
