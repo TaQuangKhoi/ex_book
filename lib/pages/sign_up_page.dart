@@ -87,10 +87,68 @@ class _SignUpPageState extends State<SignUpPage> {
     );
   }
 
+  Widget getDropDown() {
+    return Padding(
+      padding: const EdgeInsets.only(top: 16),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'Giới tính',
+            style: labelTextFieldStyle,
+          ),
+          DecoratedBox(
+            decoration: BoxDecoration(
+              color: Color(ExBookColor.mauChinh3.colorHex),
+              border: Border.all(
+                  color: Color(ExBookColor.mauChinh2.colorHex), width: 2),
+              borderRadius: BorderRadius.circular(4),
+            ),
+            child: Padding(
+              padding: const EdgeInsets.only(left: 15, right: 15),
+              child: DropdownButton(
+                dropdownColor: Color(ExBookColor.mauChinh3.colorHex),
+                isExpanded: true,
+                borderRadius: BorderRadius.circular(4),
+                value: gioiTinh,
+                items: [
+                  DropdownMenuItem(
+                    enabled: false,
+                    value: 0,
+                    child: Text('Nam/Nữ',
+                        style: TextStyle(color: Theme.of(context).hintColor)),
+                  ),
+                  const DropdownMenuItem(
+                    value: 1,
+                    child: Text('Nam'),
+                  ),
+                  const DropdownMenuItem(
+                    value: 2,
+                    child: Text('Nữ'),
+                  ),
+                ],
+                onChanged: (int? value) {
+                  setState(() {
+                    gioiTinh = value!;
+                  });
+                },
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
   @override
   void initState() {
     // TODO: implement initState
     birthdayController = TextEditingController();
+    tenTaiKhoanController = TextEditingController();
+    emailController = TextEditingController();
+    matKhauController = TextEditingController();
+    nhapLaiMatKhauController = TextEditingController();
     super.initState();
   }
 
@@ -155,59 +213,7 @@ class _SignUpPageState extends State<SignUpPage> {
               getInput(
                   'Email / Điện thoại', '@gmail.com', null, emailController),
               getInput('Ngày sinh', 'DD/MM/YY', calendarIconSvg),
-              Padding(
-                padding: const EdgeInsets.only(top: 16),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Giới tính',
-                      style: labelTextFieldStyle,
-                    ),
-                    DecoratedBox(
-                      decoration: BoxDecoration(
-                        color: Color(ExBookColor.mauChinh3.colorHex),
-                        border: Border.all(
-                            color: Color(ExBookColor.mauChinh2.colorHex),
-                            width: 2),
-                        borderRadius: BorderRadius.circular(4),
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.only(left: 15, right: 15),
-                        child: DropdownButton(
-                          dropdownColor: Color(ExBookColor.mauChinh3.colorHex),
-                          isExpanded: true,
-                          borderRadius: BorderRadius.circular(4),
-                          value: gioiTinh,
-                          items: [
-                            DropdownMenuItem(
-                              enabled: false,
-                              value: 0,
-                              child: Text('Nam/Nữ',
-                                  style: TextStyle(
-                                      color: Theme.of(context).hintColor)),
-                            ),
-                            const DropdownMenuItem(
-                              value: 1,
-                              child: Text('Nam'),
-                            ),
-                            const DropdownMenuItem(
-                              value: 2,
-                              child: Text('Nữ'),
-                            ),
-                          ],
-                          onChanged: (int? value) {
-                            setState(() {
-                              gioiTinh = value!;
-                            });
-                          },
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
+              getDropDown(),
               getInput('Mật khẩu', '*********', null, matKhauController),
               getInput('Nhập lại mật khẩu', '*********', null,
                   nhapLaiMatKhauController),
