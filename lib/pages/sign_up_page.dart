@@ -104,37 +104,40 @@ class _SignUpPageState extends State<SignUpPage> {
             decoration: BoxDecoration(
               color: Color(ExBookColor.mauChinh3.colorHex),
               border: Border.all(
-                  color: Color(ExBookColor.mauChinh2.colorHex), width: 2),
+                  color: Color(ExBookColor.mauChinh2.colorHex), width: 1),
               borderRadius: BorderRadius.circular(4),
             ),
             child: Padding(
               padding: const EdgeInsets.only(left: 15, right: 15),
-              child: DropdownButton(
-                dropdownColor: Color(ExBookColor.mauChinh3.colorHex),
-                isExpanded: true,
-                borderRadius: BorderRadius.circular(4),
-                value: gioiTinh,
-                items: [
-                  DropdownMenuItem(
-                    enabled: false,
-                    value: 0,
-                    child: Text('Nam/Nữ',
-                        style: TextStyle(color: Theme.of(context).hintColor)),
-                  ),
-                  const DropdownMenuItem(
-                    value: 1,
-                    child: Text('Nam'),
-                  ),
-                  const DropdownMenuItem(
-                    value: 2,
-                    child: Text('Nữ'),
-                  ),
-                ],
-                onChanged: (int? value) {
-                  setState(() {
-                    gioiTinh = value!;
-                  });
-                },
+              child: SizedBox(
+                height: 64,
+                child: DropdownButton(
+                  dropdownColor: Color(ExBookColor.mauChinh3.colorHex),
+                  isExpanded: true,
+                  borderRadius: BorderRadius.circular(4),
+                  value: gioiTinh,
+                  items: [
+                    DropdownMenuItem(
+                      enabled: false,
+                      value: 0,
+                      child: Text('Nam/Nữ',
+                          style: TextStyle(color: Theme.of(context).hintColor)),
+                    ),
+                    const DropdownMenuItem(
+                      value: 1,
+                      child: Text('Nam'),
+                    ),
+                    const DropdownMenuItem(
+                      value: 2,
+                      child: Text('Nữ'),
+                    ),
+                  ],
+                  onChanged: (int? value) {
+                    setState(() {
+                      gioiTinh = value!;
+                    });
+                  },
+                ),
               ),
             ),
           ),
