@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:ex_book/widgets/ex_book_text_field.dart';
+import 'package:ex_book/widgets/facebook_google_sign_in.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -168,12 +169,6 @@ class _SignUpPageState extends State<SignUpPage> {
   Widget build(BuildContext context) {
     const String assetPath = 'assets/sign_up_page/';
 
-    final Widget fbLogoSvg = SvgPicture.asset('${assetPath}facebook-logo.svg',
-        semanticsLabel: 'Facebook Logo');
-
-    final Widget googleLogoSvg = SvgPicture.asset('${assetPath}google-logo.svg',
-        semanticsLabel: 'Google Logo');
-
     final Widget calendarIconSvg = IconButton(
         onPressed: () {
           log('calendarIconSvg onPressed');
@@ -295,29 +290,7 @@ class _SignUpPageState extends State<SignUpPage> {
                       ),
                     ),
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                            minimumSize: const Size(44, 44),
-                            shape: const CircleBorder(),
-                            backgroundColor:
-                            Color(ExBookColor.mauChinh1.colorHex),
-                          ),
-                          onPressed: () {},
-                          child: fbLogoSvg),
-                      ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                            minimumSize: const Size(44, 44),
-                            shape: const CircleBorder(),
-                            backgroundColor:
-                            Color(ExBookColor.mauChinh1.colorHex),
-                          ),
-                          onPressed: () {},
-                          child: googleLogoSvg),
-                    ],
-                  )
+                  const FacebookGoogleSignIn()
                 ],
               ),
             ],
