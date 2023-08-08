@@ -183,67 +183,86 @@ class _SignUpPageState extends State<SignUpPage> {
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(18.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.center,
+          child: ListView(
             children: [
-              Text(
-                'ĐĂNG KÝ TÀI KHOẢN',
-                style: GoogleFonts.mulish(
-                    textStyle: const TextStyle(
-                  color: Color(0xFF2A3732),
-                  fontSize: 16,
-                  fontWeight: FontWeight.w700,
-                  letterSpacing: -0.30,
-                )),
-              ),
-              Text(
-                'Bạn hãy nhập thông tin đã đăng ký tài khoản',
-                style: GoogleFonts.mulish(
-                  textStyle: const TextStyle(
-                    color: Color(0xFF2A3732),
-                    fontSize: 16,
-                    fontWeight: FontWeight.w400,
-                    // letterSpacing: -0.30,
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Text(
+                    'ĐĂNG KÝ TÀI KHOẢN',
+                    style: GoogleFonts.mulish(
+                        textStyle: const TextStyle(
+                      color: Color(0xFF2A3732),
+                      fontSize: 16,
+                      fontWeight: FontWeight.w700,
+                      letterSpacing: -0.30,
+                    )),
                   ),
-                ),
-              ),
-              getInputUI(
-                  'Tên tài khoản', 'Name_123', null, tenTaiKhoanController),
-              getInputUI(
-                  'Email / Điện thoại', '@gmail.com', null, emailController),
-              getInputUI('Ngày sinh', 'DD/MM/YY', calendarIconSvg),
-              getDropDownUI(),
-              getInputUI('Mật khẩu', '*********', null, matKhauController),
-              getInputUI('Nhập lại mật khẩu', '*********', null,
-                  nhapLaiMatKhauController),
-              const Center(
-                child: ElevatedButton(
-                    onPressed: null,
-                    child: Text(
-                      'ĐĂNG NHẬP',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 18,
-                        fontFamily: 'Mulish',
+                  Text(
+                    'Bạn hãy nhập thông tin đã đăng ký tài khoản',
+                    style: GoogleFonts.mulish(
+                      textStyle: const TextStyle(
+                        color: Color(0xFF2A3732),
+                        fontSize: 16,
                         fontWeight: FontWeight.w400,
                         letterSpacing: -0.30,
                       ),
-                    )),
+                    ),
+                  ),
+                  getInputUI(
+                      'Tên tài khoản', 'Name_123', null, tenTaiKhoanController),
+                  getInputUI('Email / Điện thoại', '@gmail.com', null,
+                      emailController),
+                  getInputUI('Ngày sinh', 'DD/MM/YY', calendarIconSvg),
+                  getDropDownUI(),
+                  getInputUI('Mật khẩu', '*********', null, matKhauController),
+                  getInputUI('Nhập lại mật khẩu', '*********', null,
+                      nhapLaiMatKhauController),
+                  SizedBox(
+                    width: double.infinity,
+                    height: 56,
+                    child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor:
+                              Color(ExBookColor.mauChinh1.colorHex),
+                        ),
+                        onPressed: () {},
+                        child: Text(
+                          'ĐĂNG NHẬP',
+                          textAlign: TextAlign.center,
+                          style: GoogleFonts.mulish(
+                            textStyle: const TextStyle(
+                              color: Colors.white,
+                              fontSize: 18,
+                              fontWeight: FontWeight.w400,
+                              letterSpacing: -0.30,
+                            ),
+                          ),
+                        )),
+                  ),
+                  Text(
+                    'Hoặc',
+                    textAlign: TextAlign.center,
+                    style: GoogleFonts.mulish(
+                      textStyle: TextStyle(
+                        color: Color(ExBookColor.mauTrungTinh1.colorHex),
+                        fontSize: 16,
+                        fontWeight: FontWeight.w500,
+                        letterSpacing: -0.30,
+                      ),
+                    ),
+                  ),
+                  ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        shape: const CircleBorder(),
+                        backgroundColor: Color(ExBookColor.mauChinh1.colorHex),
+                      ),
+                      onPressed: () {},
+                      child: fbLogoSvg),
+                ],
               ),
-              const Text(
-                'Hoặc',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  color: Color(0xFF2A3732),
-                  fontSize: 16,
-                  fontFamily: 'Mulish',
-                  fontWeight: FontWeight.w500,
-                  letterSpacing: -0.30,
-                ),
-              ),
-              ElevatedButton(onPressed: null, child: fbLogoSvg),
             ],
           ),
         ),
