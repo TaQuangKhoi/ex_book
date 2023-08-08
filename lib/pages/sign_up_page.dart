@@ -26,11 +26,11 @@ class _SignUpPageState extends State<SignUpPage> {
 
   TextStyle labelTextFieldStyle = GoogleFonts.mulish(
       textStyle: const TextStyle(
-        color: Color(0xFF293731),
-        fontSize: 16,
-        fontWeight: FontWeight.w400,
-        letterSpacing: -0.30,
-      ));
+    color: Color(0xFF293731),
+    fontSize: 16,
+    fontWeight: FontWeight.w400,
+    letterSpacing: -0.30,
+  ));
 
   InputDecoration getTextFieldStyle(String hintText, [Widget? suffixIcon]) {
     OutlineInputBorder border = OutlineInputBorder(
@@ -72,8 +72,8 @@ class _SignUpPageState extends State<SignUpPage> {
 
   Widget getInputUI(String text, String textFieldText,
       [Widget? suffixIcon,
-        TextEditingController? controller,
-        bool? isPassword]) {
+      TextEditingController? controller,
+      bool? isPassword]) {
     return Padding(
       padding: const EdgeInsets.only(top: 16),
       child: Column(
@@ -127,9 +127,7 @@ class _SignUpPageState extends State<SignUpPage> {
                       enabled: false,
                       value: 0,
                       child: Text('Nam/Nữ',
-                          style: TextStyle(color: Theme
-                              .of(context)
-                              .hintColor)),
+                          style: TextStyle(color: Theme.of(context).hintColor)),
                     ),
                     const DropdownMenuItem(
                       value: 1,
@@ -180,16 +178,6 @@ class _SignUpPageState extends State<SignUpPage> {
           fit: BoxFit.scaleDown,
         ));
 
-    final Widget eyeIconSvg = IconButton(
-        onPressed: () {
-          log('eyeIconSvg onPressed');
-        },
-        icon: SvgPicture.asset(
-          '${assetPath}eye-icon.svg',
-          semanticsLabel: 'Show Password Icon',
-          fit: BoxFit.scaleDown,
-        ));
-
     final Widget sexIconSvg = SvgPicture.asset(
       '${assetPath}people-sharp-icon.svg',
       semanticsLabel: 'Calendar Icon',
@@ -203,96 +191,108 @@ class _SignUpPageState extends State<SignUpPage> {
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(18.0),
-          child: ListView(
+          child: Stack(
             children: [
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisSize: MainAxisSize.max,
+              ListView(
                 children: [
-                  Text(
-                    'ĐĂNG KÝ TÀI KHOẢN',
-                    style: GoogleFonts.mulish(
-                        textStyle: const TextStyle(
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Text(
+                        'ĐĂNG KÝ TÀI KHOẢN',
+                        style: GoogleFonts.mulish(
+                            textStyle: const TextStyle(
                           color: Color(0xFF2A3732),
                           fontSize: 16,
                           fontWeight: FontWeight.w700,
                           letterSpacing: -0.30,
                         )),
-                  ),
-                  Text(
-                    'Bạn hãy nhập thông tin để đăng ký tài khoản',
-                    style: GoogleFonts.mulish(
-                      textStyle: const TextStyle(
-                        color: Color(0xFF2A3732),
-                        fontSize: 16,
-                        fontWeight: FontWeight.w400,
-                        letterSpacing: -0.30,
                       ),
-                    ),
-                  ),
-                  getInputUI(
-                      'Tên tài khoản', 'Name_123', null, tenTaiKhoanController),
-                  getInputUI('Email / Điện thoại', '@gmail.com', null,
-                      emailController),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Expanded(
-                          flex: 1,
-                          child: getInputUI('Ngày sinh', 'DD/MM/YY',
-                              calendarIconSvg, birthdayController)),
-                      const SizedBox(width: 10.0),
-                      Expanded(flex: 1, child: getDropDownUI()),
+                      Text(
+                        'Bạn hãy nhập thông tin để đăng ký tài khoản',
+                        style: GoogleFonts.mulish(
+                          textStyle: const TextStyle(
+                            color: Color(0xFF2A3732),
+                            fontSize: 16,
+                            fontWeight: FontWeight.w400,
+                            letterSpacing: -0.30,
+                          ),
+                        ),
+                      ),
+                      getInputUI('Tên tài khoản', 'Name_123', null,
+                          tenTaiKhoanController),
+                      getInputUI('Email / Điện thoại', '@gmail.com', null,
+                          emailController),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Expanded(
+                              flex: 1,
+                              child: getInputUI('Ngày sinh', 'DD/MM/YY',
+                                  calendarIconSvg, birthdayController)),
+                          const SizedBox(width: 10.0),
+                          Expanded(flex: 1, child: getDropDownUI()),
+                        ],
+                      ),
+                      ExBookTextField(
+                          text: 'Mật khẩu',
+                          textFieldText: '*********',
+                          controller: matKhauController,
+                          isPassword: true),
+                      ExBookTextField(
+                          text: 'Nhập lại mật khẩu',
+                          textFieldText: '*********',
+                          controller: nhapLaiMatKhauController,
+                          isPassword: true),
                     ],
                   ),
-                  ExBookTextField(
-                      text: 'Mật khẩu',
-                      textFieldText: '*********',
-                      controller: matKhauController,
-                      isPassword: true),
-                  ExBookTextField(
-                    text: 'Nhập lại mật khẩu',
-                    textFieldText: '*********',
-                    controller: nhapLaiMatKhauController,
-                    isPassword: true),
-                  SizedBox(
-                    width: double.infinity,
-                    height: 56,
-                    child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor:
-                          Color(ExBookColor.mauChinh1.colorHex),
-                        ),
-                        onPressed: () {},
-                        child: Text(
-                          'ĐĂNG KÝ',
-                          textAlign: TextAlign.center,
-                          style: GoogleFonts.mulish(
-                            textStyle: const TextStyle(
-                              color: Colors.white,
-                              fontSize: 18,
-                              fontWeight: FontWeight.w400,
-                              letterSpacing: -0.30,
-                            ),
-                          ),
-                        )),
-                  ),
-                  Text(
-                    'Hoặc',
-                    textAlign: TextAlign.center,
-                    style: GoogleFonts.mulish(
-                      textStyle: TextStyle(
-                        color: Color(ExBookColor.mauTrungTinh1.colorHex),
-                        fontSize: 16,
-                        fontWeight: FontWeight.w500,
-                        letterSpacing: -0.30,
-                      ),
-                    ),
-                  ),
-                  const FacebookGoogleSignIn()
                 ],
               ),
+              Positioned(
+                  bottom: 0,
+                  left: 0,
+                  child: Column(
+                    children: [
+                      SizedBox(
+                        // width: double.infinity,
+                        height: 56,
+                        child: ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor:
+                              Color(ExBookColor.mauChinh1.colorHex),
+                            ),
+                            onPressed: () {},
+                            child: Text(
+                              'ĐĂNG KÝ',
+                              textAlign: TextAlign.center,
+                              style: GoogleFonts.mulish(
+                                textStyle: const TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.w400,
+                                  letterSpacing: -0.30,
+                                ),
+                              ),
+                            )),
+                      ),
+                      Text(
+                        'Hoặc',
+                        textAlign: TextAlign.center,
+                        style: GoogleFonts.mulish(
+                          textStyle: TextStyle(
+                            color:
+                            Color(ExBookColor.mauTrungTinh1.colorHex),
+                            fontSize: 16,
+                            fontWeight: FontWeight.w500,
+                            letterSpacing: -0.30,
+                          ),
+                        ),
+                      ),
+                      const FacebookGoogleSignIn()
+                    ],
+                  ))
             ],
           ),
         ),
