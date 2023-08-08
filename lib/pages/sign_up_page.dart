@@ -1,5 +1,6 @@
 import 'dart:developer';
 
+import 'package:ex_book/widgets/ExBookTextField.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -24,11 +25,11 @@ class _SignUpPageState extends State<SignUpPage> {
 
   TextStyle labelTextFieldStyle = GoogleFonts.mulish(
       textStyle: const TextStyle(
-    color: Color(0xFF293731),
-    fontSize: 16,
-    fontWeight: FontWeight.w400,
-    letterSpacing: -0.30,
-  ));
+        color: Color(0xFF293731),
+        fontSize: 16,
+        fontWeight: FontWeight.w400,
+        letterSpacing: -0.30,
+      ));
 
   InputDecoration getTextFieldStyle(String hintText, [Widget? suffixIcon]) {
     OutlineInputBorder border = OutlineInputBorder(
@@ -70,8 +71,8 @@ class _SignUpPageState extends State<SignUpPage> {
 
   Widget getInputUI(String text, String textFieldText,
       [Widget? suffixIcon,
-      TextEditingController? controller,
-      bool? isPassword]) {
+        TextEditingController? controller,
+        bool? isPassword]) {
     return Padding(
       padding: const EdgeInsets.only(top: 16),
       child: Column(
@@ -125,7 +126,9 @@ class _SignUpPageState extends State<SignUpPage> {
                       enabled: false,
                       value: 0,
                       child: Text('Nam/Nữ',
-                          style: TextStyle(color: Theme.of(context).hintColor)),
+                          style: TextStyle(color: Theme
+                              .of(context)
+                              .hintColor)),
                     ),
                     const DropdownMenuItem(
                       value: 1,
@@ -216,11 +219,11 @@ class _SignUpPageState extends State<SignUpPage> {
                     'ĐĂNG KÝ TÀI KHOẢN',
                     style: GoogleFonts.mulish(
                         textStyle: const TextStyle(
-                      color: Color(0xFF2A3732),
-                      fontSize: 16,
-                      fontWeight: FontWeight.w700,
-                      letterSpacing: -0.30,
-                    )),
+                          color: Color(0xFF2A3732),
+                          fontSize: 16,
+                          fontWeight: FontWeight.w700,
+                          letterSpacing: -0.30,
+                        )),
                   ),
                   Text(
                     'Bạn hãy nhập thông tin để đăng ký tài khoản',
@@ -249,16 +252,23 @@ class _SignUpPageState extends State<SignUpPage> {
                     ],
                   ),
                   getInputUI(
-                      'Mật khẩu', '*********', eyeIconSvg, matKhauController, true),
-                  getInputUI('Nhập lại mật khẩu', '*********', eyeIconSvg,
-                      nhapLaiMatKhauController, true),
+                      'Mật khẩu', '*********', eyeIconSvg, matKhauController,
+                      true),
+                  // getInputUI('Nhập lại mật khẩu', '*********', eyeIconSvg,
+                  //     nhapLaiMatKhauController, true),
+                  ExBookTextField(
+                    text: 'Nhập lại mật khẩu',
+                    textFieldText: '*********',
+                    controller: nhapLaiMatKhauController,
+                    suffixIcon: eyeIconSvg,
+                    isPassword: true),
                   SizedBox(
                     width: double.infinity,
                     height: 56,
                     child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
                           backgroundColor:
-                              Color(ExBookColor.mauChinh1.colorHex),
+                          Color(ExBookColor.mauChinh1.colorHex),
                         ),
                         onPressed: () {},
                         child: Text(
@@ -294,7 +304,7 @@ class _SignUpPageState extends State<SignUpPage> {
                             minimumSize: const Size(44, 44),
                             shape: const CircleBorder(),
                             backgroundColor:
-                                Color(ExBookColor.mauChinh1.colorHex),
+                            Color(ExBookColor.mauChinh1.colorHex),
                           ),
                           onPressed: () {},
                           child: fbLogoSvg),
@@ -303,7 +313,7 @@ class _SignUpPageState extends State<SignUpPage> {
                             minimumSize: const Size(44, 44),
                             shape: const CircleBorder(),
                             backgroundColor:
-                                Color(ExBookColor.mauChinh1.colorHex),
+                            Color(ExBookColor.mauChinh1.colorHex),
                           ),
                           onPressed: () {},
                           child: googleLogoSvg),
