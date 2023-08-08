@@ -177,7 +177,7 @@ class _SignUpPageState extends State<SignUpPage> {
     final Widget calendarIconSvg = IconButton(
         onPressed: () {
           log('calendarIconSvg onPressed');
-          _selectDate(context);
+          // _selectDate(context);
         },
         icon: SvgPicture.asset(
           '${assetPath}calendar-icon.svg',
@@ -251,16 +251,15 @@ class _SignUpPageState extends State<SignUpPage> {
                       Expanded(flex: 1, child: getDropDownUI()),
                     ],
                   ),
-                  getInputUI(
-                      'Mật khẩu', '*********', eyeIconSvg, matKhauController,
-                      true),
-                  // getInputUI('Nhập lại mật khẩu', '*********', eyeIconSvg,
-                  //     nhapLaiMatKhauController, true),
+                  ExBookTextField(
+                      text: 'Mật khẩu',
+                      textFieldText: '*********',
+                      controller: matKhauController,
+                      isPassword: true),
                   ExBookTextField(
                     text: 'Nhập lại mật khẩu',
                     textFieldText: '*********',
                     controller: nhapLaiMatKhauController,
-                    suffixIcon: eyeIconSvg,
                     isPassword: true),
                   SizedBox(
                     width: double.infinity,

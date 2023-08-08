@@ -1,7 +1,11 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../library/ex_book_colors.dart';
+import 'eye_icon.dart';
 
 class ExBookTextField extends StatefulWidget {
   final String text;
@@ -23,6 +27,9 @@ class ExBookTextField extends StatefulWidget {
 }
 
 class _ExBookTextFieldState extends State<ExBookTextField> {
+  bool showPassword = false;
+  final String assetPath = 'assets/sign_up_page/';
+
   TextStyle labelTextFieldStyle = GoogleFonts.mulish(
       textStyle: const TextStyle(
     color: Color(0xFF293731),
@@ -50,8 +57,26 @@ class _ExBookTextFieldState extends State<ExBookTextField> {
     );
   }
 
+  void showHidePassword() {
+    setState(() {
+      if (showPassword == true) {
+        showPassword = false;
+      } else {
+        showPassword = true;
+      }
+    });
+  }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    showPassword = widget.isPassword!;
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
+
     return Padding(
       padding: const EdgeInsets.only(top: 16),
       child: Column(
@@ -64,12 +89,15 @@ class _ExBookTextFieldState extends State<ExBookTextField> {
           ),
           TextField(
             controller: widget.controller,
-            obscureText: widget.isPassword ?? false,
-            decoration:
-                getTextFieldStyle(widget.textFieldText, widget.suffixIcon),
+            obscureText: showPassword,
+            decoration: widget.isPassword == true
+                ? getTextFieldStyle(widget.textFieldText, EyeIcon(showHidePassword: showHidePassword))
+                : getTextFieldStyle(widget.textFieldText, widget.suffixIcon),
           ),
         ],
       ),
     );
   }
 }
+
+
