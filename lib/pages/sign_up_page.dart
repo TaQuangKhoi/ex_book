@@ -69,7 +69,9 @@ class _SignUpPageState extends State<SignUpPage> {
   }
 
   Widget getInputUI(String text, String textFieldText,
-      [Widget? suffixIcon, TextEditingController? controller]) {
+      [Widget? suffixIcon,
+      TextEditingController? controller,
+      bool? isPassword]) {
     return Padding(
       padding: const EdgeInsets.only(top: 16),
       child: Column(
@@ -82,6 +84,7 @@ class _SignUpPageState extends State<SignUpPage> {
           ),
           TextField(
             controller: controller,
+            obscureText: isPassword ?? false,
             decoration: getTextFieldStyle(textFieldText, suffixIcon),
           ),
         ],
@@ -235,9 +238,10 @@ class _SignUpPageState extends State<SignUpPage> {
                       Expanded(flex: 1, child: getDropDownUI()),
                     ],
                   ),
-                  getInputUI('Mật khẩu', '*********', null, matKhauController),
+                  getInputUI(
+                      'Mật khẩu', '*********', null, matKhauController, true),
                   getInputUI('Nhập lại mật khẩu', '*********', null,
-                      nhapLaiMatKhauController),
+                      nhapLaiMatKhauController, true),
                   SizedBox(
                     width: double.infinity,
                     height: 56,
