@@ -5,6 +5,7 @@ import 'package:flutter_svg/svg.dart';
 
 class EyeIcon extends StatefulWidget {
   final Function showHidePassword;
+
   const EyeIcon({super.key, required this.showHidePassword});
 
   @override

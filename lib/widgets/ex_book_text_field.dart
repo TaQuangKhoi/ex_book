@@ -76,7 +76,6 @@ class _ExBookTextFieldState extends State<ExBookTextField> {
 
   @override
   Widget build(BuildContext context) {
-
     return Padding(
       padding: const EdgeInsets.only(top: 16),
       child: Column(
@@ -91,7 +90,8 @@ class _ExBookTextFieldState extends State<ExBookTextField> {
             controller: widget.controller,
             obscureText: showPassword,
             decoration: widget.isPassword == true
-                ? getTextFieldStyle(widget.textFieldText, EyeIcon(showHidePassword: showHidePassword))
+                ? getTextFieldStyle(widget.textFieldText,
+                    EyeIcon(showHidePassword: showHidePassword))
                 : getTextFieldStyle(widget.textFieldText, widget.suffixIcon),
           ),
         ],
@@ -99,5 +99,3 @@ class _ExBookTextFieldState extends State<ExBookTextField> {
     );
   }
 }
-
-
