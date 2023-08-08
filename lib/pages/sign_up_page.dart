@@ -159,6 +159,9 @@ class _SignUpPageState extends State<SignUpPage> {
     final Widget fbLogoSvg = SvgPicture.asset('${assetPath}facebook-logo.svg',
         semanticsLabel: 'Facebook Logo');
 
+    final Widget googleLogoSvg = SvgPicture.asset('${assetPath}google-logo.svg',
+        semanticsLabel: 'Google Logo');
+
     final Widget calendarIconSvg = IconButton(
         onPressed: () {
           log('calendarIconSvg onPressed');
@@ -254,20 +257,25 @@ class _SignUpPageState extends State<SignUpPage> {
                       ),
                     ),
                   ),
-                  ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        shape: const CircleBorder(),
-                        backgroundColor: Color(ExBookColor.mauChinh1.colorHex),
-                      ),
-                      onPressed: () {},
-                      child: fbLogoSvg),
-                  ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        shape: const CircleBorder(),
-                        backgroundColor: Color(ExBookColor.mauChinh1.colorHex),
-                      ),
-                      onPressed: () {},
-                      child: fbLogoSvg),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            shape: const CircleBorder(),
+                            backgroundColor: Color(ExBookColor.mauChinh1.colorHex),
+                          ),
+                          onPressed: () {},
+                          child: fbLogoSvg),
+                      ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            shape: const CircleBorder(),
+                            backgroundColor: Color(ExBookColor.mauChinh1.colorHex),
+                          ),
+                          onPressed: () {},
+                          child: googleLogoSvg),
+                    ],
+                  )
                 ],
               ),
             ],
