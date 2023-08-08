@@ -109,8 +109,9 @@ class _SignUpPageState extends State<SignUpPage> {
             ),
             child: Padding(
               padding: const EdgeInsets.only(left: 15, right: 15),
-              child: SizedBox(
+              child: Container(
                 height: 64,
+                alignment: Alignment.center,
                 child: DropdownButton(
                   dropdownColor: Color(ExBookColor.mauChinh3.colorHex),
                   isExpanded: true,
