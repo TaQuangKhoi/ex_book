@@ -262,15 +262,19 @@ class _SignUpPageState extends State<SignUpPage> {
                     children: [
                       ElevatedButton(
                           style: ElevatedButton.styleFrom(
+                            minimumSize: const Size(44, 44),
                             shape: const CircleBorder(),
-                            backgroundColor: Color(ExBookColor.mauChinh1.colorHex),
+                            backgroundColor:
+                                Color(ExBookColor.mauChinh1.colorHex),
                           ),
                           onPressed: () {},
                           child: fbLogoSvg),
                       ElevatedButton(
                           style: ElevatedButton.styleFrom(
+                            minimumSize: const Size(44, 44),
                             shape: const CircleBorder(),
-                            backgroundColor: Color(ExBookColor.mauChinh1.colorHex),
+                            backgroundColor:
+                                Color(ExBookColor.mauChinh1.colorHex),
                           ),
                           onPressed: () {},
                           child: googleLogoSvg),
