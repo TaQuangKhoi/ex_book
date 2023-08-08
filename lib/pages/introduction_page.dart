@@ -24,7 +24,6 @@ class _IntroductionPageState extends State<IntroductionPage> {
   }
 
   Widget getBackground() {
-    log("getBackground-$circleIndex");
     switch (circleIndex) {
       case 1:
         return const IntroBackground1();
