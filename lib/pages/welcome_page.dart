@@ -1,5 +1,6 @@
 import 'dart:developer';
 
+import 'package:ex_book/pages/navigation_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -17,9 +18,16 @@ class WelcomePage extends StatelessWidget {
     final Widget logo =
         SvgPicture.asset(assetName, semanticsLabel: 'Ex.Book Logo');
 
+    bool isLogin = true;
+
     Timer(const Duration(seconds: 2), () {
-      Navigator.push(context,
-          MaterialPageRoute(builder: (context) => const IntroductionPage()));
+      if (isLogin) {
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => const NavigationPage()));
+      } else {
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => const IntroductionPage()));
+      }
     });
 
     return Scaffold(
