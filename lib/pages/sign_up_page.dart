@@ -220,8 +220,17 @@ class _SignUpPageState extends State<SignUpPage> {
                       'Tên tài khoản', 'Name_123', null, tenTaiKhoanController),
                   getInputUI('Email / Điện thoại', '@gmail.com', null,
                       emailController),
-                  getInputUI('Ngày sinh', 'DD/MM/YY', calendarIconSvg, birthdayController),
-                  getDropDownUI(),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Expanded(
+                          flex: 1,
+                          child: getInputUI('Ngày sinh', 'DD/MM/YY',
+                              calendarIconSvg, birthdayController)),
+                      const SizedBox(width: 10.0),
+                      Expanded(flex: 1, child: getDropDownUI()),
+                    ],
+                  ),
                   getInputUI('Mật khẩu', '*********', null, matKhauController),
                   getInputUI('Nhập lại mật khẩu', '*********', null,
                       nhapLaiMatKhauController),
