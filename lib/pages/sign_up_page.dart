@@ -182,6 +182,16 @@ class _SignUpPageState extends State<SignUpPage> {
           fit: BoxFit.scaleDown,
         ));
 
+    final Widget eyeIconSvg = IconButton(
+        onPressed: () {
+          log('eyeIconSvg onPressed');
+        },
+        icon: SvgPicture.asset(
+          '${assetPath}eye-icon.svg',
+          semanticsLabel: 'Show Password Icon',
+          fit: BoxFit.scaleDown,
+        ));
+
     final Widget sexIconSvg = SvgPicture.asset(
       '${assetPath}people-sharp-icon.svg',
       semanticsLabel: 'Calendar Icon',
@@ -239,8 +249,8 @@ class _SignUpPageState extends State<SignUpPage> {
                     ],
                   ),
                   getInputUI(
-                      'Mật khẩu', '*********', null, matKhauController, true),
-                  getInputUI('Nhập lại mật khẩu', '*********', null,
+                      'Mật khẩu', '*********', eyeIconSvg, matKhauController, true),
+                  getInputUI('Nhập lại mật khẩu', '*********', eyeIconSvg,
                       nhapLaiMatKhauController, true),
                   SizedBox(
                     width: double.infinity,
