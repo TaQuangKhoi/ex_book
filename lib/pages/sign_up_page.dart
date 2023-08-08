@@ -261,6 +261,13 @@ class _SignUpPageState extends State<SignUpPage> {
                       ),
                       onPressed: () {},
                       child: fbLogoSvg),
+                  ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        shape: const CircleBorder(),
+                        backgroundColor: Color(ExBookColor.mauChinh1.colorHex),
+                      ),
+                      onPressed: () {},
+                      child: fbLogoSvg),
                 ],
               ),
             ],
