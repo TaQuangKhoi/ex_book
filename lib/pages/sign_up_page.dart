@@ -253,10 +253,11 @@ class _SignUpPageState extends State<SignUpPage> {
               Positioned(
                   bottom: 0,
                   left: 0,
+                  right: 0,
                   child: Column(
                     children: [
                       SizedBox(
-                        // width: double.infinity,
+                        width: double.infinity,
                         height: 56,
                         child: ElevatedButton(
                             style: ElevatedButton.styleFrom(
