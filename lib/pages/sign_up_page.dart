@@ -113,7 +113,7 @@ class _SignUpPageState extends State<SignUpPage> {
             child: Padding(
               padding: const EdgeInsets.only(left: 15, right: 15),
               child: Container(
-                height: 64,
+                // height: 64,
                 alignment: Alignment.center,
                 child: DropdownButton(
                   dropdownColor: Color(ExBookColor.mauChinh3.colorHex),
@@ -223,7 +223,7 @@ class _SignUpPageState extends State<SignUpPage> {
                     )),
                   ),
                   Text(
-                    'Bạn hãy nhập thông tin đã đăng ký tài khoản',
+                    'Bạn hãy nhập thông tin để đăng ký tài khoản',
                     style: GoogleFonts.mulish(
                       textStyle: const TextStyle(
                         color: Color(0xFF2A3732),
@@ -262,7 +262,7 @@ class _SignUpPageState extends State<SignUpPage> {
                         ),
                         onPressed: () {},
                         child: Text(
-                          'ĐĂNG NHẬP',
+                          'ĐĂNG KÝ',
                           textAlign: TextAlign.center,
                           style: GoogleFonts.mulish(
                             textStyle: const TextStyle(
