@@ -61,7 +61,9 @@ class _SignUpPageState extends State<SignUpPage> {
     if (picked != null && picked != selectedDate) {
       setState(() {
         selectedDate = picked;
-        birthdayController.text = selectedDate.toString().substring(0, 10);
+        String date = selectedDate.toString().substring(0, 10);
+        log('date: $date');
+        birthdayController.text = date;
       });
     }
   }
@@ -218,7 +220,7 @@ class _SignUpPageState extends State<SignUpPage> {
                       'Tên tài khoản', 'Name_123', null, tenTaiKhoanController),
                   getInputUI('Email / Điện thoại', '@gmail.com', null,
                       emailController),
-                  getInputUI('Ngày sinh', 'DD/MM/YY', calendarIconSvg),
+                  getInputUI('Ngày sinh', 'DD/MM/YY', calendarIconSvg, birthdayController),
                   getDropDownUI(),
                   getInputUI('Mật khẩu', '*********', null, matKhauController),
                   getInputUI('Nhập lại mật khẩu', '*********', null,
