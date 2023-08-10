@@ -66,6 +66,7 @@ flutter:
     - assets/
     - assets/translations/
     - assets/introduction_page/
+    - assets/navigation_page/
     - assets/sign_up_page/
     - assets/introduction_page/background1/
     - assets/introduction_page/background2/

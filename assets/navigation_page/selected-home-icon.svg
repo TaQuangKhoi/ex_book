@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="34"
+   height="31"
+   viewBox="0 0 34 31"
+   fill="none"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="home-icon - Copy.svg"
+   inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="26.225806"
+     inkscape:cx="16.987085"
+     inkscape:cy="15.5"
+     inkscape:window-width="1920"
+     inkscape:window-height="1009"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg1" />
+  <path
+     id="Vector"
+     d="M16.7852 18.8176C15.2366 18.8176 13.68 18.8176 12.1315 18.8176C12.1315 22.4284 12.1315 26.0392 12.1315 29.6426C8.41829 29.6426 4.7132 29.6426 1 29.6426V11.0423L16.7852 1L33 10.3482V29.6426H21.8685C21.8685 26.0392 21.8685 22.4358 21.8685 18.8324C20.1741 18.825 18.4796 18.825 16.7852 18.8176Z"
+     stroke="#074E16"
+     stroke-width="1.5"
+     stroke-miterlimit="10"
+     style="stroke:#ff772b;stroke-opacity:1" />
+</svg>
