@@ -60,28 +60,34 @@ class _NavigationPageState extends State<NavigationPage> {
           ),
         ],
       ),
-      body: <Widget>[
-        Container(
-          color: Colors.red,
-          alignment: Alignment.center,
-          child: const Text('Page 1'),
-        ),
-        Container(
-          color: Colors.green,
-          alignment: Alignment.center,
-          child: const Text('Page 2'),
-        ),
-        Container(
-          color: Colors.blue,
-          alignment: Alignment.center,
-          child: const Text('Page 3'),
-        ),
-        Container(
-          color: Colors.indigo,
-          alignment: Alignment.center,
-          child: const Text('Page 4'),
-        ),
-      ][currentPageIndex],
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text("Test"),
+          <Widget>[
+            Container(
+              color: Colors.red,
+              alignment: Alignment.center,
+              child: const Text('Page 1'),
+            ),
+            Container(
+              color: Colors.green,
+              alignment: Alignment.center,
+              child: const Text('Page 2'),
+            ),
+            Container(
+              color: Colors.blue,
+              alignment: Alignment.center,
+              child: const Text('Page 3'),
+            ),
+            Container(
+              color: Colors.indigo,
+              alignment: Alignment.center,
+              child: const Text('Page 4'),
+            ),
+          ][currentPageIndex]
+        ],
+      ),
     );
   }
 }
