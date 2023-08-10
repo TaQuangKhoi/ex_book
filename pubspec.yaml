@@ -71,6 +71,7 @@ flutter:
     - assets/introduction_page/background1/
     - assets/introduction_page/background2/
     - assets/introduction_page/background3/
+    - assets/search_bar/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
