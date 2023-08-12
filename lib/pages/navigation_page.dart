@@ -1,4 +1,8 @@
 import 'package:ex_book/library/ex_book_colors.dart';
+import 'package:ex_book/pages/buy_book_page.dart';
+import 'package:ex_book/pages/home_page.dart';
+import 'package:ex_book/pages/personal_page.dart';
+import 'package:ex_book/pages/transfer_book_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -67,26 +71,10 @@ class _NavigationPageState extends State<NavigationPage> {
         children: [
           const Padding(padding: EdgeInsets.all(16), child: ExBookSearchBar()),
           Expanded(child: <Widget>[
-            Container(
-              color: Colors.red,
-              alignment: Alignment.center,
-              child: const Text('Page 1'),
-            ),
-            Container(
-              color: Colors.green,
-              alignment: Alignment.center,
-              child: const Text('Page 2'),
-            ),
-            Container(
-              color: Colors.blue,
-              alignment: Alignment.center,
-              child: const Text('Page 3'),
-            ),
-            Container(
-              color: Colors.indigo,
-              alignment: Alignment.center,
-              child: const Text('Page 4'),
-            ),
+            const HomePage(),
+            const BuyBookPage(),
+            const TransferBookPage(),
+            const PersonalPage(),
           ][currentPageIndex])
         ],
       ),
