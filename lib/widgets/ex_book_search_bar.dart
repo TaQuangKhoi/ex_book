@@ -28,12 +28,14 @@ class _ExBookSearchBarState extends State<ExBookSearchBar> {
           width: 300,
           child: TextField(
             decoration: InputDecoration(
-              contentPadding: const EdgeInsets.symmetric(vertical: 40.0),
               filled: true,
               fillColor: Color(ExBookColor.mauChinh3.colorHex),
               border: border,
               hintText: 'Tìm kiếm',
-              // suffixIcon: suffixIcon,
+              suffixIcon: SvgPicture.asset('${assetPath}cart-icon.svg',
+                  semanticsLabel: 'Cart Icon', fit: BoxFit.scaleDown),
+              prefixIcon: SvgPicture.asset('${assetPath}search-icon.svg',
+                  semanticsLabel: 'Search Icon', fit: BoxFit.scaleDown),
               enabledBorder: border,
               focusedBorder: border,
               errorBorder: border,
