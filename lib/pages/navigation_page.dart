@@ -65,7 +65,7 @@ class _NavigationPageState extends State<NavigationPage> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const ExBookSearchBar(),
+          const Padding(padding: EdgeInsets.all(16), child: ExBookSearchBar()),
           Expanded(child: <Widget>[
             Container(
               color: Colors.red,
