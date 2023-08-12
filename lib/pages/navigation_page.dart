@@ -2,6 +2,8 @@ import 'package:ex_book/library/ex_book_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
+import '../widgets/ex_book_search_bar.dart';
+
 class NavigationPage extends StatefulWidget {
   const NavigationPage({super.key});
 
@@ -63,7 +65,7 @@ class _NavigationPageState extends State<NavigationPage> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text("Test"),
+          const ExBookSearchBar(),
           <Widget>[
             Container(
               color: Colors.red,
