@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 
 import '../library/ex_book_colors.dart';
 
-class SearchBar extends StatefulWidget {
-  const SearchBar({super.key});
+class ExBookSearchBar extends StatefulWidget {
+  const ExBookSearchBar({super.key});
 
   @override
-  State<SearchBar> createState() => _SearchBarState();
+  State<ExBookSearchBar> createState() => _ExBookSearchBarState();
 }
 
-class _SearchBarState extends State<SearchBar> {
+class _ExBookSearchBarState extends State<ExBookSearchBar> {
   @override
   Widget build(BuildContext context) {
     OutlineInputBorder border = OutlineInputBorder(
@@ -18,14 +18,15 @@ class _SearchBarState extends State<SearchBar> {
             color: Color(ExBookColor.mauChinh2.colorHex), width: 1.0));
 
     return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
         TextField(
           decoration: InputDecoration(
             filled: true,
             fillColor: Color(ExBookColor.mauChinh3.colorHex),
             border: border,
-            hintText: hintText,
-            suffixIcon: suffixIcon,
+            hintText: 'Tìm kiếm',
+            // suffixIcon: suffixIcon,
             enabledBorder: border,
             focusedBorder: border,
             errorBorder: border,
