@@ -28,8 +28,7 @@ class _FacebookGoogleSignInState extends State<FacebookGoogleSignIn> {
             style: ElevatedButton.styleFrom(
               minimumSize: const Size(44, 44),
               shape: const CircleBorder(),
-              backgroundColor:
-              Color(ExBookColor.mauChinh1.colorHex),
+              backgroundColor: Color(ExBookColor.mauChinh1.colorHex),
             ),
             onPressed: () {},
             child: fbLogoSvg),
@@ -37,8 +36,7 @@ class _FacebookGoogleSignInState extends State<FacebookGoogleSignIn> {
             style: ElevatedButton.styleFrom(
               minimumSize: const Size(44, 44),
               shape: const CircleBorder(),
-              backgroundColor:
-              Color(ExBookColor.mauChinh1.colorHex),
+              backgroundColor: Color(ExBookColor.mauChinh1.colorHex),
             ),
             onPressed: () {},
             child: googleLogoSvg),
