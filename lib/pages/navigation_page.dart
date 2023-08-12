@@ -28,7 +28,7 @@ class _NavigationPageState extends State<NavigationPage> {
           });
         },
         selectedIndex: currentPageIndex,
-        destinations: <Widget>[
+        destinations: [
           NavigationDestination(
             selectedIcon: SvgPicture.asset('${assetPath}selected-home-icon.svg',
                 semanticsLabel: 'Selected Home Icon'),
@@ -66,7 +66,7 @@ class _NavigationPageState extends State<NavigationPage> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           const ExBookSearchBar(),
-          <Widget>[
+          Expanded(child: <Widget>[
             Container(
               color: Colors.red,
               alignment: Alignment.center,
@@ -87,7 +87,7 @@ class _NavigationPageState extends State<NavigationPage> {
               alignment: Alignment.center,
               child: const Text('Page 4'),
             ),
-          ][currentPageIndex]
+          ][currentPageIndex])
         ],
       ),
     );
