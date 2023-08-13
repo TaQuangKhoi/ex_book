@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../widgets/news_slide.dart';
+
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -10,10 +12,17 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.red,
-      alignment: Alignment.center,
-      child: const Text('Page 1'),
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      children: [
+        const NewsSlide(),
+        ElevatedButton(
+          onPressed: () {
+            Navigator.pushNamed(context, '/second');
+          },
+          child: const Text('Go to Second Page'),
+        ),
+      ],
     );
   }
 }
