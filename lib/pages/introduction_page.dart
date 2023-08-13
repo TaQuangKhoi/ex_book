@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../library/ex_book_colors.dart';
+import '../widgets/three_dot.dart';
 
 class IntroductionPage extends StatefulWidget {
   const IntroductionPage({super.key});
@@ -435,7 +436,7 @@ class IntroBackground3 extends StatelessWidget {
           right: 0,
           child: SizedBox(
             width: MediaQuery.of(context).size.width,
-            child: Image(
+            child: const Image(
               fit: BoxFit.fill,
               image: AssetImage(
                   'assets/introduction_page/background3/vector_4.png'),
@@ -513,67 +514,6 @@ class TextBetween extends StatelessWidget {
           index: circleIndex,
         ),
       ],
-    );
-  }
-}
-
-class ThreeDot extends StatelessWidget {
-  final int index;
-
-  const ThreeDot({super.key, required this.index});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.only(top: 16),
-      width: 40,
-      height: 8,
-      child: Stack(
-        children: [
-          Positioned(
-            left: 0,
-            top: 0,
-            child: Container(
-              width: 8,
-              height: 8,
-              decoration: ShapeDecoration(
-                color: index == 1
-                    ? Color(ExBookColor.mauChinh1.colorHex)
-                    : const Color(0xFF7D8984),
-                shape: const OvalBorder(),
-              ),
-            ),
-          ),
-          Positioned(
-            left: 16,
-            top: 0,
-            child: Container(
-              width: 8,
-              height: 8,
-              decoration: ShapeDecoration(
-                color: index == 2
-                    ? Color(ExBookColor.mauChinh1.colorHex)
-                    : const Color(0xFF7D8984),
-                shape: const OvalBorder(),
-              ),
-            ),
-          ),
-          Positioned(
-            left: 32,
-            top: 0,
-            child: Container(
-              width: 8,
-              height: 8,
-              decoration: ShapeDecoration(
-                color: index == 3
-                    ? Color(ExBookColor.mauChinh1.colorHex)
-                    : const Color(0xFF7D8984),
-                shape: const OvalBorder(),
-              ),
-            ),
-          ),
-        ],
-      ),
     );
   }
 }
