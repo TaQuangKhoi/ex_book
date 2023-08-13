@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:ex_book/widgets/three_dot.dart';
 import 'package:flutter/material.dart';
 
@@ -19,10 +21,28 @@ class _NewsSlideState extends State<NewsSlide> {
 
   String currentImage = '';
 
+  late Timer _timer;
+
   @override
   void initState() {
     // TODO: implement initState
-    currentImage = images[0];
+    currentImage = images[index-1];
+    _timer = Timer.periodic(
+      const Duration(seconds: 5),
+      (Timer timer) {
+        if (index == 3) {
+          setState(() {
+            index = 1;
+            currentImage = images[index-1];
+          });
+        } else {
+          setState(() {
+            index++;
+            currentImage = images[index-1];
+          });
+        }
+      },
+    );
     super.initState();
   }
 
@@ -30,6 +50,7 @@ class _NewsSlideState extends State<NewsSlide> {
   Widget build(BuildContext context) {
     return SizedBox(
       height: 200,
+      width: double.infinity,
       child: Stack(
         children: [
           Image.asset(
