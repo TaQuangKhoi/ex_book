@@ -78,6 +78,7 @@ flutter:
     - assets/home_page/
     - assets/buy_book_page/
     - assets/transfer_book_page/
+    - assets/personal_page/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
