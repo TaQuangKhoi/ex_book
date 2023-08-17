@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../library/ex_book_constants.dart';
-
 class PersonalPage extends StatefulWidget {
   const PersonalPage({super.key});
 
@@ -21,7 +19,7 @@ class _PersonalPageState extends State<PersonalPage> {
         child: Column(
           children: [
             Padding(
-                padding: EdgeInsets.all(16),
+                padding: const EdgeInsets.all(16),
                 child: Container(
                   width: double.infinity,
                   decoration: BoxDecoration(
@@ -194,6 +192,33 @@ class _PersonalPageState extends State<PersonalPage> {
                     ),
                   ],
                 )),
+            SizedBox(
+              width: double.infinity,
+              child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.red,
+                      shape: RoundedRectangleBorder(
+                        side: const BorderSide(
+                          width: 1,
+                          color: Colors.white,
+                        ),
+                        borderRadius: BorderRadius.circular(4),
+                      ),
+                    ),
+                    child: Text(
+                      'Đăng xuất',
+                      style: GoogleFonts.mulish(
+                          textStyle: const TextStyle(
+                        color: Color(0xff2A3732),
+                        fontSize: 16,
+                        fontWeight: FontWeight.w400,
+                      )),
+                    ),
+                  )),
+            ),
           ],
         ),
       ),
