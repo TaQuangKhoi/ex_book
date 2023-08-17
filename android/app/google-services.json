@@ -29,13 +29,6 @@
             {
               "client_id": "997364373900-3alij1to4lik5r3uvvp4hrgo6pfro2ud.apps.googleusercontent.com",
               "client_type": 3
-            },
-            {
-              "client_id": "997364373900-2184725i16u3fqr2h742hf8a9k0q5j2c.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.taquangkhoi.exBook"
-              }
             }
           ]
         }
