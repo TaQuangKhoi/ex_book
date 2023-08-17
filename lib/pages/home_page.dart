@@ -37,17 +37,21 @@ class _HomePageState extends State<HomePage> {
                             child: Padding(
                           padding: EdgeInsets.only(right: 8),
                           child: CategoryBox(
-                              text: 'Sách Bán Chạy',
-                              imagePath:
-                                  'assets/home_page/best_seller_book.png'),
+                            text: 'Sách Bán Chạy',
+                            imagePath: 'assets/home_page/best_seller_book.png',
+                            backgroundColor: Color(0xFFAC8C73),
+                            borderColor: Color(0xFFAC8C73),
+                          ),
                         )),
                         Expanded(
                             child: Padding(
                           padding: EdgeInsets.only(left: 8),
                           child: CategoryBox(
-                              text: 'Sách Tìm Kiếm Cao',
-                              imagePath:
-                                  'assets/home_page/best_search_book.png'),
+                            text: 'Sách Tìm Kiếm Cao',
+                            imagePath: 'assets/home_page/best_search_book.png',
+                            backgroundColor: Color(0xFFAC8C73),
+                            borderColor: Color(0xFFAC8C73),
+                          ),
                         )),
                       ],
                     )),

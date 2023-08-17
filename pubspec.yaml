@@ -76,6 +76,7 @@ flutter:
     - assets/search_bar/
     - assets/news_slide/
     - assets/home_page/
+    - assets/buy_book_page/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

@@ -16,18 +16,38 @@ class BuyBookPage extends StatefulWidget {
 class _BuyBookPageState extends State<BuyBookPage> {
   List<ExBookCategory> categories = [
     ExBookCategory(
-        name: 'Tâm lý', imagePath: 'assets/home_page/best_seller_book.png'),
+      name: 'Tâm lý',
+      imagePath: 'assets/buy_book_page/tam_ly.png',
+    ),
     ExBookCategory(
-        name: 'Tịnh Tâm', imagePath: 'assets/home_page/best_seller_book.png'),
+      name: 'Tịnh Tâm',
+      imagePath: 'assets/buy_book_page/tinh_tam.png',
+    ),
     ExBookCategory(
-        name: 'Văn học', imagePath: 'assets/home_page/best_seller_book.png'),
+      name: 'Văn học',
+      imagePath: 'assets/home_page/best_seller_book.png',
+    ),
     ExBookCategory(
-        name: 'Tiểu thuyết',
-        imagePath: 'assets/home_page/best_seller_book.png'),
+      name: 'Tiểu thuyết',
+      imagePath: 'assets/home_page/best_seller_book.png',
+    ),
     ExBookCategory(
-        name: 'Khoa học', imagePath: 'assets/home_page/best_seller_book.png'),
+      name: 'Khoa học',
+      imagePath: 'assets/home_page/best_seller_book.png',
+    ),
     ExBookCategory(
-        name: 'Học tập', imagePath: 'assets/home_page/best_seller_book.png'),
+      name: 'Học tập',
+      imagePath: 'assets/home_page/best_seller_book.png',
+    ),
+  ];
+
+  List<Color> backgroundColors = [
+    const Color(0xFFABE497),
+    const Color(0xFFFBEAAD),
+    const Color(0xFFD5FAF0),
+    const Color(0xFFFACECE),
+    const Color(0xFFB2C6FB),
+    const Color(0xFFecaee1),
   ];
 
   @override
@@ -52,8 +72,11 @@ class _BuyBookPageState extends State<BuyBookPage> {
                     ),
                     itemCount: categories.length,
                     itemBuilder: (context, index) => CategoryBox(
-                        text: categories[index].name,
-                        imagePath: categories[index].imagePath)),
+                          text: categories[index].name,
+                          imagePath: categories[index].imagePath,
+                          backgroundColor: backgroundColors[index],
+                          borderColor: Color(0xFFD0E4BF),
+                        )),
               ],
             ),
             const BookList(title: 'Dành cho bạn'),
