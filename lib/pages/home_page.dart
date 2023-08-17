@@ -32,6 +32,12 @@ class _HomePageState extends State<HomePage> {
         description:
             'Cậu bé Harry Potter một mình chống lại một phù thủy hắc ám Chúa tể Voldemort,...',
         imagePath: 'assets/home_page/sherlock_homes.png'),
+    Book(
+        author: 'J. K. Rowling.',
+        name: 'Harry Potter',
+        description:
+            'Cậu bé Harry Potter một mình chống lại một phù thủy hắc ám Chúa tể Voldemort,...',
+        imagePath: 'assets/home_page/sherlock_homes.png'),
   ];
 
   @override
@@ -78,41 +84,44 @@ class _HomePageState extends State<HomePage> {
                     )),
               ],
             ),
-            Column(
-              children: [
-                Align(
-                  alignment: Alignment.centerLeft,
-                  child: Padding(
-                    padding: const EdgeInsets.only(left: 16),
-                    child: Text(
-                      'Dành cho bạn',
-                      style: GoogleFonts.mulish(
-                        textStyle: const TextStyle(
-                          color: Colors.black,
-                          fontSize: 18,
-                          fontWeight: FontWeight.w700,
-                          letterSpacing: -0.30,
+            Padding(
+              padding: EdgeInsets.only(bottom: 8),
+              child: Column(
+                children: [
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 16),
+                      child: Text(
+                        'Dành cho bạn',
+                        style: GoogleFonts.mulish(
+                          textStyle: const TextStyle(
+                            color: Colors.black,
+                            fontSize: 18,
+                            fontWeight: FontWeight.w700,
+                            letterSpacing: -0.30,
+                          ),
                         ),
                       ),
                     ),
                   ),
-                ),
-                ListView.builder(
-                  padding: const EdgeInsets.symmetric(horizontal: 16),
-                  itemBuilder: (context, index) => Padding(
-                      padding: const EdgeInsets.only(top: 8),
-                      child: BookBox(
-                        bookName: books[index].name,
-                        authorName: books[index].author,
-                        description: books[index].description,
-                        imagePath: books[index].imagePath,
-                      )),
-                  itemCount: books.length,
-                  physics: const NeverScrollableScrollPhysics(),
-                  primary: false,
-                  shrinkWrap: true,
-                ),
-              ],
+                  ListView.builder(
+                    padding: const EdgeInsets.symmetric(horizontal: 16),
+                    itemBuilder: (context, index) => Padding(
+                        padding: const EdgeInsets.only(top: 8),
+                        child: BookBox(
+                          bookName: books[index].name,
+                          authorName: books[index].author,
+                          description: books[index].description,
+                          imagePath: books[index].imagePath,
+                        )),
+                    itemCount: books.length,
+                    physics: const NeverScrollableScrollPhysics(),
+                    primary: false,
+                    shrinkWrap: true,
+                  ),
+                ],
+              ),
             )
           ],
         ),
