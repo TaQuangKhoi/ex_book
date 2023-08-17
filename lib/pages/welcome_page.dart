@@ -4,6 +4,7 @@ import 'package:ex_book/pages/navigation_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:async';
 
 import '../library/ex_book_colors.dart';
@@ -18,9 +19,17 @@ class WelcomePage extends StatelessWidget {
     final Widget logo =
         SvgPicture.asset(assetName, semanticsLabel: 'Ex.Book Logo');
 
-    bool isLogin = true;
 
-    Timer(const Duration(seconds: 2), () {
+    Timer(const Duration(seconds: 2), () async {
+      log('Timer is running');
+      // Obtain shared preferences.
+      final SharedPreferences prefs = await SharedPreferences.getInstance();
+      // bool? isLogin = prefs.getBool('isLogin') ?? false;
+      // log('isLogin:');
+      // log('isLogin: $isLogin');
+
+      bool isLogin = true;
+
       if (isLogin) {
         Navigator.push(context,
             MaterialPageRoute(builder: (context) => const NavigationPage()));
