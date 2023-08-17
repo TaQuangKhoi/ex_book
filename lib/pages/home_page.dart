@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../library/ex_book_constants.dart';
 import '../widgets/category_box.dart';
@@ -42,12 +43,23 @@ class _HomePageState extends State<HomePage> {
                     )),
                   ],
                 )),
+            Text('Dành cho bạn', style: GoogleFonts.mulish(
+              textStyle: const TextStyle(
+                color: Colors.black,
+                fontSize: 18,
+                fontWeight: FontWeight.w700,
+                letterSpacing: -0.30,
+              ),
+            ),),
             ElevatedButton(
               onPressed: () {
                 Navigator.pushNamed(context, '/second');
               },
               child: const Text('Go to Second Page'),
             ),
+            ListView(children: [
+
+            ],)
           ],
         ),
       ),
