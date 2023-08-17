@@ -24,76 +24,88 @@ class _HomePageState extends State<HomePage> {
         name: 'Sherlock Holmes',
         author: 'Conan Doyle',
         description:
-            'Sherlock Holmes là một nhân vật thám tử hư cấu vào cuối thể kỉ 19 và đầu thế kỉ 20,....'),
+            'Sherlock Holmes là một nhân vật thám tử hư cấu vào cuối thể kỉ 19 và đầu thế kỉ 20,....',
+        imagePath: 'assets/home_page/sherlock_homes.png'),
     Book(
         author: 'J. K. Rowling.',
         name: 'Harry Potter',
         description:
-            'Cậu bé Harry Potter một mình chống lại một phù thủy hắc ám Chúa tể Voldemort,...')
+            'Cậu bé Harry Potter một mình chống lại một phù thủy hắc ám Chúa tể Voldemort,...',
+        imagePath: 'assets/home_page/sherlock_homes.png'),
   ];
 
   @override
   Widget build(BuildContext context) {
+    List<Widget> BookBoxList = books
+        .map((e) => BookBox(
+              bookName: e.name,
+              authorName: e.author,
+              description: e.description,
+              imagePath: 'assets/home_page/sherlock_homes.png',
+            ))
+        .toList();
     return SingleChildScrollView(
       child: Container(
         color: ExBookConstants.mauChinh3,
         child: Column(
           children: [
-            const NewsSlide(),
-            const Padding(
-                padding: EdgeInsets.all(16),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Expanded(
-                        child: Padding(
-                      padding: EdgeInsets.only(right: 8),
-                      child: CategoryBox(
-                          text: 'Sách Bán Chạy',
-                          imagePath: 'assets/home_page/best_seller_book.png'),
+            const Column(
+              children: [
+                NewsSlide(),
+                Padding(
+                    padding: EdgeInsets.all(16),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Expanded(
+                            child: Padding(
+                          padding: EdgeInsets.only(right: 8),
+                          child: CategoryBox(
+                              text: 'Sách Bán Chạy',
+                              imagePath:
+                                  'assets/home_page/best_seller_book.png'),
+                        )),
+                        Expanded(
+                            child: Padding(
+                          padding: EdgeInsets.only(left: 8),
+                          child: CategoryBox(
+                              text: 'Sách Tìm Kiếm Cao',
+                              imagePath:
+                                  'assets/home_page/best_search_book.png'),
+                        )),
+                      ],
                     )),
-                    Expanded(
-                        child: Padding(
-                      padding: EdgeInsets.only(left: 8),
-                      child: CategoryBox(
-                          text: 'Sách Tìm Kiếm Cao',
-                          imagePath: 'assets/home_page/best_search_book.png'),
-                    )),
-                  ],
-                )),
-            Text(
-              'Dành cho bạn',
-              style: GoogleFonts.mulish(
-                textStyle: const TextStyle(
-                  color: Colors.black,
-                  fontSize: 18,
-                  fontWeight: FontWeight.w700,
-                  letterSpacing: -0.30,
+              ],
+            ),
+            Column(
+              children: [
+                Text(
+                  'Dành cho bạn',
+                  style: GoogleFonts.mulish(
+                    textStyle: const TextStyle(
+                      color: Colors.black,
+                      fontSize: 18,
+                      fontWeight: FontWeight.w700,
+                      letterSpacing: -0.30,
+                    ),
+                  ),
                 ),
-              ),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.pushNamed(context, '/second');
-              },
-              child: const Text('Go to Second Page'),
-            ),
-            BookBox(
-              bookName: books[0].name,
-              authorName: books[0].author,
-              description: books[0].description,
-              imagePath: 'assets/home_page/sherlock_homes.png',
-            ),
-            // Expanded(child: ListView.builder(
-            //   itemBuilder: (context, index) => BookBox(
-            //     bookName: books[index].name,
-            //     authorName: books[index].author,
-            //     description: books[index].description,
-            //     imagePath: 'assets/home_page/book.png',
-            //   ),
-            //   itemCount: books.length,
-            // )),
+                Container(
+                    child: ListView.builder(
+                  itemBuilder: (context, index) => BookBox(
+                    bookName: books[index].name,
+                    authorName: books[index].author,
+                    description: books[index].description,
+                    imagePath: books[index].imagePath,
+                  ),
+                  itemCount: books.length,
+                  physics: const NeverScrollableScrollPhysics(),
+                  primary: false,
+                  shrinkWrap: true,
+                )),
+              ],
+            )
           ],
         ),
       ),
