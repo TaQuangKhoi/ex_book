@@ -4,14 +4,15 @@ import 'package:google_fonts/google_fonts.dart';
 import '../model/book.dart';
 import '../widgets/book_box.dart';
 
-class ForYou extends StatefulWidget {
-  const ForYou({super.key});
+class BookList extends StatefulWidget {
+  final String title;
+  const BookList({super.key, required this.title});
 
   @override
-  State<ForYou> createState() => _ForYouState();
+  State<BookList> createState() => _BookListState();
 }
 
-class _ForYouState extends State<ForYou> {
+class _BookListState extends State<BookList> {
   List books = [
     Book(
         name: 'Sherlock Holmes',
@@ -44,7 +45,7 @@ class _ForYouState extends State<ForYou> {
             child: Padding(
               padding: const EdgeInsets.only(left: 16),
               child: Text(
-                'Dành cho bạn',
+                widget.title,
                 style: GoogleFonts.mulish(
                   textStyle: const TextStyle(
                     color: Colors.black,

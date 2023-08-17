@@ -1,10 +1,7 @@
 import 'package:ex_book/component/for_you.dart';
-import 'package:ex_book/model/book.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 import '../library/ex_book_constants.dart';
-import '../widgets/book_box.dart';
 import '../widgets/category_box.dart';
 import '../widgets/news_slide.dart';
 
@@ -56,7 +53,7 @@ class _HomePageState extends State<HomePage> {
                     )),
               ],
             ),
-            ForYou(),
+            BookList(title: 'Dành cho bạn'),
           ],
         ),
       ),
