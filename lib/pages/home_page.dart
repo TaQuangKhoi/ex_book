@@ -1,3 +1,4 @@
+import 'package:ex_book/component/for_you.dart';
 import 'package:ex_book/model/book.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -19,43 +20,14 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   FirebaseFirestore firestore = FirebaseFirestore.instance;
 
-  List books = [
-    Book(
-        name: 'Sherlock Holmes',
-        author: 'Conan Doyle',
-        description:
-            'Sherlock Holmes là một nhân vật thám tử hư cấu vào cuối thể kỉ 19 và đầu thế kỉ 20,....',
-        imagePath: 'assets/home_page/sherlock_homes.png'),
-    Book(
-        author: 'J. K. Rowling.',
-        name: 'Harry Potter',
-        description:
-            'Cậu bé Harry Potter một mình chống lại một phù thủy hắc ám Chúa tể Voldemort,...',
-        imagePath: 'assets/home_page/sherlock_homes.png'),
-    Book(
-        author: 'J. K. Rowling.',
-        name: 'Harry Potter',
-        description:
-            'Cậu bé Harry Potter một mình chống lại một phù thủy hắc ám Chúa tể Voldemort,...',
-        imagePath: 'assets/home_page/sherlock_homes.png'),
-  ];
-
   @override
   Widget build(BuildContext context) {
-    List<Widget> BookBoxList = books
-        .map((e) => BookBox(
-              bookName: e.name,
-              authorName: e.author,
-              description: e.description,
-              imagePath: 'assets/home_page/sherlock_homes.png',
-            ))
-        .toList();
     return Container(
       color: ExBookConstants.mauChinh3,
-      child: SingleChildScrollView(
+      child: const SingleChildScrollView(
         child: Column(
           children: [
-            const Column(
+            Column(
               children: [
                 NewsSlide(),
                 Padding(
@@ -84,45 +56,7 @@ class _HomePageState extends State<HomePage> {
                     )),
               ],
             ),
-            Padding(
-              padding: EdgeInsets.only(bottom: 8),
-              child: Column(
-                children: [
-                  Align(
-                    alignment: Alignment.centerLeft,
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 16),
-                      child: Text(
-                        'Dành cho bạn',
-                        style: GoogleFonts.mulish(
-                          textStyle: const TextStyle(
-                            color: Colors.black,
-                            fontSize: 18,
-                            fontWeight: FontWeight.w700,
-                            letterSpacing: -0.30,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  ListView.builder(
-                    padding: const EdgeInsets.symmetric(horizontal: 16),
-                    itemBuilder: (context, index) => Padding(
-                        padding: const EdgeInsets.only(top: 8),
-                        child: BookBox(
-                          bookName: books[index].name,
-                          authorName: books[index].author,
-                          description: books[index].description,
-                          imagePath: books[index].imagePath,
-                        )),
-                    itemCount: books.length,
-                    physics: const NeverScrollableScrollPhysics(),
-                    primary: false,
-                    shrinkWrap: true,
-                  ),
-                ],
-              ),
-            )
+            ForYou(),
           ],
         ),
       ),
