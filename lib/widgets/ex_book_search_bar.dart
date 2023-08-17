@@ -23,22 +23,29 @@ class _ExBookSearchBarState extends State<ExBookSearchBar> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Expanded(child: TextField(
-          decoration: InputDecoration(
-            filled: true,
-            fillColor: Color(ExBookColor.mauChinh3.colorHex),
-            border: border,
-            hintText: 'Tìm kiếm',
-            suffixIcon: SvgPicture.asset('${assetPath}cart-icon.svg',
-                semanticsLabel: 'Cart Icon', fit: BoxFit.scaleDown),
-            prefixIcon: SvgPicture.asset('${assetPath}search-icon.svg',
-                semanticsLabel: 'Search Icon', fit: BoxFit.scaleDown),
-            enabledBorder: border,
-            focusedBorder: border,
-            errorBorder: border,
-            focusedErrorBorder: border,
-          ),
-        )),
+        Expanded(
+          child: SizedBox(
+              height: 32,
+              child: TextField(
+                decoration: InputDecoration(
+                  filled: true,
+                  fillColor: Color(ExBookColor.mauChinh3.colorHex),
+                  border: border,
+                  hintText: 'Tìm kiếm',
+                  hintStyle: TextStyle(
+                      color: Color(ExBookColor.mauChinh2.colorHex),
+                      fontSize: 14),
+                  suffixIcon: SvgPicture.asset('${assetPath}cart-icon.svg',
+                      semanticsLabel: 'Cart Icon', fit: BoxFit.scaleDown),
+                  prefixIcon: SvgPicture.asset('${assetPath}search-icon.svg',
+                      semanticsLabel: 'Search Icon', fit: BoxFit.scaleDown),
+                  enabledBorder: border,
+                  focusedBorder: border,
+                  errorBorder: border,
+                  focusedErrorBorder: border,
+                ),
+              )),
+        ),
         SvgPicture.asset('${assetPath}bell-icon.svg',
             semanticsLabel: 'Bell Icon'),
         SvgPicture.asset('${assetPath}coin-icon.svg',

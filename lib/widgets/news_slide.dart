@@ -26,19 +26,19 @@ class _NewsSlideState extends State<NewsSlide> {
   @override
   void initState() {
     // TODO: implement initState
-    currentImage = images[index-1];
+    currentImage = images[index - 1];
     _timer = Timer.periodic(
       const Duration(seconds: 5),
       (Timer timer) {
         if (index == 3) {
           setState(() {
             index = 1;
-            currentImage = images[index-1];
+            currentImage = images[index - 1];
           });
         } else {
           setState(() {
             index++;
-            currentImage = images[index-1];
+            currentImage = images[index - 1];
           });
         }
       },
@@ -55,6 +55,8 @@ class _NewsSlideState extends State<NewsSlide> {
         children: [
           Image.asset(
             currentImage,
+            fit: BoxFit.fitWidth,
+            width: double.infinity,
           ),
           Positioned(
             bottom: 10,

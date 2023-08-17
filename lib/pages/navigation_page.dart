@@ -66,17 +66,19 @@ class _NavigationPageState extends State<NavigationPage> {
           ),
         ],
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          const Padding(padding: EdgeInsets.all(16), child: ExBookSearchBar()),
-          Expanded(child: <Widget>[
-            const HomePage(),
-            const BuyBookPage(),
-            const TransferBookPage(),
-            const PersonalPage(),
-          ][currentPageIndex])
-        ],
+      body: SafeArea(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Padding(padding: EdgeInsets.all(16), child: ExBookSearchBar()),
+            Expanded(child: <Widget>[
+              const HomePage(),
+              const BuyBookPage(),
+              const TransferBookPage(),
+              const PersonalPage(),
+            ][currentPageIndex])
+          ],
+        ),
       ),
     );
   }
