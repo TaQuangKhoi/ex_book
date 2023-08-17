@@ -80,19 +80,21 @@ class _HomePageState extends State<HomePage> {
             ),
             Column(
               children: [
-                Text(
-                  'Dành cho bạn',
-                  style: GoogleFonts.mulish(
-                    textStyle: const TextStyle(
-                      color: Colors.black,
-                      fontSize: 18,
-                      fontWeight: FontWeight.w700,
-                      letterSpacing: -0.30,
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    'Dành cho bạn',
+                    style: GoogleFonts.mulish(
+                      textStyle: const TextStyle(
+                        color: Colors.black,
+                        fontSize: 18,
+                        fontWeight: FontWeight.w700,
+                        letterSpacing: -0.30,
+                      ),
                     ),
                   ),
                 ),
-                Container(
-                    child: ListView.builder(
+                ListView.builder(
                   itemBuilder: (context, index) => BookBox(
                     bookName: books[index].name,
                     authorName: books[index].author,
@@ -103,7 +105,7 @@ class _HomePageState extends State<HomePage> {
                   physics: const NeverScrollableScrollPhysics(),
                   primary: false,
                   shrinkWrap: true,
-                )),
+                ),
               ],
             )
           ],
