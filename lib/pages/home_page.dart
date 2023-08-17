@@ -82,25 +82,31 @@ class _HomePageState extends State<HomePage> {
               children: [
                 Align(
                   alignment: Alignment.centerLeft,
-                  child: Text(
-                    'Dành cho bạn',
-                    style: GoogleFonts.mulish(
-                      textStyle: const TextStyle(
-                        color: Colors.black,
-                        fontSize: 18,
-                        fontWeight: FontWeight.w700,
-                        letterSpacing: -0.30,
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 16),
+                    child: Text(
+                      'Dành cho bạn',
+                      style: GoogleFonts.mulish(
+                        textStyle: const TextStyle(
+                          color: Colors.black,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w700,
+                          letterSpacing: -0.30,
+                        ),
                       ),
                     ),
                   ),
                 ),
                 ListView.builder(
-                  itemBuilder: (context, index) => BookBox(
-                    bookName: books[index].name,
-                    authorName: books[index].author,
-                    description: books[index].description,
-                    imagePath: books[index].imagePath,
-                  ),
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
+                  itemBuilder: (context, index) => Padding(
+                      padding: const EdgeInsets.only(top: 8),
+                      child: BookBox(
+                        bookName: books[index].name,
+                        authorName: books[index].author,
+                        description: books[index].description,
+                        imagePath: books[index].imagePath,
+                      )),
                   itemCount: books.length,
                   physics: const NeverScrollableScrollPhysics(),
                   primary: false,
