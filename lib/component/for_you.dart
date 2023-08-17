@@ -6,33 +6,14 @@ import '../widgets/book_box.dart';
 
 class BookList extends StatefulWidget {
   final String title;
-  const BookList({super.key, required this.title});
+  final List<Book> books;
+  const BookList({super.key, required this.title, required this.books});
 
   @override
   State<BookList> createState() => _BookListState();
 }
 
 class _BookListState extends State<BookList> {
-  List books = [
-    Book(
-        name: 'Sherlock Holmes',
-        author: 'Conan Doyle',
-        description:
-        'Sherlock Holmes là một nhân vật thám tử hư cấu vào cuối thể kỉ 19 và đầu thế kỉ 20,....',
-        imagePath: 'assets/home_page/sherlock_homes.png'),
-    Book(
-        author: 'J. K. Rowling.',
-        name: 'Harry Potter',
-        description:
-        'Cậu bé Harry Potter một mình chống lại một phù thủy hắc ám Chúa tể Voldemort,...',
-        imagePath: 'assets/home_page/sherlock_homes.png'),
-    Book(
-        author: 'J. K. Rowling.',
-        name: 'Harry Potter',
-        description:
-        'Cậu bé Harry Potter một mình chống lại một phù thủy hắc ám Chúa tể Voldemort,...',
-        imagePath: 'assets/home_page/sherlock_homes.png'),
-  ];
 
   @override
   Widget build(BuildContext context) {
@@ -62,12 +43,12 @@ class _BookListState extends State<BookList> {
             itemBuilder: (context, index) => Padding(
                 padding: const EdgeInsets.only(top: 8),
                 child: BookBox(
-                  bookName: books[index].name,
-                  authorName: books[index].author,
-                  description: books[index].description,
-                  imagePath: books[index].imagePath,
+                  bookName: widget.books[index].name,
+                  authorName: widget.books[index].author,
+                  description: widget.books[index].description,
+                  imagePath: widget.books[index].imagePath,
                 )),
-            itemCount: books.length,
+            itemCount: widget.books.length,
             physics: const NeverScrollableScrollPhysics(),
             primary: false,
             shrinkWrap: true,

@@ -2,6 +2,7 @@ import 'package:ex_book/component/for_you.dart';
 import 'package:flutter/material.dart';
 
 import '../library/ex_book_constants.dart';
+import '../model/book.dart';
 import '../widgets/category_box.dart';
 import '../widgets/news_slide.dart';
 
@@ -17,14 +18,33 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   FirebaseFirestore firestore = FirebaseFirestore.instance;
 
-
-
   @override
   Widget build(BuildContext context) {
     List<String> images = [
       'assets/news_slide/image_1.png',
       'assets/news_slide/image_2.png',
       'assets/news_slide/image_3.png',
+    ];
+
+    List<Book> books = [
+      Book(
+          name: 'Sherlock Holmes',
+          author: 'Conan Doyle',
+          description:
+              'Sherlock Holmes là một nhân vật thám tử hư cấu vào cuối thể kỉ 19 và đầu thế kỉ 20,....',
+          imagePath: 'assets/home_page/sherlock_homes.png'),
+      Book(
+          author: 'J. K. Rowling.',
+          name: 'Harry Potter',
+          description:
+              'Cậu bé Harry Potter một mình chống lại một phù thủy hắc ám Chúa tể Voldemort,...',
+          imagePath: 'assets/home_page/sherlock_homes.png'),
+      Book(
+          author: 'J. K. Rowling.',
+          name: 'Harry Potter',
+          description:
+              'Cậu bé Harry Potter một mình chống lại một phù thủy hắc ám Chúa tể Voldemort,...',
+          imagePath: 'assets/home_page/sherlock_homes.png'),
     ];
 
     return Container(
@@ -67,7 +87,7 @@ class _HomePageState extends State<HomePage> {
                     )),
               ],
             ),
-            const BookList(title: 'Dành cho bạn'),
+            BookList(title: 'Dành cho bạn', books: books),
           ],
         ),
       ),
