@@ -1,4 +1,4 @@
-import 'package:ex_book/component/for_you.dart';
+import 'package:ex_book/component/book_list.dart';
 import 'package:flutter/material.dart';
 
 import '../library/ex_book_constants.dart';

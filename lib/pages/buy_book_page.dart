@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../component/for_you.dart';
+import '../component/book_list.dart';
 import '../library/ex_book_constants.dart';
 import '../model/book.dart';
 import '../model/category.dart';
