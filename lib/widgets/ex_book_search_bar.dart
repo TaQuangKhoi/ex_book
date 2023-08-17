@@ -25,7 +25,6 @@ class _ExBookSearchBarState extends State<ExBookSearchBar> {
       children: [
         Expanded(
           child: SizedBox(
-              height: 32,
               child: TextField(
                 decoration: InputDecoration(
                   filled: true,
