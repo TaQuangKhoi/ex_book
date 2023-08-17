@@ -62,6 +62,7 @@ class _BuyBookPageState extends State<BuyBookPage> {
                 const NewsSlide(),
                 GridView.builder(
                     shrinkWrap: true,
+                    physics: const NeverScrollableScrollPhysics(),
                     padding: const EdgeInsets.all(16),
                     gridDelegate:
                         const SliverGridDelegateWithFixedCrossAxisCount(
