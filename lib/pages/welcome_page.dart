@@ -23,12 +23,12 @@ class WelcomePage extends StatelessWidget {
     Timer(const Duration(seconds: 2), () async {
       log('Timer is running');
       // Obtain shared preferences.
-      final SharedPreferences prefs = await SharedPreferences.getInstance();
+      // final SharedPreferences prefs = await SharedPreferences.getInstance();
       // bool? isLogin = prefs.getBool('isLogin') ?? false;
       // log('isLogin:');
       // log('isLogin: $isLogin');
 
-      bool isLogin = true;
+      bool isLogin = false;
 
       if (isLogin) {
         Navigator.push(context,

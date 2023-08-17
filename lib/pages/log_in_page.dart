@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../library/ex_book_colors.dart';
+import '../widgets/ex_book_text_field.dart';
 import '../widgets/facebook_google_sign_in.dart';
+import 'navigation_page.dart';
 
 class LogInPage extends StatefulWidget {
   const LogInPage({super.key});
@@ -12,6 +14,7 @@ class LogInPage extends StatefulWidget {
 }
 
 class _LogInPageState extends State<LogInPage> {
+  TextEditingController usernameController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,6 +26,25 @@ class _LogInPageState extends State<LogInPage> {
     padding: const EdgeInsets.all(18.0),
         child: Stack(
           children: [
+            Column(
+              children: [
+                ExBookTextField(
+                    text: 'Email/ Điện thoại',
+                    textFieldText: '@gmail.com',
+                    controller: usernameController,
+                    isPassword: false,),
+                ExBookTextField(
+                  text: 'Mật khẩu',
+                  textFieldText: '*********',
+                  controller: usernameController,
+                  isPassword: true,),
+                const Row(
+                  children: [
+                    Text('Quên mật khẩu?'),
+                  ],
+                )
+              ],
+            ),
             Positioned(
                 bottom: 0,
                 left: 0,
@@ -37,7 +59,10 @@ class _LogInPageState extends State<LogInPage> {
                             backgroundColor:
                             Color(ExBookColor.mauChinh1.colorHex),
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(context,
+                                MaterialPageRoute(builder: (context) => const NavigationPage()));
+                          },
                           child: Text(
                             'ĐĂNG NHẬP',
                             textAlign: TextAlign.center,
