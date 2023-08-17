@@ -13,17 +13,19 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [
-          const NewsSlide(),
-          ElevatedButton(
-            onPressed: () {
-              Navigator.pushNamed(context, '/second');
-            },
-            child: const Text('Go to Second Page'),
-          ),
-        ],
+      child: Container(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            const NewsSlide(),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/second');
+              },
+              child: const Text('Go to Second Page'),
+            ),
+          ],
+        ),
       ),
     );
   }
