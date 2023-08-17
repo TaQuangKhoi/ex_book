@@ -17,17 +17,25 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   FirebaseFirestore firestore = FirebaseFirestore.instance;
 
+
+
   @override
   Widget build(BuildContext context) {
+    List<String> images = [
+      'assets/news_slide/image_1.png',
+      'assets/news_slide/image_2.png',
+      'assets/news_slide/image_3.png',
+    ];
+
     return Container(
       color: ExBookConstants.mauChinh3,
-      child: const SingleChildScrollView(
+      child: SingleChildScrollView(
         child: Column(
           children: [
             Column(
               children: [
-                NewsSlide(),
-                Padding(
+                NewsSlide(images: images),
+                const Padding(
                     padding: EdgeInsets.all(16),
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -59,7 +67,7 @@ class _HomePageState extends State<HomePage> {
                     )),
               ],
             ),
-            BookList(title: 'Dành cho bạn'),
+            const BookList(title: 'Dành cho bạn'),
           ],
         ),
       ),

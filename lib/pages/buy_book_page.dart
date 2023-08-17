@@ -52,6 +52,12 @@ class _BuyBookPageState extends State<BuyBookPage> {
 
   @override
   Widget build(BuildContext context) {
+    List<String> images = [
+      'assets/news_slide/image_1.png',
+      'assets/news_slide/image_2.png',
+      'assets/news_slide/image_3.png',
+    ];
+
     return Container(
       color: ExBookConstants.mauChinh3,
       child: SingleChildScrollView(
@@ -59,7 +65,7 @@ class _BuyBookPageState extends State<BuyBookPage> {
           children: [
             Column(
               children: [
-                const NewsSlide(),
+                NewsSlide(images: images),
                 GridView.builder(
                     shrinkWrap: true,
                     physics: const NeverScrollableScrollPhysics(),

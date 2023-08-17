@@ -16,7 +16,7 @@ class NavigationPage extends StatefulWidget {
 }
 
 class _NavigationPageState extends State<NavigationPage> {
-  int currentPageIndex = 1;
+  int currentPageIndex = 2;
 
   @override
   Widget build(BuildContext context) {

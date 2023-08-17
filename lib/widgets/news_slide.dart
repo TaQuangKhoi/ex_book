@@ -4,7 +4,8 @@ import 'package:ex_book/widgets/three_dot.dart';
 import 'package:flutter/material.dart';
 
 class NewsSlide extends StatefulWidget {
-  const NewsSlide({super.key});
+  final List<String> images;
+  const NewsSlide({super.key, required this.images});
 
   @override
   State<NewsSlide> createState() => _NewsSlideState();
@@ -13,12 +14,6 @@ class NewsSlide extends StatefulWidget {
 class _NewsSlideState extends State<NewsSlide> {
   int index = 1;
 
-  var images = [
-    'assets/news_slide/image_1.png',
-    'assets/news_slide/image_2.png',
-    'assets/news_slide/image_3.png',
-  ];
-
   String currentImage = '';
 
   late Timer _timer;
@@ -26,19 +21,19 @@ class _NewsSlideState extends State<NewsSlide> {
   @override
   void initState() {
     // TODO: implement initState
-    currentImage = images[index - 1];
+    currentImage = widget.images[index - 1];
     _timer = Timer.periodic(
       const Duration(seconds: 5),
       (Timer timer) {
         if (index == 3) {
           setState(() {
             index = 1;
-            currentImage = images[index - 1];
+            currentImage = widget.images[index - 1];
           });
         } else {
           setState(() {
             index++;
-            currentImage = images[index - 1];
+            currentImage = widget.images[index - 1];
           });
         }
       },

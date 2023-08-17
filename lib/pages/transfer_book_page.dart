@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 
+import '../component/for_you.dart';
+import '../library/ex_book_constants.dart';
+import '../widgets/news_slide.dart';
+
 class TransferBookPage extends StatefulWidget {
   const TransferBookPage({super.key});
 
@@ -8,12 +12,24 @@ class TransferBookPage extends StatefulWidget {
 }
 
 class _TransferBookPageState extends State<TransferBookPage> {
+  List<String> images = [
+    'assets/news_slide/image_1.png',
+    'assets/news_slide/image_2.png',
+    'assets/news_slide/image_3.png',
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.blue,
-      alignment: Alignment.center,
-      child: const Text('Page 3'),
+      color: ExBookConstants.mauChinh3,
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            NewsSlide(images: images),
+            BookList(title: 'Dành cho bạn'),
+          ],
+        ),
+      ),
     );
   }
 }
