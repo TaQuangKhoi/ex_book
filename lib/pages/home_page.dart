@@ -44,9 +44,9 @@ class _HomePageState extends State<HomePage> {
               imagePath: 'assets/home_page/sherlock_homes.png',
             ))
         .toList();
-    return SingleChildScrollView(
-      child: Container(
-        color: ExBookConstants.mauChinh3,
+    return Container(
+      color: ExBookConstants.mauChinh3,
+      child: SingleChildScrollView(
         child: Column(
           children: [
             const Column(
@@ -60,20 +60,20 @@ class _HomePageState extends State<HomePage> {
                       children: [
                         Expanded(
                             child: Padding(
-                          padding: EdgeInsets.only(right: 8),
-                          child: CategoryBox(
-                              text: 'Sách Bán Chạy',
-                              imagePath:
+                              padding: EdgeInsets.only(right: 8),
+                              child: CategoryBox(
+                                  text: 'Sách Bán Chạy',
+                                  imagePath:
                                   'assets/home_page/best_seller_book.png'),
-                        )),
+                            )),
                         Expanded(
                             child: Padding(
-                          padding: EdgeInsets.only(left: 8),
-                          child: CategoryBox(
-                              text: 'Sách Tìm Kiếm Cao',
-                              imagePath:
+                              padding: EdgeInsets.only(left: 8),
+                              child: CategoryBox(
+                                  text: 'Sách Tìm Kiếm Cao',
+                                  imagePath:
                                   'assets/home_page/best_search_book.png'),
-                        )),
+                            )),
                       ],
                     )),
               ],
