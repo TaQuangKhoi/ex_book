@@ -22,23 +22,23 @@ class _TransferBookPageState extends State<TransferBookPage> {
 
   List<Book> books = [
     Book(
-        name: 'Sherlock Holmes',
-        author: 'Conan Doyle',
+        name: 'Thiên tài bên trái, kẻ điên bên phải',
+        author: 'Cao Minh',
         description:
-        'Sherlock Holmes là một nhân vật thám tử hư cấu vào cuối thể kỉ 19 và đầu thế kỉ 20,....',
-        imagePath: 'assets/home_page/sherlock_homes.png'),
+            'Hỡi những con người đang oằn mình trong cuộc sống, bạn biết gì về thế giới của mình?...',
+        imagePath: 'assets/transfer_book_page/thien_tai.png'),
     Book(
-        author: 'J. K. Rowling.',
-        name: 'Harry Potter',
+        name: 'Tâm lý học tội phạm Phác họa chân dung kẻ phạm tội',
+        author: 'Diệp Hồng Vũ',
         description:
-        'Cậu bé Harry Potter một mình chống lại một phù thủy hắc ám Chúa tể Voldemort,...',
-        imagePath: 'assets/home_page/sherlock_homes.png'),
+            'Đằng sau máu và nước mắt là các câu chuyện rợn tóc gáy về tội ác, góc...',
+        imagePath: 'assets/transfer_book_page/toi_pham.png'),
     Book(
-        author: 'J. K. Rowling.',
-        name: 'Harry Potter',
+        name: 'Đắc nhân tâm',
+        author: 'Dale Carnegie',
         description:
-        'Cậu bé Harry Potter một mình chống lại một phù thủy hắc ám Chúa tể Voldemort,...',
-        imagePath: 'assets/home_page/sherlock_homes.png'),
+            'Một số nguyên tắc – Nghệ thuật ứng xử căn bản: Nguyên tắc 1: Không chỉ trích, oán...',
+        imagePath: 'assets/transfer_book_page/dac_nhan_tam.png'),
   ];
 
   @override
