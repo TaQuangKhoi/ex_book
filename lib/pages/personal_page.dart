@@ -212,7 +212,7 @@ class _PersonalPageState extends State<PersonalPage> {
                       'Đăng xuất',
                       style: GoogleFonts.mulish(
                           textStyle: const TextStyle(
-                        color: Color(0xff2A3732),
+                        color: Colors.white,
                         fontSize: 16,
                         fontWeight: FontWeight.w400,
                       )),
