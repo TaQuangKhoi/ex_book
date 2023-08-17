@@ -79,6 +79,12 @@ class _HomePageState extends State<HomePage> {
               },
               child: const Text('Go to Second Page'),
             ),
+            BookBox(
+              bookName: books[0].name,
+              authorName: books[0].author,
+              description: books[0].description,
+              imagePath: 'assets/home_page/sherlock_homes.png',
+            ),
             // Expanded(child: ListView.builder(
             //   itemBuilder: (context, index) => BookBox(
             //     bookName: books[index].name,
