@@ -56,7 +56,8 @@ class _PersonalPageState extends State<PersonalPage> {
                   ),
                 )),
             Center(
-              child: Text('hãy để sách và tâm hồn hòa là một 💖',
+              child: Text(
+                'hãy để sách và tâm hồn hòa là một 💖',
                 style: GoogleFonts.mulish(
                     textStyle: const TextStyle(
                   color: Color(0xff2A3732),
@@ -64,7 +65,61 @@ class _PersonalPageState extends State<PersonalPage> {
                   fontWeight: FontWeight.w500,
                 )),
               ),
-            )
+            ),
+            SizedBox(
+              width: double.infinity,
+              child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: const Color(0xFFF5F5F5),
+                      shape: RoundedRectangleBorder(
+                        side: const BorderSide(
+                          width: 1,
+                          color: Color(0xFFC0E1A3),
+                        ),
+                        borderRadius: BorderRadius.circular(4),
+                      ),
+                    ),
+                    child: Text(
+                      'Chỉnh sửa trang cá nhân',
+                      style: GoogleFonts.mulish(
+                          textStyle: const TextStyle(
+                        color: Color(0xff2A3732),
+                        fontSize: 16,
+                        fontWeight: FontWeight.w400,
+                      )),
+                    ),
+                  )),
+            ),
+            SizedBox(
+              width: double.infinity,
+              child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    child: Text(
+                      'Thêm đánh giá +',
+                      style: GoogleFonts.mulish(
+                          textStyle: const TextStyle(
+                        color: Color(0xff2A3732),
+                        fontSize: 16,
+                        fontWeight: FontWeight.w400,
+                      )),
+                    ),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: const Color(0xFFD4F1BB),
+                      shape: RoundedRectangleBorder(
+                        side: const BorderSide(
+                          width: 1,
+                          color: Color(0xFFC0E1A3),
+                        ),
+                        borderRadius: BorderRadius.circular(4),
+                      ),
+                    ),
+                  )),
+            ),
           ],
         ),
       ),
