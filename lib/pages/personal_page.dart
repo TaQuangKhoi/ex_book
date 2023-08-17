@@ -120,6 +120,80 @@ class _PersonalPageState extends State<PersonalPage> {
                     ),
                   )),
             ),
+            Padding(
+                padding: EdgeInsets.only(top: 16),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Column(
+                      children: [
+                        Text(
+                          '196',
+                          style: GoogleFonts.mulish(
+                              textStyle: const TextStyle(
+                            color: Color(0xff2A3732),
+                            fontSize: 14,
+                            fontWeight: FontWeight.w600,
+                          )),
+                        ),
+                        Text(
+                          'Yêu thích',
+                          style: GoogleFonts.mulish(
+                              textStyle: const TextStyle(
+                            color: Color(0xff2A3732),
+                            fontSize: 14,
+                            fontWeight: FontWeight.w600,
+                          )),
+                        ),
+                      ],
+                    ),
+                    Column(
+                      children: [
+                        Text(
+                          '37',
+                          style: GoogleFonts.mulish(
+                              textStyle: const TextStyle(
+                            color: Color(0xff2A3732),
+                            fontSize: 14,
+                            fontWeight: FontWeight.w600,
+                          )),
+                        ),
+                        Text(
+                          'Đang theo dõi',
+                          style: GoogleFonts.mulish(
+                              textStyle: const TextStyle(
+                            color: Color(0xff2A3732),
+                            fontSize: 14,
+                            fontWeight: FontWeight.w600,
+                          )),
+                        ),
+                      ],
+                    ),
+                    Column(
+                      children: [
+                        Text(
+                          '13',
+                          style: GoogleFonts.mulish(
+                              textStyle: const TextStyle(
+                            color: Color(0xff2A3732),
+                            fontSize: 14,
+                            fontWeight: FontWeight.w600,
+                          )),
+                        ),
+                        Text(
+                          'Người theo dõi',
+                          style: GoogleFonts.mulish(
+                              textStyle: const TextStyle(
+                            color: Color(0xff2A3732),
+                            fontSize: 14,
+                            fontWeight: FontWeight.w600,
+                          )),
+                        ),
+                      ],
+                    ),
+                  ],
+                )),
           ],
         ),
       ),
