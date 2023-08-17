@@ -6,8 +6,15 @@ class CategoryBox extends StatefulWidget {
   final String text;
   final Color backgroundColor;
   final Color borderColor;
+  final Color textColor;
 
-  const CategoryBox({super.key, required this.imagePath, required this.text, required this.backgroundColor, required this.borderColor});
+  const CategoryBox(
+      {super.key,
+      required this.imagePath,
+      required this.text,
+      required this.backgroundColor,
+      required this.borderColor,
+      required this.textColor});
 
   @override
   State<CategoryBox> createState() => _CategoryBoxState();
@@ -37,8 +44,8 @@ class _CategoryBoxState extends State<CategoryBox> {
                 child: Text(
               widget.text,
               style: GoogleFonts.roboto(
-                  textStyle: const TextStyle(
-                color: Colors.white,
+                  textStyle: TextStyle(
+                color: widget.textColor,
                 fontSize: 15,
                 fontWeight: FontWeight.w700,
                 letterSpacing: -0.30,

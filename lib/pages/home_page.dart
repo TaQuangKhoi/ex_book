@@ -41,6 +41,7 @@ class _HomePageState extends State<HomePage> {
                             imagePath: 'assets/home_page/best_seller_book.png',
                             backgroundColor: Color(0xFFAC8C73),
                             borderColor: Color(0xFFAC8C73),
+                            textColor: Colors.white,
                           ),
                         )),
                         Expanded(
@@ -51,6 +52,7 @@ class _HomePageState extends State<HomePage> {
                             imagePath: 'assets/home_page/best_search_book.png',
                             backgroundColor: Color(0xFFAC8C73),
                             borderColor: Color(0xFFAC8C73),
+                            textColor: Colors.white,
                           ),
                         )),
                       ],
