@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../library/ex_book_colors.dart';
-import '../../widgets/three_dot.dart';
+import '../../widgets/text_between.dart';
 
 class IntroductionPage extends StatefulWidget {
   const IntroductionPage({super.key});
@@ -83,8 +83,6 @@ class _IntroductionPageState extends State<IntroductionPage> {
   Widget build(BuildContext context) {
     Widget buttonNext = ElevatedButton(
       style: ElevatedButton.styleFrom(
-        // surfaceTintColor: const Color(0xFF074E16),
-        // foregroundColor: const Color(0xFF074E16),
         backgroundColor: Color(ExBookColor.mauChinh1.colorHex),
         minimumSize: Size(MediaQuery.of(context).size.width - 40, 56),
       ),
@@ -160,10 +158,18 @@ class _IntroductionPageState extends State<IntroductionPage> {
           children: [
             background,
             Center(
-                child: Container(
-              alignment: Alignment.bottomCenter,
-              margin: const EdgeInsets.only(bottom: 125),
-              child: circleIndex == 3 ? twoButtonSignUpAndLogIn : buttonNext,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                const TextBetween(
+                  circleIndex: 1,
+                  text1: 'Nơi bạn yêu những thứ cũ kỹ',
+                  text2:
+                      'Bạn tìm nơi cất giữ những điều cũ kỹ\nEX.BOOK tìm nơi cất giữ những\nnhững quyển sách cũ kỹ',
+                  imagePath: 'assets/introduction_page/background1/hinh3.png',
+                ),
+                circleIndex == 3 ? twoButtonSignUpAndLogIn : buttonNext,
+              ],
             ))
           ],
         ),
@@ -230,13 +236,6 @@ class IntroBackground1 extends StatelessWidget {
                 image: AssetImage(
                     'assets/introduction_page/background1/vector_27.png'),
               )),
-        ),
-        const TextBetween(
-          circleIndex: 1,
-          text1: 'Nơi bạn yêu những thứ cũ kỹ',
-          text2:
-              'Bạn tìm nơi cất giữ những điều cũ kỹ\nEX.BOOK tìm nơi cất giữ những\nnhững quyển sách cũ kỹ',
-          imagePath: 'assets/introduction_page/background1/hinh3.png',
         ),
       ],
     );
@@ -457,61 +456,6 @@ class IntroBackground3 extends StatelessWidget {
           text2:
               'Chúng mình là EX.BOOK nơi tái sinh \nnhững quyển sách cũ kỹ trên tay bạn',
           imagePath: 'assets/introduction_page/background3/hinh_sach_1_1.png',
-        ),
-      ],
-    );
-  }
-}
-
-class TextBetween extends StatelessWidget {
-  final int circleIndex;
-  final String text1;
-  final String text2;
-  final String imagePath;
-
-  const TextBetween(
-      {super.key,
-      required this.circleIndex,
-      required this.text1,
-      required this.text2,
-      required this.imagePath});
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Image(image: AssetImage(imagePath)),
-        Text(
-          text1,
-          textAlign: TextAlign.center,
-          style: GoogleFonts.mulish(
-              textStyle: TextStyle(
-            color: Color(ExBookColor.mauTrungTinh1.colorHex),
-            fontSize: 24,
-            // fontFamily: 'Mulish',
-            fontWeight: FontWeight.w700,
-            //   height: 36,
-          )),
-        ),
-        Container(
-          margin: const EdgeInsets.only(top: 16),
-          child: Text(
-            text2,
-            textAlign: TextAlign.center,
-            softWrap: true,
-            style: GoogleFonts.mulish(
-                textStyle: TextStyle(
-              color: Color(ExBookColor.mauTrungTinh1.colorHex),
-              fontSize: 16,
-              // fontFamily: 'Mulish',
-              fontWeight: FontWeight.w700,
-              //   height: 24,
-            )),
-          ),
-        ),
-        ThreeDot(
-          index: circleIndex,
         ),
       ],
     );
