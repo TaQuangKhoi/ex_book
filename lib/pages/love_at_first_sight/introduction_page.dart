@@ -3,8 +3,8 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../library/ex_book_colors.dart';
-import '../widgets/three_dot.dart';
+import '../../library/ex_book_colors.dart';
+import '../../widgets/three_dot.dart';
 
 class IntroductionPage extends StatefulWidget {
   const IntroductionPage({super.key});

@@ -7,7 +7,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:async';
 
-import '../library/ex_book_colors.dart';
+import '../../library/ex_book_colors.dart';
 import 'introduction_page.dart';
 
 class WelcomePage extends StatelessWidget {

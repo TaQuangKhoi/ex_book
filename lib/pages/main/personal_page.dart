@@ -1,4 +1,4 @@
-import 'package:ex_book/pages/welcome_page.dart';
+import 'package:ex_book/pages/love_at_first_sight/welcome_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
