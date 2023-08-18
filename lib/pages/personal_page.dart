@@ -1,3 +1,4 @@
+import 'package:ex_book/pages/welcome_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -198,7 +199,8 @@ class _PersonalPageState extends State<PersonalPage> {
                   padding: const EdgeInsets.symmetric(horizontal: 16),
                   child: ElevatedButton(
                     onPressed: () {
-                      Navigator.pushNamed(context, '/login');
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => const WelcomePage()));
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.red,
