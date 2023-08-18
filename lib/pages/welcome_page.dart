@@ -1,6 +1,6 @@
 import 'dart:developer';
 
-import 'package:ex_book/pages/navigation_page.dart';
+import 'package:ex_book/pages/main/navigation_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';

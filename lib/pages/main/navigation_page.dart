@@ -6,7 +6,7 @@ import 'package:ex_book/pages/transfer_book_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../widgets/ex_book_search_bar.dart';
+import '../../widgets/ex_book_search_bar.dart';
 
 class NavigationPage extends StatefulWidget {
   const NavigationPage({super.key});

@@ -4,7 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import '../library/ex_book_colors.dart';
 import '../widgets/ex_book_text_field.dart';
 import '../widgets/facebook_google_sign_in.dart';
-import 'navigation_page.dart';
+import 'main/navigation_page.dart';
 
 class LogInPage extends StatefulWidget {
   const LogInPage({super.key});
