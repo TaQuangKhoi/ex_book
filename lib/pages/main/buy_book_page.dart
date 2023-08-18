@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-import '../component/book_list.dart';
-import '../library/ex_book_constants.dart';
-import '../model/book.dart';
-import '../model/category.dart';
-import '../widgets/category_box.dart';
-import '../widgets/news_slide.dart';
+import '../../component/book_list.dart';
+import '../../library/ex_book_constants.dart';
+import '../../model/book.dart';
+import '../../model/category.dart';
+import '../../widgets/category_box.dart';
+import '../../widgets/news_slide.dart';
 
 class BuyBookPage extends StatefulWidget {
   const BuyBookPage({super.key});

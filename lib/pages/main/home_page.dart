@@ -1,10 +1,10 @@
 import 'package:ex_book/component/book_list.dart';
 import 'package:flutter/material.dart';
 
-import '../library/ex_book_constants.dart';
-import '../model/book.dart';
-import '../widgets/category_box.dart';
-import '../widgets/news_slide.dart';
+import '../../library/ex_book_constants.dart';
+import '../../model/book.dart';
+import '../../widgets/category_box.dart';
+import '../../widgets/news_slide.dart';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 

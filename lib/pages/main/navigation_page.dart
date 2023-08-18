@@ -1,8 +1,8 @@
 import 'package:ex_book/library/ex_book_colors.dart';
-import 'package:ex_book/pages/buy_book_page.dart';
-import 'package:ex_book/pages/home_page.dart';
-import 'package:ex_book/pages/personal_page.dart';
-import 'package:ex_book/pages/transfer_book_page.dart';
+import 'package:ex_book/pages/main/buy_book_page.dart';
+import 'package:ex_book/pages/main/home_page.dart';
+import 'package:ex_book/pages/main/personal_page.dart';
+import 'package:ex_book/pages/main/transfer_book_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 

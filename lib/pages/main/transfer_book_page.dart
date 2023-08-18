@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../component/book_list.dart';
-import '../library/ex_book_constants.dart';
-import '../model/book.dart';
-import '../widgets/news_slide.dart';
+import '../../component/book_list.dart';
+import '../../library/ex_book_constants.dart';
+import '../../model/book.dart';
+import '../../widgets/news_slide.dart';
 
 class TransferBookPage extends StatefulWidget {
   const TransferBookPage({super.key});
