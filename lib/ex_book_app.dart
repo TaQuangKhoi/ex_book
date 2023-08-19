@@ -1,4 +1,4 @@
-import 'package:ex_book/pages/love_at_first_sight/introduction_page/main.dart';
+import 'package:ex_book/pages/love_at_first_sight/introduction_page/page.dart';
 import 'package:ex_book/pages/love_at_first_sight/log_in_page.dart';
 import 'package:ex_book/pages/love_at_first_sight/sign_up_page.dart';
 import 'package:ex_book/pages/love_at_first_sight/welcome_page.dart';
