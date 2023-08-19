@@ -17,7 +17,14 @@ class IntroductionPage extends StatefulWidget {
 
 class _IntroductionPageState extends State<IntroductionPage> {
   int circleIndex = 1;
+  int index = 0;
   late Widget background = getBackground();
+
+  List<Widget> backgrounds = [
+    const IntroBackground1(),
+    const IntroBackground2(),
+    const IntroBackground3(),
+  ];
 
   @override
   void initState() {
@@ -46,6 +53,7 @@ class _IntroductionPageState extends State<IntroductionPage> {
         return;
       }
       circleIndex--;
+      index--;
       log(circleIndex.toString());
       setState(() {
         background = getBackground();
@@ -55,6 +63,7 @@ class _IntroductionPageState extends State<IntroductionPage> {
         return;
       }
       circleIndex++;
+      index++;
       log(circleIndex.toString());
       setState(() {
         background = getBackground();
