@@ -3,9 +3,9 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../../library/ex_book_colors.dart';
-import '../../widgets/text_between.dart';
-import 'introduction_page/introduction_background_1.dart';
+import '../../../library/ex_book_colors.dart';
+import '../../../widgets/text_between.dart';
+import 'background_1.dart';
 
 class IntroductionPage extends StatefulWidget {
   const IntroductionPage({super.key});
