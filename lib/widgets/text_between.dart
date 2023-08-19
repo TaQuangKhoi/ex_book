@@ -22,7 +22,7 @@ class TextBetween extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Image(image: AssetImage(imagePath)),
+        imagePath == '' ? Container() : Image(image: AssetImage(imagePath)),
         Text(
           text1,
           textAlign: TextAlign.center,
@@ -51,9 +51,9 @@ class TextBetween extends StatelessWidget {
                 )),
           ),
         ),
-        ThreeDot(
-          index: circleIndex,
-        ),
+        // ThreeDot(
+        //   index: circleIndex,
+        // ),
       ],
     );
   }

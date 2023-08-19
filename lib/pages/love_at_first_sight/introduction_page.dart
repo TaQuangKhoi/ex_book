@@ -158,28 +158,27 @@ class _IntroductionPageState extends State<IntroductionPage> {
           alignment: Alignment.center,
           children: [
             background,
-            Center(
+            const Center(
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                const TextBetween(
+                TextBetween(
                   circleIndex: 1,
                   text1: 'Nơi bạn yêu những thứ cũ kỹ',
                   text2:
                       'Bạn tìm nơi cất giữ những điều cũ kỹ\nEX.BOOK tìm nơi cất giữ những\nnhững quyển sách cũ kỹ',
                   imagePath: 'assets/introduction_page/background1/hinh3.png',
                 ),
-                circleIndex == 3 ? twoButtonSignUpAndLogIn : buttonNext,
+                // circleIndex == 3 ? twoButtonSignUpAndLogIn : buttonNext,
               ],
-            ))
+            )),
           ],
         ),
       ),
     );
   }
 }
-
-
 
 class IntroBackground2 extends StatelessWidget {
   const IntroBackground2({super.key});
