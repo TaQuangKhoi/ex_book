@@ -170,9 +170,12 @@ class _IntroductionPageState extends State<IntroductionPage> {
                       'Bạn tìm nơi cất giữ những điều cũ kỹ\nEX.BOOK tìm nơi cất giữ những\nnhững quyển sách cũ kỹ',
                   imagePath: 'assets/introduction_page/background1/hinh3.png',
                 ),
-                // circleIndex == 3 ? twoButtonSignUpAndLogIn : buttonNext,
               ],
             )),
+            Positioned(
+              bottom: 100,
+              child: circleIndex == 3 ? twoButtonSignUpAndLogIn : buttonNext,
+            ),
           ],
         ),
       ),
