@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 import '../../library/ex_book_colors.dart';
 import '../../widgets/text_between.dart';
+import 'introduction_page/introduction_background_1.dart';
 
 class IntroductionPage extends StatefulWidget {
   const IntroductionPage({super.key});
@@ -178,69 +179,7 @@ class _IntroductionPageState extends State<IntroductionPage> {
   }
 }
 
-class IntroBackground1 extends StatelessWidget {
-  const IntroBackground1({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return Stack(
-      alignment: Alignment.center,
-      children: [
-        const Positioned(
-          top: 90,
-          left: 0,
-          child: Image(
-            image: AssetImage(
-                'assets/introduction_page/background1/group_101.png'),
-          ),
-        ),
-        Positioned(
-            top: 0,
-            left: 0,
-            child: SizedBox(
-                width: MediaQuery.of(context).size.width,
-                child: const Image(
-                  fit: BoxFit.fill,
-                  image: AssetImage(
-                      'assets/introduction_page/background1/vector_1.png'),
-                ))),
-        Positioned(
-          top: 0,
-          left: 0,
-          child: SizedBox(
-              width: MediaQuery.of(context).size.width,
-              child: const Image(
-                fit: BoxFit.fill,
-                image: AssetImage(
-                    'assets/introduction_page/background1/vector_2.png'),
-              )),
-        ),
-        Positioned(
-          bottom: 0,
-          left: 0,
-          child: SizedBox(
-              width: MediaQuery.of(context).size.width,
-              child: const Image(
-                fit: BoxFit.fill,
-                image: AssetImage(
-                    'assets/introduction_page/background1/vector_25.png'),
-              )),
-        ),
-        Positioned(
-          bottom: 0,
-          left: 0,
-          child: SizedBox(
-              width: MediaQuery.of(context).size.width,
-              child: const Image(
-                fit: BoxFit.fill,
-                image: AssetImage(
-                    'assets/introduction_page/background1/vector_27.png'),
-              )),
-        ),
-      ],
-    );
-  }
-}
 
 class IntroBackground2 extends StatelessWidget {
   const IntroBackground2({super.key});
