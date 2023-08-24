@@ -98,13 +98,6 @@ class IntroBackground2 extends StatelessWidget {
             ),
           ),
         ),
-        // const TextBetween(
-        //   circleIndex: 2,
-        //   text1: 'Mua sự chữa lành',
-        //   text2:
-        //   'Bạn mua liều thuốc thời gian\nđể chữa lành cho tâm hồn giản đơn',
-        //   imagePath: 'assets/introduction_page/background2/sach_2_1.png',
-        // ),
       ],
     );
   }
