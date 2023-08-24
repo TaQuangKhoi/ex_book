@@ -14,14 +14,15 @@ class ExBookTextField extends StatefulWidget {
   final bool? isPassword;
   final String? Function(String?) validator;
 
-  const ExBookTextField(
-      {super.key,
-      required this.text,
-      required this.textFieldText,
-      this.controller,
-      this.suffixIcon,
-      this.isPassword, required this.validator,
-      });
+  const ExBookTextField({
+    super.key,
+    required this.text,
+    required this.textFieldText,
+    this.controller,
+    this.suffixIcon,
+    this.isPassword,
+    required this.validator,
+  });
 
   @override
   State<ExBookTextField> createState() => _ExBookTextFieldState();
@@ -46,6 +47,13 @@ class _ExBookTextFieldState extends State<ExBookTextField> {
             color: Color(ExBookColor.mauChinh2.colorHex), width: 1.0));
 
     return InputDecoration(
+      errorStyle: GoogleFonts.mulish(
+          textStyle: const TextStyle(
+        color: Color(0xFFF61111),
+        fontSize: 12,
+        fontWeight: FontWeight.w500,
+        letterSpacing: -0.30,
+      )),
       filled: true,
       fillColor: Color(ExBookColor.mauChinh3.colorHex),
       border: border,
