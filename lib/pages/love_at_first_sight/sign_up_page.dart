@@ -237,15 +237,29 @@ class _SignUpPageState extends State<SignUpPage> {
                         ],
                       ),
                       ExBookTextField(
-                          text: 'Mật khẩu',
-                          textFieldText: '*********',
-                          controller: matKhauController,
-                          isPassword: true),
+                        text: 'Mật khẩu',
+                        textFieldText: '*********',
+                        controller: matKhauController,
+                        isPassword: true,
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Please enter some text';
+                          }
+                          return null;
+                        },
+                      ),
                       ExBookTextField(
-                          text: 'Nhập lại mật khẩu',
-                          textFieldText: '*********',
-                          controller: nhapLaiMatKhauController,
-                          isPassword: true),
+                        text: 'Nhập lại mật khẩu',
+                        textFieldText: '*********',
+                        controller: nhapLaiMatKhauController,
+                        isPassword: true,
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Please enter some text';
+                          }
+                          return null;
+                        },
+                      ),
                     ],
                   ),
                 ],
@@ -262,7 +276,7 @@ class _SignUpPageState extends State<SignUpPage> {
                         child: ElevatedButton(
                             style: ElevatedButton.styleFrom(
                               backgroundColor:
-                              Color(ExBookColor.mauChinh1.colorHex),
+                                  Color(ExBookColor.mauChinh1.colorHex),
                             ),
                             onPressed: () {},
                             child: Text(
@@ -283,8 +297,7 @@ class _SignUpPageState extends State<SignUpPage> {
                         textAlign: TextAlign.center,
                         style: GoogleFonts.mulish(
                           textStyle: TextStyle(
-                            color:
-                            Color(ExBookColor.mauTrungTinh1.colorHex),
+                            color: Color(ExBookColor.mauTrungTinh1.colorHex),
                             fontSize: 16,
                             fontWeight: FontWeight.w500,
                             letterSpacing: -0.30,

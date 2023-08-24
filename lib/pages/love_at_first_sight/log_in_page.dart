@@ -15,6 +15,8 @@ class LogInPage extends StatefulWidget {
 
 class _LogInPageState extends State<LogInPage> {
   TextEditingController usernameController = TextEditingController();
+  final _formKey = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,24 +28,41 @@ class _LogInPageState extends State<LogInPage> {
     padding: const EdgeInsets.all(18.0),
         child: Stack(
           children: [
-            Column(
-              children: [
-                ExBookTextField(
+            Form(
+              key: _formKey,
+              child: Column(
+                children: [
+                  ExBookTextField(
                     text: 'Email/ Điện thoại',
                     textFieldText: '@gmail.com',
                     controller: usernameController,
-                    isPassword: false,),
-                ExBookTextField(
-                  text: 'Mật khẩu',
-                  textFieldText: '*********',
-                  controller: usernameController,
-                  isPassword: true,),
-                const Row(
-                  children: [
-                    Text('Quên mật khẩu?'),
-                  ],
-                )
-              ],
+                    isPassword: false,
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'Please enter some text';
+                      }
+                      return null;
+                    },
+                  ),
+                  ExBookTextField(
+                    text: 'Mật khẩu',
+                    textFieldText: '*********',
+                    controller: usernameController,
+                    isPassword: true,
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'Please enter some text';
+                      }
+                      return null;
+                    },
+                  ),
+                  const Row(
+                    children: [
+                      Text('Quên mật khẩu?'),
+                    ],
+                  )
+                ],
+              ),
             ),
             Positioned(
                 bottom: 0,

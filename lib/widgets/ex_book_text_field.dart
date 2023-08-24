@@ -13,6 +13,7 @@ class ExBookTextField extends StatefulWidget {
   final TextEditingController? controller;
   final Widget? suffixIcon;
   final bool? isPassword;
+  final Function validator;
 
   const ExBookTextField(
       {super.key,
@@ -20,7 +21,8 @@ class ExBookTextField extends StatefulWidget {
       required this.textFieldText,
       this.controller,
       this.suffixIcon,
-      this.isPassword});
+      this.isPassword,
+      required this.validator});
 
   @override
   State<ExBookTextField> createState() => _ExBookTextFieldState();
