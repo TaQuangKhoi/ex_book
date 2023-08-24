@@ -33,15 +33,21 @@ class _IntroductionPageState extends State<IntroductionPage> {
       circleIndex: 1,
       text1: 'Nơi bạn yêu những thứ cũ kỹ',
       text2:
-      'Bạn tìm nơi cất giữ những điều cũ kỹ\nEX.BOOK tìm nơi cất giữ những\nnhững quyển sách cũ kỹ',
+          'Bạn tìm nơi cất giữ những điều cũ kỹ\nEX.BOOK tìm nơi cất giữ những\nnhững quyển sách cũ kỹ',
       imagePath: 'assets/introduction_page/background1/hinh3.png',
     ),
     const TextBetween(
       circleIndex: 2,
       text1: 'Mua sự chữa lành',
-      text2:
-      'Bạn mua liều thuốc thời gian\nđể chữa lành cho tâm hồn giản đơn',
+      text2: 'Bạn mua liều thuốc thời gian\nđể chữa lành cho tâm hồn giản đơn',
       imagePath: 'assets/introduction_page/background2/sach_2_1.png',
+    ),
+    const TextBetween(
+      circleIndex: 3,
+      text1: 'Những cuốn sách tái sinh',
+      text2:
+          'Chúng mình là EX.BOOK nơi tái sinh \nnhững quyển sách cũ kỹ trên tay bạn',
+      imagePath: 'assets/introduction_page/background2/hinh_sach_1_1.png',
     ),
   ];
 

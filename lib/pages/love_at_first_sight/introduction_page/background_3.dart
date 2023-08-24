@@ -102,13 +102,6 @@ class IntroBackground3 extends StatelessWidget {
             AssetImage('assets/introduction_page/background3/vector_2.png'),
           ),
         ),
-        // const TextBetween(
-        //   circleIndex: 3,
-        //   text1: 'Những cuốn sách tái sinh',
-        //   text2:
-        //   'Chúng mình là EX.BOOK nơi tái sinh \nnhững quyển sách cũ kỹ trên tay bạn',
-        //   imagePath: 'assets/introduction_page/background3/hinh_sach_1_1.png',
-        // ),
       ],
     );
   }
