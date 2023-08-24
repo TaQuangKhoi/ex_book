@@ -1,7 +1,6 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../library/ex_book_colors.dart';
@@ -13,7 +12,7 @@ class ExBookTextField extends StatefulWidget {
   final TextEditingController? controller;
   final Widget? suffixIcon;
   final bool? isPassword;
-  final Function validator;
+  final String? Function(String?) validator;
 
   const ExBookTextField(
       {super.key,
@@ -21,8 +20,8 @@ class ExBookTextField extends StatefulWidget {
       required this.textFieldText,
       this.controller,
       this.suffixIcon,
-      this.isPassword,
-      required this.validator});
+      this.isPassword, required this.validator,
+      });
 
   @override
   State<ExBookTextField> createState() => _ExBookTextFieldState();
@@ -88,7 +87,8 @@ class _ExBookTextFieldState extends State<ExBookTextField> {
             widget.text,
             style: labelTextFieldStyle,
           ),
-          TextField(
+          TextFormField(
+            validator: widget.validator,
             controller: widget.controller,
             obscureText: showPassword,
             decoration: widget.isPassword == true

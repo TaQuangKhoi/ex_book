@@ -15,6 +15,7 @@ class LogInPage extends StatefulWidget {
 
 class _LogInPageState extends State<LogInPage> {
   TextEditingController usernameController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
 
   @override
@@ -47,7 +48,7 @@ class _LogInPageState extends State<LogInPage> {
                   ExBookTextField(
                     text: 'Mật khẩu',
                     textFieldText: '*********',
-                    controller: usernameController,
+                    controller: passwordController,
                     isPassword: true,
                     validator: (value) {
                       if (value == null || value.isEmpty) {
@@ -79,6 +80,13 @@ class _LogInPageState extends State<LogInPage> {
                             Color(ExBookColor.mauChinh1.colorHex),
                           ),
                           onPressed: () {
+                            if (_formKey.currentState!.validate()) {
+                              // If the form is valid, display a snackbar. In the real world,
+                              // you'd often call a server or save the information in a database.
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                const SnackBar(content: Text('Processing Data')),
+                              );
+                            }
                             Navigator.push(context,
                                 MaterialPageRoute(builder: (context) => const NavigationPage()));
                           },
