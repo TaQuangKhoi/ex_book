@@ -47,7 +47,7 @@ class _IntroductionPageState extends State<IntroductionPage> {
       text1: 'Những cuốn sách tái sinh',
       text2:
           'Chúng mình là EX.BOOK nơi tái sinh \nnhững quyển sách cũ kỹ trên tay bạn',
-      imagePath: 'assets/introduction_page/background2/hinh_sach_1_1.png',
+      imagePath: 'assets/introduction_page/background3/hinh_sach_1_1.png',
     ),
   ];
 
