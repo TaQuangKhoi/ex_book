@@ -19,7 +19,7 @@ class IntroductionPage extends StatefulWidget {
 
 class _IntroductionPageState extends State<IntroductionPage> {
   int circleIndex = 1;
-  int index = 0;
+  int _index = 0;
   late Widget background = getBackground();
 
   List<Widget> backgrounds = [
@@ -28,7 +28,7 @@ class _IntroductionPageState extends State<IntroductionPage> {
     const IntroBackground3(),
   ];
 
-  List<Widget> textBetweens = [
+  List<Widget> textBetweenList = [
     const TextBetween(
       circleIndex: 1,
       text1: 'Nơi bạn yêu những thứ cũ kỹ',
@@ -49,6 +49,7 @@ class _IntroductionPageState extends State<IntroductionPage> {
   void initState() {
     // background = const IntroBackground1();
     // circleIndex = 1;
+    _index = 0;
     super.initState();
   }
 
@@ -72,9 +73,9 @@ class _IntroductionPageState extends State<IntroductionPage> {
         return;
       }
       circleIndex--;
-      index--;
       log(circleIndex.toString());
       setState(() {
+        _index--;
         background = getBackground();
       });
     } else if (velocity < 0) {
@@ -82,12 +83,13 @@ class _IntroductionPageState extends State<IntroductionPage> {
         return;
       }
       circleIndex++;
-      index++;
       log(circleIndex.toString());
       setState(() {
+        _index++;
         background = getBackground();
       });
     }
+    log("index: $_index");
   }
 
   void nextBackground() {
@@ -95,10 +97,12 @@ class _IntroductionPageState extends State<IntroductionPage> {
       return;
     }
     circleIndex++;
-    log(circleIndex.toString());
+    log("circleIndex.toString() ${circleIndex.toString()}");
     setState(() {
+      _index++;
       background = getBackground();
     });
+    log("index: $_index");
   }
 
   @override
@@ -129,13 +133,13 @@ class _IntroductionPageState extends State<IntroductionPage> {
           fit: StackFit.expand,
           alignment: Alignment.center,
           children: [
-            background,
+            backgrounds[_index],
             Center(
                 child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                textBetweens[index],
+                textBetweenList[_index],
               ],
             )),
             Positioned(
