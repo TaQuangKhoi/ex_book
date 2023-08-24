@@ -130,34 +130,40 @@ class _IntroductionPageState extends State<IntroductionPage> {
           ))),
     );
 
-    return GestureDetector(
-      onPanEnd: handleSwipe,
-      child: Scaffold(
-        backgroundColor: Color(ExBookColor.mauChinh3.colorHex),
-        appBar: null,
-        body: Stack(
-          fit: StackFit.expand,
-          alignment: Alignment.center,
-          children: [
-            backgrounds[_index],
-            Center(
-                child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
+    return WillPopScope(
+        child: GestureDetector(
+          onPanEnd: handleSwipe,
+          child: Scaffold(
+            backgroundColor: Color(ExBookColor.mauChinh3.colorHex),
+            appBar: null,
+            body: Stack(
+              fit: StackFit.expand,
+              alignment: Alignment.center,
               children: [
-                textBetweenList[_index],
+                backgrounds[_index],
+                Center(
+                    child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    textBetweenList[_index],
+                  ],
+                )),
+                Positioned(
+                  bottom: 100,
+                  left: 16,
+                  right: 16,
+                  child: circleIndex == 3
+                      ? const ButtonLoginAndSignUp()
+                      : buttonNext,
+                  // child: buttonNext,
+                ),
               ],
-            )),
-            Positioned(
-              bottom: 100,
-              left: 16,
-              right: 16,
-              child: circleIndex == 3 ? const ButtonLoginAndSignUp() : buttonNext,
-              // child: buttonNext,
             ),
-          ],
+          ),
         ),
-      ),
-    );
+        onWillPop: () async {
+          return false;
+        });
   }
 }
