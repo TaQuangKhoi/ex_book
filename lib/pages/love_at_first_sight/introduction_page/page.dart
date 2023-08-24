@@ -7,6 +7,7 @@ import '../../../library/ex_book_colors.dart';
 import '../../../widgets/text_between.dart';
 import 'background_1.dart';
 import 'background_2.dart';
+import 'button_login_and_sign_up.dart';
 
 class IntroductionPage extends StatefulWidget {
   const IntroductionPage({super.key});
@@ -136,10 +137,13 @@ class _IntroductionPageState extends State<IntroductionPage> {
                 textBetweens[index],
               ],
             )),
-            // Positioned(
-            //   bottom: 100,
-            //   child: circleIndex == 3 ? twoButtonSignUpAndLogIn : buttonNext,
-            // ),
+            Positioned(
+              bottom: 100,
+              left: 16,
+              right: 16,
+              child: circleIndex == 3 ? const ButtonLoginAndSignUp() : buttonNext,
+              // child: buttonNext,
+            ),
           ],
         ),
       ),

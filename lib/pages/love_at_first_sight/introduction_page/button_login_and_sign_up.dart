@@ -17,7 +17,8 @@ class ButtonLoginAndSignUp extends StatelessWidget {
     }
 
     return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Expanded(
             child: Container(
