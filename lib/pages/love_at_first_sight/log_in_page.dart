@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../library/ex_book_colors.dart';
@@ -32,77 +33,93 @@ class _LogInPageState extends State<LogInPage> {
             padding: const EdgeInsets.all(18.0),
             child: Stack(
               children: [
-                Form(
-                  key: _formKey,
-                  child: Column(
-                    children: [
-                      ExBookTextField(
-                        text: 'Email/ Điện thoại',
-                        textFieldText: '@gmail.com',
-                        controller: usernameController,
-                        isPassword: false,
-                        validator: (value) {
-                          if (value == null || value.isEmpty) {
-                            return 'Please enter some text';
-                          }
-                          return null;
-                        },
-                      ),
-                      ExBookTextField(
-                        text: 'Mật khẩu',
-                        textFieldText: '*********',
-                        controller: passwordController,
-                        isPassword: true,
-                        validator: (value) {
-                          if (value == null || value.isEmpty) {
-                            return 'Please enter some text';
-                          }
-                          return null;
-                        },
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                Column(
+                  children: [
+                    SvgPicture.asset('assets/logo.svg',
+                        semanticsLabel: 'Ex.Book Logo'),
+                    Text('Ex.Book',
+                        textAlign: TextAlign.center,
+                        style: GoogleFonts.mulish(
+                            textStyle: TextStyle(
+                          color: Color(ExBookColor.mauChinh1.colorHex),
+                          fontSize: 64,
+                          // fontFamily: 'Mulish',
+                          fontWeight: FontWeight.w700,
+                          // height: 36,
+                        ))),
+                    Form(
+                      key: _formKey,
+                      child: Column(
                         children: [
-                          Row(
-                            children: [
-                              Checkbox(
-                                value: IsSavePassword,
-                                onChanged: (bool? value) {
-                                  setState(() {
-                                    IsSavePassword = value!;
-                                  });
-                                },
-                              ),
-                              Text(
-                                'Lưu mật khẩu!',
-                                style: GoogleFonts.mulish(
-                                    textStyle: const TextStyle(
-                                  color: Color.fromRGBO(42, 55, 50, 0.50),
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.w400,
-                                  letterSpacing: -0.30,
-                                )),
-                              ),
-                            ],
+                          ExBookTextField(
+                            text: 'Email/ Điện thoại',
+                            textFieldText: '@gmail.com',
+                            controller: usernameController,
+                            isPassword: false,
+                            validator: (value) {
+                              if (value == null || value.isEmpty) {
+                                return 'Please enter some text';
+                              }
+                              return null;
+                            },
                           ),
-                          TextButton(
-                              onPressed: () {
-                                log('Quên mật khẩu?');
-                              },
-                              child: Text(
-                                'Quên mật khẩu?',
-                                style: GoogleFonts.mulish(
-                                    textStyle: const TextStyle(
-                                  color: Color.fromRGBO(42, 55, 50, 0.50),
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.w400,
-                                  letterSpacing: -0.30,
-                                )),
-                              )),
+                          ExBookTextField(
+                            text: 'Mật khẩu',
+                            textFieldText: '*********',
+                            controller: passwordController,
+                            isPassword: true,
+                            validator: (value) {
+                              if (value == null || value.isEmpty) {
+                                return 'Please enter some text';
+                              }
+                              return null;
+                            },
+                          ),
                         ],
-                      )
-                    ],
-                  ),
+                      ),
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Row(
+                          children: [
+                            Checkbox(
+                              value: IsSavePassword,
+                              onChanged: (bool? value) {
+                                setState(() {
+                                  IsSavePassword = value!;
+                                });
+                              },
+                            ),
+                            Text(
+                              'Lưu mật khẩu!',
+                              style: GoogleFonts.mulish(
+                                  textStyle: const TextStyle(
+                                color: Color.fromRGBO(42, 55, 50, 0.50),
+                                fontSize: 12,
+                                fontWeight: FontWeight.w400,
+                                letterSpacing: -0.30,
+                              )),
+                            ),
+                          ],
+                        ),
+                        TextButton(
+                            onPressed: () {
+                              log('Quên mật khẩu?');
+                            },
+                            child: Text(
+                              'Quên mật khẩu?',
+                              style: GoogleFonts.mulish(
+                                  textStyle: const TextStyle(
+                                color: Color.fromRGBO(42, 55, 50, 0.50),
+                                fontSize: 12,
+                                fontWeight: FontWeight.w400,
+                                letterSpacing: -0.30,
+                              )),
+                            )),
+                      ],
+                    ),
+                  ],
                 ),
                 Positioned(
                     bottom: 0,
