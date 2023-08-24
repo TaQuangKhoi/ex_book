@@ -26,6 +26,23 @@ class _IntroductionPageState extends State<IntroductionPage> {
     const IntroBackground3(),
   ];
 
+  List<Widget> textBetweens = [
+    const TextBetween(
+      circleIndex: 1,
+      text1: 'Nơi bạn yêu những thứ cũ kỹ',
+      text2:
+      'Bạn tìm nơi cất giữ những điều cũ kỹ\nEX.BOOK tìm nơi cất giữ những\nnhững quyển sách cũ kỹ',
+      imagePath: 'assets/introduction_page/background1/hinh3.png',
+    ),
+    const TextBetween(
+      circleIndex: 2,
+      text1: 'Mua sự chữa lành',
+      text2:
+      'Bạn mua liều thuốc thời gian\nđể chữa lành cho tâm hồn giản đơn',
+      imagePath: 'assets/introduction_page/background2/sach_2_1.png',
+    ),
+  ];
+
   @override
   void initState() {
     // background = const IntroBackground1();
@@ -111,24 +128,18 @@ class _IntroductionPageState extends State<IntroductionPage> {
           alignment: Alignment.center,
           children: [
             background,
-            const Center(
+            Center(
                 child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                TextBetween(
-                  circleIndex: 1,
-                  text1: 'Nơi bạn yêu những thứ cũ kỹ',
-                  text2:
-                      'Bạn tìm nơi cất giữ những điều cũ kỹ\nEX.BOOK tìm nơi cất giữ những\nnhững quyển sách cũ kỹ',
-                  imagePath: 'assets/introduction_page/background1/hinh3.png',
-                ),
+                textBetweens[index],
               ],
             )),
-            Positioned(
-              bottom: 100,
-              child: circleIndex == 3 ? twoButtonSignUpAndLogIn : buttonNext,
-            ),
+            // Positioned(
+            //   bottom: 100,
+            //   child: circleIndex == 3 ? twoButtonSignUpAndLogIn : buttonNext,
+            // ),
           ],
         ),
       ),
